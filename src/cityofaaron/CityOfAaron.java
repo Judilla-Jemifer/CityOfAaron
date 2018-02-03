@@ -39,7 +39,7 @@ public class CityOfAaron {
     ListItem animalsOne = new ListItem();
       
     animalsOne.setName("sheep");
-    animalsOne.setNumber(12.00);
+    animalsOne.setNumber(12);
 
 
     String animalsOneName = animalsOne.getName();
@@ -53,8 +53,8 @@ public class CityOfAaron {
     toolsOne.setName("sword");
     toolsOne.setNumber(7);
 
-    String animalsOneName = toolsOne.getName();
-    double animalsOneNumber = toolsOne.getNumber();
+    String toolsOneName = toolsOne.getName();
+    double toolsOneNumber = toolsOne.getNumber();
 
     System.out.println(toolsOne.toString());
 

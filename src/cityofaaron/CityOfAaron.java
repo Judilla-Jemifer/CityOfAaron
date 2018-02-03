@@ -1,6 +1,7 @@
 
 package cityofaaron;
 
+//The * tells it to import all files in the model folder
 import byu.cit260.cityOfAaron.model.*;
 
 public class CityOfAaron {

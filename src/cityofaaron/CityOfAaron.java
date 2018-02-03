@@ -2,6 +2,7 @@
 package cityofaaron;
 
 //The * tells it to import all files in the model folder
+//Upload to the dang website, NetBeans! 
 import byu.cit260.cityOfAaron.model.*;
 
 public class CityOfAaron {

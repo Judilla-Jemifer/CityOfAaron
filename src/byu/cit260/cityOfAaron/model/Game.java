@@ -64,6 +64,7 @@ package byu.cit260.cityOfAaron.model;
    public void setProvisions(ArrayList<ListItem> provisions){
      this.provisions = provisions;
    }
+ }
 
    //I removed the main() function here and put it in the main class CityOfAaron.java
    

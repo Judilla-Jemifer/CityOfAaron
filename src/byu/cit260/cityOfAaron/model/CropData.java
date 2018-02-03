@@ -7,7 +7,7 @@ package byu.cit260.cityOfAaron.model;
 
 /**
  *
- * @author HP14-ab111tx
+ * @author JemJacClay
  */
 public class CropData {
     

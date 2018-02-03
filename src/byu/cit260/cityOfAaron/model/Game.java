@@ -64,12 +64,11 @@ package byu.cit260.cityOfAaron.model;
    public void setProvisions(ArrayList<ListItem> provisions){
      this.provisions = provisions;
    }
-<<<<<<< HEAD
- }
+
 
    //I removed the main() function here and put it in the main class CityOfAaron.java
    
-=======
+
 
 //   public static void main(String[] args) {
      //set ListItem instance -- Jem: should this be here in Game class?
@@ -134,4 +133,4 @@ package byu.cit260.cityOfAaron.model;
 
    }*/
  }//close class Game 
->>>>>>> 7b74e9c44bda82ab1a830aa89c23a2ecf95a614c
+

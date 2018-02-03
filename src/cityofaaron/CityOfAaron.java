@@ -67,23 +67,13 @@ public class CityOfAaron {
 
     System.out.println(toolsOne.toString());
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 4c5df99f80402bac67d725cff25a079bcf6452a1
 }
 
-//set ListItem instance -- Jem: should this be here in Game class?
+//set ListItem instance 
 //I hope I'm doing this right because I'm not sure how to do it for Arrays
 
-/*Set Player instance.
- *I've added this back in from where it got deleted.
- *Also, I fixed a bunch of errors that got added in overnight due to a
- *mistake higher in the code.
- *There are only six errors showing right now, all with the list item.
- *Jem, I think you have it almost right.
- * - Jacalyn */
+
 
 public static void main(String[] args) {
 
@@ -104,36 +94,17 @@ public static void main(String[] args) {
     //From Jem
     ListItem[] animalsOne = New ListItem[ItemCount];
 
-    //for animals
+    //From Jem - tried to change it to make just one instance
+    ListItem[] listItemOne = New ListItem[];
 
-    animalsOne.setName("sheep");
-    animalsOne.setNumber(12.00);
+    listItemOne.setName("sheep");
+    listItemOne.setNumber(12.00);
 
-    String animalsOneName = animalsOne.getName();
-    double animalsOneNumber = animalsOne.getNumber();
+    String listItemName = listItemOne.getName();
+    double listItemOneNumber = listItemOne.getNumber();
 
-    System.out.println(animalsOne.toString());
+    System.out.println(listItemOne.toString());
 
-    //for tools
-    ListItem[] toolsOne = New ListItem[ItemCount];
 
-    toolsOne.setName("sword");
-    toolsOne.setNumber(7.00);
-
-    String animalsOneName = toolsOne.getName();
-    double animalsOneNumber = toolsOne.getNumber();
-
-    System.out.println(toolsOne.toString());
-
-    //for provisions
-    ListItem[] provisionsOne = New ListItem[ItemCount];
-
-    provisionsOne.setName("helmet");
-    provisionsOne.setNumber(7.00);
-
-    String provisionsOneName = provisionsOne.getName();
-    double provisionsOneNumber = provisionsOne.getNumber();
-
-    System.out.println(toolsOne.toString());
-
-  }//close main
+  }
+}

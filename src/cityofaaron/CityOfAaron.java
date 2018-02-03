@@ -5,16 +5,19 @@
  */
 package cityofaaron;
 
+
 /**
  *
  * @authors Jemifer/Jacalyn/Aaron
  */
+
 public class CityOfAaron {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         Player playerOne = new Player();
     playerOne.setName("Alma The Missionary");
 

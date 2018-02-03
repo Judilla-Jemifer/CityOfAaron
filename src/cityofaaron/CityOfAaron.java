@@ -1,6 +1,8 @@
 
 package cityofaaron;
 
+import byu.cit260.cityOfAaron.model.*;
+
 public class CityOfAaron {
 
     /**
@@ -34,7 +36,7 @@ public class CityOfAaron {
 
 
       //From Jem
-      ListItem[] animalsOne = New ListItem[ItemCount];
+      ListItem animalsOne = new ListItem();
 
       //for animals
 

@@ -1,5 +1,6 @@
 
 package byu.cit260.cityOfAaron.model;
+import byu.cit260.cityOfAaron.model.*;
  /*
   *City of Aaron*
   */

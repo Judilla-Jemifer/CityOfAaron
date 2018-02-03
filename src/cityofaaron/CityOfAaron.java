@@ -1,11 +1,17 @@
 
 package cityofaaron;
 
+<<<<<<< HEAD
 
 /**
  *
  * @authors Jemifer/Jacalyn/Aaron
  */
+=======
+//The * tells it to import all files in the model folder
+//Upload to the dang website, NetBeans! 
+import byu.cit260.cityOfAaron.model.*;
+>>>>>>> a5d58fe7dcf5d167e67dd6b13041773bfb01f202
 
 public class CityOfAaron {
 
@@ -33,8 +39,13 @@ public class CityOfAaron {
 
     //for animals
 
+<<<<<<< HEAD
     animalsOne.setName("sheep");
     animalsOne.setNumber(12.00);
+=======
+      //From Jem
+      ListItem animalsOne = new ListItem();
+>>>>>>> a5d58fe7dcf5d167e67dd6b13041773bfb01f202
 
     String animalsOneName = animalsOne.getName();
     double animalsOneNumber = animalsOne.getNumber();

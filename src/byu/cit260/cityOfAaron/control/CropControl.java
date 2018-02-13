@@ -9,7 +9,27 @@ package byu.cit260.cityOfAaron.control;
  *
  * @author ct
  */
+
+import java.util.Random;
+
 public class CropControl {
+
+  //constants
+  private static final int LAND_BASE = 17;
+  private static final int LAND_RANGE = 10;
+
+  //random number generator
+  public static Random random = new Random();
+
+  //calcLandCost method
+  //Purpose: to calculate a random land cost between 17 to 26 bushels per acre
+  //Parameters: none
+  //Returns: the land cost
+public static intCalcLandCost(){
+  int landPrice = random.nextInt(LAND_RANGE)+ LAND_BASE;
+    // nextInt is a standard method from the imported library Random
+  return landPrice;
+}
 
 // The sellLand method
 // Purpose: To sell land

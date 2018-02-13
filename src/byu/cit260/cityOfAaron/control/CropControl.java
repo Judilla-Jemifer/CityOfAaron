@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byu.cit260.cityOfAaron.control;
 
 /**
@@ -10,6 +5,7 @@ package byu.cit260.cityOfAaron.control;
  * @author ct
  */
 
+import byu.cit260.cityOfAaron.model.CropData;
 import java.util.Random;
 
 public class CropControl {
@@ -25,7 +21,7 @@ public class CropControl {
   //Purpose: to calculate a random land cost between 17 to 26 bushels per acre
   //Parameters: none
   //Returns: the land cost
-public static intCalcLandCost(){
+public static int CalcLandCost(){
   int landPrice = random.nextInt(LAND_RANGE)+ LAND_BASE;
     // nextInt is a standard method from the imported library Random
   return landPrice;

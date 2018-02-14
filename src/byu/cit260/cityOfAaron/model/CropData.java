@@ -77,53 +77,54 @@ package byu.cit260.cityOfAaron.model;
      return wheatForPeople;
    }
  //setters
+
    public void setYear(int setYear){
-     this.year = year;
+     this.year = setYear;
    }
    public void setPopulation(int setPopulation){
-     this.year = population;
+     this.population = setPopulation;
    }
    public void setAcresOwned(int setAcresOwned){
-     this.year = acresOwned;
+     this.acresOwned = setAcresOwned;
    }
    public void setCropYield(int setCropYield){
-     this.year = cropYield;
+     this.cropYield = setCropYield;
    }
    public void setWheatInStore(int setWheatInStore){
-     this.year = wheatInStore;
+     this.year = setWheatInStore;
    }
    public void setNumberWhoDied(int setNumberWhoDied){
-     this.year = numberWhoDied;
+     this.numberWhoDied = setNumberWhoDied;
    }
    public void setNewPeople(int setNewPeople){
-     this.year = newPeople;
+     this.newPeople = setNewPeople;
    }
    public void setHarvest(int setHarvest){
-     this.year = harvest;
+     this.harvest = setHarvest;
    }
    public void setHarvestAfterOffering(int setHarvestAfterOffering){
-     this.year = harvestAfterOffering;
+     this.harvestAfterOffering = setHarvestAfterOffering;
    }
    public void setOffering(int setOffering){
-     this.year = offering;
+     this.offering = setOffering;
    }
    public void setOfferingBushels(int setOfferingBushels){
-     this.year = offeringBushels;
+     this.offeringBushels = setOfferingBushels;
    }
    public void setPeopleFed(int setPeopleFed){
-     this.year = peopleFed;
+     this.peopleFed = setPeopleFed;
    }
    public void setAcresPlanted(int setAcresPlanted){
-     this.year = acresPlanted;
+     this.acresPlanted = setAcresPlanted;
    }
    public void setNumStarved(int setNumStarved){
-     this.year = numStarved;
+     this.numStarved = setNumStarved;
    }
    public void setEatenByRats(int setEatenByRats){
-     this.year = eatenByRats;
+     this.eatenByRats = setEatenByRats;
    }
    public void setWheatForPeople(int setWheatForPeople){
-     this.year = wheatForPeople;
+     this.wheatForPeople = setWheatForPeople;
    }
 
  }

@@ -2,7 +2,6 @@
 package byu.cit260.cityOfAaron.control;
 import byu.cit260.cityOfAaron.model.CropData;
 
-
 /**
  * 
  * Method: Plant Crop
@@ -15,7 +14,7 @@ import byu.cit260.cityOfAaron.model.CropData;
  **/
 public class PlantCrop {
     
-    public static int acresPlanted(int wheatInStore, int landOwned, CropData cropData){
+    public static int acresPlanted(CropData cropData){
         
         int owned = cropData.getAcresOwned();
         int wheat = cropData.getWheatInStore();
@@ -40,7 +39,7 @@ public class PlantCrop {
         
         cropData.setWheatInStore(wheatLeft); 
                 
-        return wheatInStore;
+        return wheatLeft;
     }
     
 }

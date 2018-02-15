@@ -91,7 +91,7 @@ package byu.cit260.cityOfAaron.model;
      this.cropYield = setCropYield;
    }
    public void setWheatInStore(int setWheatInStore){
-     this.year = setWheatInStore;
+     this.wheatInStore = setWheatInStore;
    }
    public void setNumberWhoDied(int setNumberWhoDied){
      this.numberWhoDied = setNumberWhoDied;

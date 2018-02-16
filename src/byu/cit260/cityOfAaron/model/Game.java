@@ -4,7 +4,6 @@ import byu.cit260.cityOfAaron.model.*;
   *City of Aaron*
   */
 
-<<<<<<< HEAD
 
  import java.io.Serializable;
  import java.util.ArrayList;

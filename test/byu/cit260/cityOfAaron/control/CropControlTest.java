@@ -7,12 +7,28 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Jacalyn/Jemifer/Clayton
+ * @authors Jacalyn
  */
 public class CropControlTest {
    
     //@org.junit.Test  
     public CropControlTest() {
+    }
+
+    @org.junit.BeforeClass
+    public static void setUpClass() throws Exception {
+    }
+
+    @org.junit.AfterClass
+    public static void tearDownClass() throws Exception {
+    }
+
+    @org.junit.Before
+    public void setUp() throws Exception {
+    }
+
+    @org.junit.After
+    public void tearDown() throws Exception {
     }
 
     /**
@@ -37,7 +53,7 @@ public class CropControlTest {
     public void testSellLand() {
         System.out.println("sellLand");
         
-          // --- Test case 1 --- 
+          // --- Test case 1 --- Jem
         System.out.println("\tTest case 1");
         
         CropData cropData = new CropData();

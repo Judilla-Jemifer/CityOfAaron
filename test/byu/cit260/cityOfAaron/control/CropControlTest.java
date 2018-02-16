@@ -117,10 +117,10 @@ public class CropControlTest {
         // --- Test case 4 ---
         System.out.println("\tTest case 4");
         cropData.setWheatInStore(1000);
-        cropData.setAcresOwned(2800);
+        cropData.setAcresOwned(2000);
         // define the input variables
-        landPrice = 20;
-        acresToSell = 2800;
+        landPrice = 10;
+        acresToSell = 2000;
        
         expResult = 0;
         // I think we're having problems here wwhen I test it -- Jem
@@ -136,12 +136,12 @@ public class CropControlTest {
         // --- Test case 5 ---
         System.out.println("\tTest case 5");
        cropData.setWheatInStore(1000);
-        cropData.setAcresOwned(2800);
+        cropData.setAcresOwned(2000);
         // define the input variables
         landPrice = 10;
         acresToSell = 0;
        
-        expResult = 2800;
+        expResult = 2000;
         
         //call the method
         result = CropControl.sellLand(landPrice, acresToSell, cropData);

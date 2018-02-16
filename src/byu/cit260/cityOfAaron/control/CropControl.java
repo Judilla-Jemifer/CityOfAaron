@@ -34,7 +34,7 @@ public static int CalcLandCost(){
 // Returns: the acres owned after the sale
 // Pre-conditions: acres to sell must be positive
   // and <= acresOwned
-    public static int sellLand(int landPrice, int acresToSell, CropData cropData){
+    public static int sellLand(int landPrice, int acresToSell, CropData, cropData){
 
       //if acresToSell < 0, return -1
       if(acresToSell < 0){
@@ -57,3 +57,4 @@ public static int CalcLandCost(){
 
     }
 }
+

@@ -98,7 +98,7 @@ public class CropControlTest {
         System.out.println("\tTest case 4");
        
         // define the input variables
-        landPrice = 10;
+        landPrice = 20;
         acresToSell = 2800;
        
         expResult = 0;

@@ -63,7 +63,7 @@ public class CropControl {
     using harvest amount collected, multiply by percentage of offering to calculate amount of harvest to be offered as tithes
     return calculated offering if valid, or return -1 if invalid
     */
-    public static double payOffering(int offering, CropData cropData){
+    public static long payOffering(int offering, CropData cropData){
       //if offering is less than zero or more than 100, return error code -1
       if(offering < 0 || offering > 100){
         return -1;
@@ -73,7 +73,7 @@ public class CropControl {
       //get cropYield from cropData instance
       int cropYield = cropData.getCropYield();
       //calc offeringBushels from offeringPercentage of cropYield
-      double offeringBushels = cropYield * offeringPercentage;
+      long offeringBushels = Math.round(cropYield * offeringPercentage);
       //return offeringBushels
       return offeringBushels;
     } //close payOffering

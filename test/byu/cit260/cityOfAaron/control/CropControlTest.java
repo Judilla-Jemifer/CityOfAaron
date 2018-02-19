@@ -170,4 +170,104 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    
+    @Test
+    public void testFeedPeople() {
+        System.out.println("feedPeople");
+
+          // --- Test case 1 --- @author Jem
+        System.out.println("\tTest case 1 for Valid");
+
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(2700);
+     
+        // define the input variables
+        int wheatForPeople = 1300;
+      
+
+        int expResult = 1400;
+
+        //call the method
+        int result = CropControl.feedPeople(wheatForPeople, cropData);
+
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+       
+
+    // --- Test case 2 ---
+        System.out.println("\tTest case 2 for Invalid");
+
+
+        cropData.setWheatInStore(2700);
+      
+        // define the input variables
+        wheatForPeople = -100;
+      
+
+        expResult = -1;
+
+        //call the method
+        result = CropControl.feedPeople(wheatForPeople, cropData);
+
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        
+
+        // --- Test case 3 ---
+        System.out.println("\tTest case 3 for Invalid");
+        
+        cropData.setWheatInStore(2700);
+      
+        // define the input variables
+        wheatForPeople = 2900;
+      
+
+        expResult = -1;
+
+        //call the method
+        result = CropControl.feedPeople(wheatForPeople, cropData);
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+
+        // --- Test case 4 ---
+        System.out.println("\tTest case 4 for Boundary");
+        
+        cropData.setWheatInStore(2700);
+      
+        // define the input variables
+        wheatForPeople = 2700;
+      
+
+        expResult = 0;
+
+        //call the method
+        result = CropControl.feedPeople(wheatForPeople, cropData);
+
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+
+        // --- Test case 5 ---
+        System.out.println("\tTest case 5 for Boundary");
+        
+        cropData.setWheatInStore(2700);
+      
+        // define the input variables
+        wheatForPeople = 0;
+      
+
+        expResult = 2700;
+
+        //call the method
+        result = CropControl.feedPeople(wheatForPeople, cropData);
+
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 }

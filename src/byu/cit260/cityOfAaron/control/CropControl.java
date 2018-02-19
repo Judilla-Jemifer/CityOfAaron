@@ -77,4 +77,29 @@ public class CropControl {
       //return offeringBushels
       return offeringBushels;
     } //close payOffering
+    
+    /* @author Jem
+  The feedPeople method
+  Purpose: To allocate wheat for feeding people
+  Parameters: The wheat for people (number of bushels of grain to be given to people)
+  Returns: the wheat in store after the wheat for people is set aside
+  Pre-conditions: wheat for people must be positive and wheat in store should be > wheat for people
+  */
+    public static int feedPeople(int wheatForPeople, CropData cropData){
+      //if wheatForPeople < 0, return -1
+      if(wheatForPeople < 0){
+        return -1;
+      }
+      //if wheatInStore <wheatForPeople, return -1
+      int wheat = cropData.getWheatInStore();
+      if(wheat < wheatForPeople){
+        return -1;
+      }
+      //wheatInStore = wheatInStore - whjeatForPeople
+      wheat -= wheatForPeople;
+      cropData.setWheatInStore(wheat);
+      
+      //return wheatInStore
+      return wheat;
+    } //close feedPeople
 }

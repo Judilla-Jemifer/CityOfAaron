@@ -6,9 +6,9 @@ package cityofaaron;
  */
 
 //The * tells it to import all files in the model folder
-//Upload to the dang website, NetBeans! 
 import byu.cit260.cityOfAaron.model.*;
-import View.*;
+import byu.cit260.cityOfAaron.view.*;
+import byu.cit260.cityOfAaron.control.*;
 
 public class CityOfAaron {
 
@@ -19,9 +19,9 @@ public class CityOfAaron {
 
     //from slide 50 of week 7 notes ///////////////////////////////
     MainMenuView mmv = new MainMenuView();
-    mmv.displayMenuView();
-    ///////////////////////////////////////////////////////////////
-    
+    mmv.displayMainMenu();
+    ////////////////////////////////////////////////////////////-ct
+
     Player playerOne = new Player();
     playerOne.setName("Alma The Missionary");
 
@@ -39,7 +39,7 @@ public class CityOfAaron {
 
     //From Jem
     ListItem animalsOne = new ListItem();
-      
+
     animalsOne.setName("sheep");
     animalsOne.setNumber(12);
 
@@ -70,6 +70,6 @@ public class CityOfAaron {
     double provisionsOneNumber = provisionsOne.getNumber();
 
     System.out.println(provisionsOne.toString());
-    
+
   }
 }

@@ -2,26 +2,30 @@ package byu.cit260.cityOfAaron.view;
 /**
  * @authors Clayton, Jemifer, Jacalyn
  */
+import java.util.Scanner;
+import cityofaaron.CityOfAaron;//aka our GameProject class
+import byu.cit260.cityOfAaron.model.Player;
+
 public class MainMenuView {
 
-import java.util.Scanner;
-import gameproject.GameProject;
-import byu.cit260.cityOfAaron.model.Player;
 Scanner keyboard = new Scanner(System.in);
 
 private String mainMenu;
 private int max;
+//build constructor
+public void mainMenuView(){
+  mainMenu = "\n" +
+  "**********************************\n" +
+  "* CITY OF AARON: MAIN GAME MENU *\n" +
+  "**********************************\n" +
+  " 1 - Start new game\n" +
+  " 2 - Get and start a saved game\n" +
+  " 3 - Get help on playing the game\n" +
+  " 4 - Save game\n" +
+  " 5 - Quit\n";
+  max = 5;
+}
 
-mainMenu = "\n" +
-"**********************************\n" +
-"* CITY OF AARON: MAIN GAME MENU *\n" +
-"**********************************\n" +
-" 1 - Start new game\n" +
-" 2 - Get and start a saved game\n" +
-" 3 - Get help on playing the game\n" +
-" 4 - Save game\n" +
-" 5 - Quit\n";
-max = 5;
 
   public void displayMainMenu(){
     int menuOption;
@@ -48,14 +52,12 @@ max = 5;
       //if invalid input, output error message
       if(userInput < 1 || userInput > max){
         System.out.println("\n option must be between 1 and" + max);
-      }
-    //loop back to top if input invalid
-
-  }while(userInput < 1 || userInput > max);
-  //return the value input by the user
-  return userInput;
-
-}//close getMenuOption
+        }
+        //loop back to top if input invalid
+      }while(userInput < 1 || userInput > max);
+      //return the value input by the user
+    return userInput;
+  }//close getMenuOption
 
   public void doAction(int option){
     switch (option) {
@@ -86,5 +88,5 @@ max = 5;
   public void displaySaveGame(){
     System.out.println("\n Display Save Game option selected.");
   }//close displaySaveGame
-  
+
 }

@@ -1,5 +1,5 @@
 
-package cityofaaron;
+package cityofaaron;//contains main method
 
 /**
  * @authors Jemifer/Jacalyn/Clayton
@@ -12,9 +12,6 @@ import byu.cit260.cityOfAaron.control.*;
 
 public class CityOfAaron {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
 
     //from slide 50 of week 7 notes ///////////////////////////////
@@ -71,5 +68,5 @@ public class CityOfAaron {
 
     System.out.println(provisionsOne.toString());
 
-  }
-}
+  }//close main
+}//end of class

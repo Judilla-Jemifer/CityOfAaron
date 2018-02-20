@@ -1,17 +1,14 @@
 
 package cityofaaron;
 
-
-
 /**
- *
- * @authors Jemifer/Jacalyn/Aaron
+ * @authors Jemifer/Jacalyn/Clayton
  */
 
 //The * tells it to import all files in the model folder
 //Upload to the dang website, NetBeans! 
 import byu.cit260.cityOfAaron.model.*;
-
+import View.*;
 
 public class CityOfAaron {
 
@@ -20,6 +17,11 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
 
+    //from slide 50 of week 7 notes ///////////////////////////////
+    MainMenuView mmv = new MainMenuView();
+    mmv.displayMenuView();
+    ///////////////////////////////////////////////////////////////
+    
     Player playerOne = new Player();
     playerOne.setName("Alma The Missionary");
 

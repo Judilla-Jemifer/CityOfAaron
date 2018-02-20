@@ -6,7 +6,7 @@ public class MainMenuView {
 
 import java.util.Scanner;
 import gameproject.GameProject;
-import model.Player;
+import byu.cit260.cityOfAaron.model.Player;
 Scanner keyboard = new Scanner(System.in);
 
 private String mainMenu;
@@ -72,19 +72,19 @@ max = 5;
   }//close doAction
 
   public void startNewGame(){
-    System.out.println("\n Start New Game option selected.")
+    System.out.println("\n Start New Game option selected.");
   }//close startNewGame
 
   public void startSavedGame(){
-    System.out.println("\n Start Saved Game option selected.")
+    System.out.println("\n Start Saved Game option selected.");
   }//close startSavedGame
 
   public void displayHelpMenu(){
-    System.out.println("\n Display help menu option selected.")
+    System.out.println("\n Display help menu option selected.");
   }//close displayHelpMenu
 
   public void displaySaveGame(){
-    System.out.println("\n Display Save Game option selected.")
+    System.out.println("\n Display Save Game option selected.");
   }//close displaySaveGame
   
 }

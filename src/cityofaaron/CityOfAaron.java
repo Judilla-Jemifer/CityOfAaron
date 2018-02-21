@@ -11,19 +11,26 @@ import byu.cit260.cityOfAaron.view.*;
 import byu.cit260.cityOfAaron.control.*;
 
 public class CityOfAaron {
-
+    
+    //variable for keeping a reference to the Game object
+    private static Game theGame = null; 
+    
+    //main function - entry point for the program
+    //runs the main menus
     public static void main(String[] args) {
 
     //from slide 50 of week 7 notes ///////////////////////////////
+    
+    
     MainMenuView mmv = new MainMenuView();
-    mmv.displayMainMenu();
+    mmv.displayMenuView();
     ////////////////////////////////////////////////////////////-ct
 
     /* commenting out for testing above
     
     
     Player playerOne = new Player();
-    playerOne.setName("Alma The Missionary");
+    playerOne.setPlayerName("Alma The Missionary");
 
     String playerOneName = playerOne.getName();
     System.out.println(playerOne.toString());

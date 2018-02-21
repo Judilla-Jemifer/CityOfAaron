@@ -14,7 +14,7 @@ import byu.cit260.cityOfAaron.model.CropData;
  **/
 public class PlantCrop {
     
-    public static int acresPlanted(CropData cropData){
+    public static int plantCrop(int acresToPlant, CropData cropData){
         
         int owned = cropData.getAcresOwned();
         int wheat = cropData.getWheatInStore();
@@ -38,6 +38,7 @@ public class PlantCrop {
         int wheatLeft = wheat - acresPlanted * 2;
         
         cropData.setWheatInStore(wheatLeft); 
+        cropData.setAcresPlanted(acresToPlant);
                 
         return wheatLeft;
     }

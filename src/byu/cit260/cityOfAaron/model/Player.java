@@ -14,11 +14,11 @@ package byu.cit260.cityOfAaron.model;
      return name;
    }
    //setter
-   public void setName(String name){
+   public void setPlayerName(String name){
      this.name = name;
    }
    @Override
    public String toString() {
        return "Greetings to you, " + name;
-   }
+   }s
  }

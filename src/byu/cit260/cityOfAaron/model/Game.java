@@ -29,10 +29,10 @@ import byu.cit260.cityOfAaron.model.*;
      this.theMap = theMap;
    }
 
-   public Player getThePlayer(){
+   public Player getPlayer(){
      return thePlayer;
    }
-   public void setThePlayer(Player thePlayer){
+   public void setPlayer(Player thePlayer){
      this.thePlayer = thePlayer;
    }
 
@@ -68,6 +68,5 @@ import byu.cit260.cityOfAaron.model.*;
 
 
    //I removed the main() function here and put it in the main class CityOfAaron.java
-   
    }
  

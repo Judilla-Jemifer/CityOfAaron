@@ -13,7 +13,7 @@ Scanner keyboard = new Scanner(System.in);
 private String mainMenu;
 private int max;
 //build constructor
-public void mainMenuView(){
+public mainMenuView(){
   mainMenu = "\n" +
   "**********************************\n" +
   "* CITY OF AARON: MAIN GAME MENU *\n" +
@@ -27,7 +27,7 @@ public void mainMenuView(){
 }
 
 
-  public void displayMainMenu(){
+  public displayMainMenu(){
     int menuOption;
     do{
       //display the menu

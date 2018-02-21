@@ -19,6 +19,9 @@ public class CityOfAaron {
     mmv.displayMainMenu();
     ////////////////////////////////////////////////////////////-ct
 
+    /* commenting out for testing above
+    
+    
     Player playerOne = new Player();
     playerOne.setName("Alma The Missionary");
 
@@ -67,6 +70,8 @@ public class CityOfAaron {
     double provisionsOneNumber = provisionsOne.getNumber();
 
     System.out.println(provisionsOne.toString());
+
+*/ //end of comment
 
   }//close main
 }//end of class

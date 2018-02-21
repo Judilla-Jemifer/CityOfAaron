@@ -10,7 +10,7 @@ import byu.cit260.cityOfAaron.model.*;
 
 public class MainMenuView {
     Scanner keyboard = new Scanner(System.in);
-    
+
     //The displayMenuView method
     //Purpose: Displays the main menu, gets user input, performs selected action
     //Parameters: none
@@ -19,16 +19,12 @@ public class MainMenuView {
 private String mainMenu;
 private int max;
 //build constructor
-<<<<<<< HEAD
-public mainMenuView(){
-=======
 public MainMenuView(){
     //Display the menu
     //Prompt user and get user's input
     //Perform the desired action
-    //determine and display the next view 
-    
->>>>>>> 521d578cb11e9dee06566f277653117b4d2805f9
+    //determine and display the next view
+
   mainMenu = "\n" +
   "**********************************\n" +
   "* CITY OF AARON: MAIN GAME MENU *\n" +
@@ -42,11 +38,7 @@ public MainMenuView(){
 }
 
 
-<<<<<<< HEAD
   public displayMainMenu(){
-=======
-  public void displayMenuView(){
->>>>>>> 521d578cb11e9dee06566f277653117b4d2805f9
     int menuOption;
     do{
       //display the menu
@@ -65,7 +57,7 @@ public MainMenuView(){
   //Purpose: gets the user's input
   //Parameters: None
   //Returns: Integer - the option selected
-  
+
   public int getMenuOption(){
     //declare variable to hold user input
     int userInput;
@@ -87,7 +79,7 @@ public MainMenuView(){
       //Purpose: performs the selection action
       //Parameters: none
       //Returns: none
-      
+
   public void doAction(int option){
     switch (option) {
         //if the option is 1, call startNewGame()
@@ -103,7 +95,7 @@ public MainMenuView(){
       case 4: displaySaveGameView();
         break;
         //if option is 5, display goodbye message
-      case 5: 
+      case 5:
           System.out.println("Thanks for playing, goodbye");
     }
   }//close doAction
@@ -114,32 +106,32 @@ public MainMenuView(){
   //Returns: none
   public void startNewGame(){
     //Create a new Game object.
-    Game theGame = new Game; 
-    
+    Game theGame = new Game;
+
     //Save a reference to it in the City of Aaron class
     CityOfAaron.setCurrentGame(theGame);
-    
-    //Display the Banner Page 
+
+    //Display the Banner Page
     //We need to "include much more and so need to look at the requirements document" - Jacalyn
     System.out.println("\nWelcome to the City of Aaron.");
-    
+
     //Create a new Player object
     Player thePlayer = new Player();
-    
+
     //Prompt for and get the user's name
     String name;
     System.out.println("\nPlease type in your first name: ");
     name=keyboard.next();
-    
+
     //Save the user's name in the Player object
     thePlayer.setPlayerName(name);
-    
+
     //Save a reference to the player object in the Game object
     theGame.setPlayer(thePlayer);
-    
+
     //Display a welcome message
     System.out.println("\nWelcome, " + name + ". Have fun!");
-    
+
     //Display the Game menu
     //"You won't fill in the code to do this until you have created the GameMenuView class." -From slide 67 of 69 Week 7 - Jacalyn
   }//close startNewGame

@@ -1,19 +1,30 @@
 package byu.cit260.cityOfAaron.view;
 /**
+ * The MainMenuView class - part of the view layer
+ * Object: Manage the main menu
  * @authors Clayton, Jemifer, Jacalyn
  */
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;//aka our GameProject class
-import byu.cit260.cityOfAaron.model.Player;
+import byu.cit260.cityOfAaron.model.*;
 
 public class MainMenuView {
-
-Scanner keyboard = new Scanner(System.in);
+    Scanner keyboard = new Scanner(System.in);
+    
+    //The displayMenuView method
+    //Purpose: Displays the main menu, gets user input, performs selected action
+    //Parameters: none
+    //Returns: none
 
 private String mainMenu;
 private int max;
 //build constructor
-public void mainMenuView(){
+public MainMenuView(){
+    //Display the menu
+    //Prompt user and get user's input
+    //Perform the desired action
+    //determine and display the next view 
+    
   mainMenu = "\n" +
   "**********************************\n" +
   "* CITY OF AARON: MAIN GAME MENU *\n" +
@@ -27,7 +38,7 @@ public void mainMenuView(){
 }
 
 
-  public void displayMainMenu(){
+  public void displayMenuView(){
     int menuOption;
     do{
       //display the menu
@@ -42,6 +53,11 @@ public void mainMenuView(){
 
   }//close displayMainMenu
 
+  //The getMenuOption method
+  //Purpose: gets the user's input
+  //Parameters: None
+  //Returns: Integer - the option selected
+  
   public int getMenuOption(){
     //declare variable to hold user input
     int userInput;
@@ -51,7 +67,7 @@ public void mainMenuView(){
       userInput = keyboard.nextInt();
       //if invalid input, output error message
       if(userInput < 1 || userInput > max){
-        System.out.println("\n option must be between 1 and" + max);
+        System.out.println("\n Option must be between 1 and " + max);
         }
         //loop back to top if input invalid
       }while(userInput < 1 || userInput > max);
@@ -59,33 +75,76 @@ public void mainMenuView(){
     return userInput;
   }//close getMenuOption
 
+  //The doAction method
+      //Purpose: performs the selection action
+      //Parameters: none
+      //Returns: none
+      
   public void doAction(int option){
     switch (option) {
+        //if the option is 1, call startNewGame()
       case 1: startNewGame();
         break;
+        //if the option is 2, call startExistingGame()
       case 2: startSavedGame();
         break;
-      case 3: displayHelpMenu();
+        //if the option is 3, call displayHelpMenu()
+      case 3: displayHelpMenuView();
         break;
-      case 4: displaySaveGame();
+        //if the option is 4, call displaySaveGame()
+      case 4: displaySaveGameView();
         break;
-      case 5: System.out.println("Thanks for playing, goodbye");
+        //if option is 5, display goodbye message
+      case 5: 
+          System.out.println("Thanks for playing, goodbye");
     }
   }//close doAction
 
+  //The startNewGame method
+  //Purpose: Creates game object and starts the game
+  //Parameters: none
+  //Returns: none
   public void startNewGame(){
-    System.out.println("\n Start New Game option selected.");
+    //Create a new Game object.
+    Game theGame = new Game; 
+    
+    //Save a reference to it in the City of Aaron class
+    CityOfAaron.setCurrentGame(theGame);
+    
+    //Display the Banner Page 
+    //We need to "include much more and so need to look at the requirements document" - Jacalyn
+    System.out.println("\nWelcome to the City of Aaron.");
+    
+    //Create a new Player object
+    Player thePlayer = new Player();
+    
+    //Prompt for and get the user's name
+    String name;
+    System.out.println("\nPlease type in your first name: ");
+    name=keyboard.next();
+    
+    //Save the user's name in the Player object
+    thePlayer.setPlayerName(name);
+    
+    //Save a reference to the player object in the Game object
+    theGame.setPlayer(thePlayer);
+    
+    //Display a welcome message
+    System.out.println("\nWelcome, " + name + ". Have fun!");
+    
+    //Display the Game menu
+    //"You won't fill in the code to do this until you have created the GameMenuView class." -From slide 67 of 69 Week 7 - Jacalyn
   }//close startNewGame
 
   public void startSavedGame(){
     System.out.println("\n Start Saved Game option selected.");
   }//close startSavedGame
 
-  public void displayHelpMenu(){
+  public void displayHelpMenuView(){
     System.out.println("\n Display help menu option selected.");
   }//close displayHelpMenu
 
-  public void displaySaveGame(){
+  public void displaySaveGameView(){
     System.out.println("\n Display Save Game option selected.");
   }//close displaySaveGame
 

@@ -20,5 +20,5 @@ package byu.cit260.cityOfAaron.model;
    @Override
    public String toString() {
        return "Greetings to you, " + name;
-   }s
+   }
  }

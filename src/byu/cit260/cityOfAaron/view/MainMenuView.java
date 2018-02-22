@@ -3,6 +3,7 @@ package byu.cit260.cityOfAaron.view;
  * The MainMenuView class - part of the view layer
  * Object: Manage the main menu
  * @authors Clayton, Jemifer, Jacalyn
+ * Date last modified: February 2018
  */
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;//aka our GameProject class
@@ -38,7 +39,7 @@ public MainMenuView(){
 }
 
 
-  public displayMainMenu(){
+  public void displayMenuView(){
     int menuOption;
     do{
       //display the menu
@@ -106,7 +107,7 @@ public MainMenuView(){
   //Returns: none
   public void startNewGame(){
     //Create a new Game object.
-    Game theGame = new Game;
+    Game theGame = new Game();
 
     //Save a reference to it in the City of Aaron class
     CityOfAaron.setCurrentGame(theGame);

@@ -270,19 +270,4 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of plantCrop method, of class CropControl.
-     */
-    @org.junit.Test
-    public void testPlantCrop() {
-        System.out.println("plantCrop");
-        int acresToPlant = 0;
-        CropData cropData = null;
-        int expResult = 0;
-        int result = CropControl.plantCrop(acresToPlant, cropData);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 }

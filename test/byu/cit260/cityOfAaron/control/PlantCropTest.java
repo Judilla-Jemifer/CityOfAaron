@@ -24,13 +24,33 @@ public class PlantCropTest {
     @org.junit.Test
     public void testPlantCrop() {
         System.out.println("plantCrop");
-        int acresToPlant = 0;
-        CropData cropData = null;
-        int expResult = 0;
+        //Test Case 1 - Valid 
+        System.out.println("\tTest Case 1 - Valid");
+        //input Variables
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(10000);
+        cropData.setAcresOwned(500);
+        int acresToPlant = 450;
+       
+        int expResult = 9100;
+        //
         int result = PlantCrop.plantCrop(acresToPlant, cropData);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        //Test Case 2 - Invalid 
+        System.out.println("\tTest Case 2 - Invalid");
+        //input Variables
+        cropData = new CropData();
+        cropData.setWheatInStore(10000);
+        cropData.setAcresOwned(500);
+        cropData.setAcresToPlant(-20);
+        
+       
+        expResult = -1;
+        //
+        result = PlantCrop.plantCrop(acresToPlant, cropData);
+        assertEquals(expResult, result);
+        
     }
     
 }

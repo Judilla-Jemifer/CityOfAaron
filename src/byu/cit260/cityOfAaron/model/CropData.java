@@ -21,6 +21,7 @@ package byu.cit260.cityOfAaron.model;
    private int offering;
    private int offeringBushels;
    private int peopleFed;
+   private int acresToPlant;
    private int acresPlanted;
    private int numStarved;
    private int eatenByRats;
@@ -63,6 +64,9 @@ package byu.cit260.cityOfAaron.model;
    }
    public int getPeopleFed(){
      return peopleFed;
+   }
+   public int getAcresToPlant(){
+       return acresToPlant;
    }
    public int getAcresPlanted(){
      return acresPlanted;
@@ -113,6 +117,9 @@ package byu.cit260.cityOfAaron.model;
    }
    public void setPeopleFed(int setPeopleFed){
      this.peopleFed = setPeopleFed;
+   }
+   public void setAcresToPlant(int setAcresToPlant){
+       this.acresToPlant = setAcresToPlant;
    }
    public void setAcresPlanted(int setAcresPlanted){
      this.acresPlanted = setAcresPlanted;

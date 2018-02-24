@@ -104,4 +104,34 @@ public class CropControl {
       //return wheatInStore
       return wheat;
     } //close feedPeople
+    
+    public static int plantCrop(int acresToPlant, CropData cropData){
+        
+        int owned = cropData.getAcresOwned();
+        int wheat = cropData.getWheatInStore();
+        int acresPlanted = cropData.getAcresPlanted();
+        
+        //If acresPlanted <0, return -1
+        if(acresPlanted < 0) {
+            return -1;
+        }
+        
+        //if acresPlanted >(acresOwned or 2*wheatInStore), return -1
+        
+        if(acresPlanted > owned) {
+            return -1;
+        }
+        if(acresPlanted > wheat * 2) {
+            return -1;
+        }
+        
+        // wheatLeft = wheatInStore - (acresPlanted * 2)
+        int wheatLeft = wheat - acresPlanted * 2;
+        
+        cropData.setWheatInStore(wheatLeft); 
+        cropData.setAcresPlanted(acresToPlant);
+                
+        return wheatLeft;
+    }//close plantCrop
+
 }

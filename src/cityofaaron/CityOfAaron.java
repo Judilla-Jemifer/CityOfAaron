@@ -13,28 +13,25 @@ import byu.cit260.cityOfAaron.control.*;
 public class CityOfAaron {
     
     //variable for keeping a reference to the Game object
-    private static Game theGame = null; 
+    private static Game currentGame = null; 
     
-    // not sure about this getter and setter - Jem
-    public Game theGame(){
-     return theGame;
-   }
-   public void setTheGame(Game theGame){
-     this.theGame = theGame;
-   }
-    
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game theGame) {
+        CityOfAaron.currentGame = currentGame;
+    }
+  
     //main function - entry point for the program
     //runs the main menus
     public static void main(String[] args) {
 
-    //from slide 50 of week 7 notes ///////////////////////////////
-    
-    
     MainMenuView mmv = new MainMenuView();
     mmv.displayMenuView();
-    ////////////////////////////////////////////////////////////-ct
+    
 
-    /* commenting out for testing above
+    
     
     
     Player playerOne = new Player();
@@ -86,7 +83,7 @@ public class CityOfAaron {
 
     System.out.println(provisionsOne.toString());
 
-*/ //end of comment
+
 
   }//close main
 }//end of class

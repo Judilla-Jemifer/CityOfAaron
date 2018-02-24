@@ -19,6 +19,7 @@ public class MainMenuView {
 
 private String mainMenu;
 private int max;
+
 //build constructor
 public MainMenuView(){
     //Display the menu
@@ -111,11 +112,11 @@ public MainMenuView(){
     Game theGame = new Game();
 
     //Save a reference to it in the City of Aaron class
-    CityOfAaron.setCurrentGame(theGame);
+    CityOfAaron.setTheGame(theGame);
 
     //Display the Banner Page
     //We need to "include much more and so need to look at the requirements document" - Jacalyn
-    System.out.println("\nWelcome to the City of Aaron.");
+    System.out.println("\nWelcome to the City of Aaron. You have been summoned here by the High Priest \nto assume your role as ruler of the city. Your responsibility is to buy and sell land, \ndetermine how much wheat to plant each year and how much to set aside to feed \nyour people. In addition, it will be your job to pay an annual tithe on the wheat that \nis harvested. If you fail to provide enough wheat for the people, people will starve,  \nsome people will die, and your workforce will be diminished. Plan carefully. And \nOh, there is always a danger of rats eating your wheat.");
 
     //Create a new Player object
     Player thePlayer = new Player();

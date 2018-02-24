@@ -114,7 +114,7 @@ public MainMenuView(){
     CityOfAaron.setCurrentGame(theGame);
 
     //Display the Banner Page
-    //We need to "include much more and so need to look at the requirements document" - Jacalyn
+    //We need to "include much more and so need to look at the requirements document" is what Professor's power point presentation said. All I saw in the Rubric was to add a help menu. There were no specifications for what to put on the help menu so I have placeholder text until we get more information. I hope that is all we needed. - Jacalyn
     System.out.println("\nWelcome to the City of Aaron.");
 
     //Create a new Player object
@@ -144,7 +144,9 @@ public MainMenuView(){
   }//close startSavedGame
 
   public void displayHelpMenuView(){
-    System.out.println("\n Display help menu option selected.");
+    HelpMenuView helpMenuView = new HelpMenuView();
+          helpMenuView.displayHelpMenuView();
+            
   }//close displayHelpMenu
 
   public void displaySaveGameView(){

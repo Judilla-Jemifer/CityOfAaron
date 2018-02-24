@@ -15,6 +15,14 @@ public class CityOfAaron {
     //variable for keeping a reference to the Game object
     private static Game theGame = null; 
     
+    // not sure about this getter and setter - Jem
+    public Game theGame(){
+     return theGame;
+   }
+   public void setTheGame(Game theGame){
+     this.theGame = theGame;
+   }
+    
     //main function - entry point for the program
     //runs the main menus
     public static void main(String[] args) {

@@ -112,7 +112,7 @@ public MainMenuView(){
     Game theGame = new Game();
 
     //Save a reference to it in the City of Aaron class
-    CityOfAaron.setTheGame(theGame);
+    CityOfAaron.setCurrentGame(theGame);
 
     //Display the Banner Page
 

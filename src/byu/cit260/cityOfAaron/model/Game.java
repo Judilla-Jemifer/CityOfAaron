@@ -67,6 +67,6 @@ import byu.cit260.cityOfAaron.model.*;
    }
 
 
-   //I removed the main() function here and put it in the main class CityOfAaron.java
+   //I removed the main() function here and put it in the main class CityOfAaron.javas
    }
  

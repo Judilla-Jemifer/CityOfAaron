@@ -106,14 +106,15 @@ public MainMenuView(){
   //Parameters: none
   //Returns: none
   public void startNewGame(){
-    //Create a new Game object.
+   
+//Create a new Game object.
     Game theGame = new Game();
 
     //Save a reference to it in the City of Aaron class
     CityOfAaron.setCurrentGame(theGame);
 
     //Display the Banner Page
-    //We need to "include much more and so need to look at the requirements document" - Jacalyn
+    //We need to "include much more and so need to look at the requirements document" is what Professor's power point presentation said. All I saw in the Rubric was to add a help menu. There were no specifications for what to put on the help menu so I have placeholder text until we get more information. I hope that is all we needed. - Jacalyn
     System.out.println("\nWelcome to the City of Aaron.");
 
     //Create a new Player object
@@ -137,12 +138,15 @@ public MainMenuView(){
     //"You won't fill in the code to do this until you have created the GameMenuView class." -From slide 67 of 69 Week 7 - Jacalyn
   }//close startNewGame
 
+
   public void startSavedGame(){
     System.out.println("\n Start Saved Game option selected.");
   }//close startSavedGame
 
   public void displayHelpMenuView(){
-    System.out.println("\n Display help menu option selected.");
+    HelpMenuView helpMenuView = new HelpMenuView();
+          helpMenuView.displayHelpMenuView();
+            
   }//close displayHelpMenu
 
   public void displaySaveGameView(){

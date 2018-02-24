@@ -106,9 +106,7 @@ public MainMenuView(){
   //Parameters: none
   //Returns: none
   public void startNewGame(){
-    System.out.println("\nStart new game option selected.");
-  }
-/* I added the stub above and commented out the next few lines to test it - Jem
+   
 //Create a new Game object.
     Game theGame = new Game();
 
@@ -139,7 +137,7 @@ public MainMenuView(){
     //Display the Game menu
     //"You won't fill in the code to do this until you have created the GameMenuView class." -From slide 67 of 69 Week 7 - Jacalyn
   }//close startNewGame
-*/
+
 
   public void startSavedGame(){
     System.out.println("\n Start Saved Game option selected.");

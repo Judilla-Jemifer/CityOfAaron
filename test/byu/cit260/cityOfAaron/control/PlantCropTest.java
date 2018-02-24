@@ -31,9 +31,9 @@ public class PlantCropTest {
         cropData.setWheatInStore(10000);
         cropData.setAcresOwned(500);
         int acresToPlant = 450;
-       
+       //I can only get this to test using the int for acresToPlant, not putting in a set to cropData, though I've added AcresToPlant to that. If I try to change it to cropData here, I get an error with the result line.
         int expResult = 9100;
-        //
+        
         int result = PlantCrop.plantCrop(acresToPlant, cropData);
         assertEquals(expResult, result);
         
@@ -45,9 +45,9 @@ public class PlantCropTest {
         cropData.setAcresOwned(500);
         cropData.setAcresToPlant(-20);
         
-       
+       //So this will not actually reset the AcresToPlant and I do not know why.  I've gone through debugging.  If you can figure it out, please let me know.
         expResult = -1;
-        //
+       
         result = PlantCrop.plantCrop(acresToPlant, cropData);
         assertEquals(expResult, result);
         

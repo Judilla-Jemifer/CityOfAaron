@@ -35,12 +35,12 @@ public HelpMenuView(){
   "**********************************\n" +
   "* CITY OF AARON: GAME HELP MENU *\n" +
   "**********************************\n" +
-  " 1 - What are the goals?\n" +
-  " 2 - Where are we?\n" +
-  " 3 - How does the map work?\n" +
-  " 4 - How does the list work?\n" +
-  " 5 - How do I move?\n" +        
-  " 6 - Quit\n";
+  " 1 - What are the goals of the game?\n" +
+  " 2 - Where is the city of Aaron?\n" +
+  " 3 - How do I view the map?\n" +
+  " 4 - How do I move to another location?\n" +
+  " 5 - How do I display a list of animals, provisions and tools in the city storehouse?\n" +        
+  " 6 - Return to the Main Menut\n";
   max = 6;
 }
 public void displayHelpMenuView(){
@@ -84,6 +84,7 @@ public void displayHelpMenuView(){
       //Purpose: performs the selection action
       //Parameters: none
       //Returns: none
+     //I couldn't find actual answers to what these questios should be so I have place holder text that is hopefully amuse the end-user until we can fix this . --Jacalyn
 
   public void doAction(int option){
     switch (option) {

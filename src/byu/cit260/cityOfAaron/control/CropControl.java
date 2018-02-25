@@ -69,7 +69,7 @@ public class CropControl {
         return -1;
       }
       //converts whole # to percentage
-      double offeringPercentage = offering / 100;
+      double offeringPercentage = offering / 100.0;
       //get cropYield from cropData instance
       int cropYield = cropData.getCropYield();
       //calc offeringBushels from offeringPercentage of cropYield

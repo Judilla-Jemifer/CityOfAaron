@@ -40,10 +40,11 @@ public class PlantCropTest {
         //Test Case 2 - Invalid 
         System.out.println("\tTest Case 2 - Invalid");
         //input Variables
-        cropData = new CropData();
+        
         cropData.setWheatInStore(10000);
         cropData.setAcresOwned(500);
-        cropData.setAcresToPlant(-20);
+        
+        acresToPlant = -20;
         
        //So this will not actually reset the AcresToPlant and I do not know why.  I've gone through debugging.  If you can figure it out, please let me know.
         expResult = -1;

@@ -21,7 +21,7 @@ public class PlantCropTest {
     /**
      * Test of plantCrop method, of class PlantCrop.
      */
-    @org.junit.Test
+    @Test
     public void testPlantCrop() {
         System.out.println("plantCrop");
         //Test Case 1 - Valid 

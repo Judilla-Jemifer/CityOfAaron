@@ -132,5 +132,4 @@ package byu.cit260.cityOfAaron.model;
    public void setWheatForPeople(int setWheatForPeople){
      this.wheatForPeople = setWheatForPeople;
    }
-
  }

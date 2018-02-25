@@ -77,7 +77,7 @@ public class CropControl {
       //return offeringBushels
       return offeringBushels;
     } //close payOffering
-    
+
     /* @author Jem
   The feedPeople method
   Purpose: To allocate wheat for feeding people
@@ -100,10 +100,9 @@ public class CropControl {
       cropData.setWheatInStore(wheat);
       cropData.setWheatForPeople(wheatForPeople);
       
-      
       //return wheatInStore
       return wheat;
     } //close feedPeople
-    
+
     //Add PlantCrop only after it has been verified through testing.
 }

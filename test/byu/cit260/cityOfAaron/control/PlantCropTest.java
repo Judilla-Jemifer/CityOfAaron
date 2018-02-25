@@ -21,7 +21,7 @@ public class PlantCropTest {
     /**
      * Test of plantCrop method, of class PlantCrop.
      */
-    @org.junit.Test
+    @Test
     public void testPlantCrop() {
         System.out.println("plantCrop");
         //Test Case 1 - Valid 
@@ -30,8 +30,8 @@ public class PlantCropTest {
         CropData cropData = new CropData();
         cropData.setWheatInStore(10000);
         cropData.setAcresOwned(500);
-        int acresToPlant = 450;
-       //I can only get this to test using the int for acresToPlant, not putting in a set to cropData, though I've added AcresToPlant to that. If I try to change it to cropData here, I get an error with the result line.
+        cropData.setAcresToPlant(450);
+       
         int expResult = 9100;
         
         int result = PlantCrop.plantCrop(acresToPlant, cropData);
@@ -40,17 +40,54 @@ public class PlantCropTest {
         //Test Case 2 - Invalid 
         System.out.println("\tTest Case 2 - Invalid");
         //input Variables
-        cropData = new CropData();
+        
         cropData.setWheatInStore(10000);
         cropData.setAcresOwned(500);
-        cropData.setAcresToPlant(-20);
+        cropData.setAcresToPlant (-20);
         
-       //So this will not actually reset the AcresToPlant and I do not know why.  I've gone through debugging.  If you can figure it out, please let me know.
         expResult = -1;
        
         result = PlantCrop.plantCrop(acresToPlant, cropData);
         assertEquals(expResult, result);
         
+        //Test Case 3 - Invalid 
+        System.out.println("\tTest Case 3 - Invalid");
+        //input Variables
+        cropData = new CropData();
+        cropData.setWheatInStore(10000);
+        cropData.setAcresOwned(500);
+        cropData.setAcresToPlant(502);
+        
+        expResult = -1;
+        
+        result = PlantCrop.plantCrop(acresToPlant, cropData);
+        assertEquals(expResult, result);
+        
+        //Test Case 4 - Boundary 
+        System.out.println("\tTest Case 4 Boundary");
+        //input Variables
+        cropData = new CropData();
+        cropData.setWheatInStore(10000);
+        cropData.setAcresOwned(500);
+        cropData.setAcresToPlant(0);
+        
+        expResult = 10000;
+
+        result = PlantCrop.plantCrop(acresToPlant, cropData);
+        assertEquals(expResult, result);
+       
+        //Test Case 5 - Boundary 
+        System.out.println("\tTest Case 5 Boundary");
+        //input Variables
+        cropData = new CropData();
+        cropData.setWheatInStore(10000);
+        cropData.setAcresOwned(500);
+        cropData.setAcresToPlant(500);
+      
+        expResult = 9000;
+  
+        result = PlantCrop.plantCrop(acresToPlant, cropData);
+        assertEquals(expResult, result);
     }
     
 }

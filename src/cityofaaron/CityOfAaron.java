@@ -20,7 +20,7 @@ public class CityOfAaron {
     }
 
     public static void setCurrentGame(Game theGame) {
-        CityOfAaron.currentGame = currentGame;
+        currentGame = currentGame;
     }
 
     //main function - entry point for the program

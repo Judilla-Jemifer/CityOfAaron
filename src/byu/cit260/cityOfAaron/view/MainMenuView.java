@@ -49,11 +49,9 @@ public MainMenuView(){
       //perform action
       doAction(menuOption);
       //determine and display next view
-
-    }while (menuOption != max);
+      } while (menuOption != max);
 
   }//close displayMainMenu
-
   //The getMenuOption method
   //Purpose: gets the user's input
   //Parameters: None
@@ -130,11 +128,11 @@ public MainMenuView(){
     //Prompt for and get the user's name
     String name;
     System.out.println("\nPlease type in your first name: ");
-    name=keyboard.next();
+    name = keyboard.next();
 
     //Save the user's name in the Player object
     thePlayer.setPlayerName(name);
-
+   
     //Save a reference to the player object in the Game object
     theGame.setPlayer(thePlayer);
 

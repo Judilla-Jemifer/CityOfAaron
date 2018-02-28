@@ -38,10 +38,10 @@ public class CityOfAaron {
     //Purpose: store a reference to a crop object
     //Parameters: a reference to a crop object
     //Returns: none
-    public void setCrop(Cropdata_cropRef)
+    public void setCrop(CropData  _cropRef)
     {
-        theCrops=_cropRef;
-    }
+        theCrops = _cropRef;
+    } 
     
     //main function - entry point for the program
     //runs the main menus

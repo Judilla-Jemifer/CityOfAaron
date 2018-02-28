@@ -58,6 +58,8 @@ public class CropControl {
       return owned;
     } //close sellLand
 
+    
+    
     /*
     using offering percentage input from user, divide integer by 100 to convert value to percentage decimal
     using harvest amount collected, multiply by percentage of offering to calculate amount of harvest to be offered as tithes

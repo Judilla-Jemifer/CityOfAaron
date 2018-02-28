@@ -24,7 +24,7 @@ private static CropData theCropData = theGame.getCropData();
 public static void buyLandView()
 {
     //Get the cost of land for this round
-    int price = CropDataControl.calcLandCost();
+    int price = CropControl.CalcLandCost();
     
     //Prompt the user to enter the number of acres to buy
     System.out.format("Land is selling for %d bushels per acres.%n",price);
@@ -35,21 +35,23 @@ public static void buyLandView()
     toBuy = keyboard.nextInt();
     
     //Call the buyLand() method in the control layer to buy the land
-    CropDataC.buyLand(toBuy, price);
+    CropControl.buyLand(toBuy, price);
 }
-    
+
 public static void sellLandView()
 {
-    //Prompt the user to enter the number of acres to sell
-    System.out.print("\nHow many acres of new land do you want to sell?");
-    
-    //Get the user's input and save it.
+    //Get the cost of the land for this round
+    int price = CropControl.CalcLandCost();
+    //Prompt user to enter the amount of acres to sell
+    System.out.print("\nHow many acres do you wish to sell?");
+    //Get the user's input and save it
     int toSell;
     toSell = keyboard.nextInt();
-    
-    //Call hte sellLand() method in the control layer to sell the land
-    CropDataControl.sellLand(toSell, price);
+    //Call the sellLand() method in the control layer to sell the land
+    CropControl.sellLand(toSell, price);
 }
+        
+  
     //The runCropsView method()
     //Purpose: runs the Hamurabi Game
     //Parameters: none

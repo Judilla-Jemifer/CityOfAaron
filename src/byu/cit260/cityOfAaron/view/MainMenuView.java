@@ -141,6 +141,24 @@ public MainMenuView(){
 
     //Display the Game menu
     //"You won't fill in the code to do this until you have created the GameMenuView class." -From slide 67 of 69 Week 7 - Jacalyn
+    
+    //Create the CropData object,
+    //initialize it and save a reference to it in the Game
+    CropData theCrops = new CropData();
+    theCrops.setYear(0);
+    theCrops.setPopulation(100);
+    theCrops.setNewPeople(5);
+    theCrops.setCropYield(3);
+    theCrops.setNumberWhoDied(0);
+    theCrops.setOffering(10);
+    theCrops.setWheatInStore(2700);
+    theCrops.setAcresOwned(1000);
+    theCrops.setAcresPlanted(1000);
+    theCrops.setHarvest(3000);
+    theCrops.setOfferingBushels(300);
+    theCrops.setAcresPlanted(1000);
+    
+    theGame.setCropData(theCrops);
   }//close startNewGame
 
 

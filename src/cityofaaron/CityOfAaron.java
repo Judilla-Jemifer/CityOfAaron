@@ -23,15 +23,33 @@ public class CityOfAaron {
         currentGame = currentGame;
     }
 
+    private CropData theCrops = null; 
+    
+    //the getCrops() method
+    //Purpose: get a reference to the crop object
+    //Parameters: none
+    //Returns: a reference to a crop object
+    public CropData getCrop()
+    {
+        return theCrops;
+    }
+    
+    //the setCrops() method 
+    //Purpose: store a reference to a crop object
+    //Parameters: a reference to a crop object
+    //Returns: none
+    public void setCrop(Cropdata_cropRef)
+    {
+        theCrops=_cropRef;
+    }
+    
     //main function - entry point for the program
     //runs the main menus
     public static void main(String[] args) {
 
     MainMenuView mmv = new MainMenuView();
     mmv.displayMenuView();
-
-
-
+    
 
     Player playerOne = new Player();
     playerOne.setPlayerName("Alma The Missionary");

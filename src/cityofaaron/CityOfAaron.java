@@ -11,29 +11,28 @@ import byu.cit260.cityOfAaron.view.*;
 import byu.cit260.cityOfAaron.control.*;
 
 public class CityOfAaron {
-    
+
     //variable for keeping a reference to the Game object
-    private static Game currentGame = null; 
-    
+    private static Game currentGame = null;
+
     public static Game getCurrentGame() {
         return currentGame;
     }
 
     public static void setCurrentGame(Game theGame) {
-        CityOfAaron.currentGame = currentGame;
+        currentGame = currentGame;
     }
-  
+
     //main function - entry point for the program
     //runs the main menus
     public static void main(String[] args) {
 
     MainMenuView mmv = new MainMenuView();
     mmv.displayMenuView();
-    
 
-    
-    
-    
+
+
+
     Player playerOne = new Player();
     playerOne.setPlayerName("Alma The Missionary");
 
@@ -47,14 +46,11 @@ public class CityOfAaron {
     String locationDescription = location.getDescription();
     System.out.println(location.toString());
 
-
-
     //From Jem
     ListItem animalsOne = new ListItem();
 
     animalsOne.setName("sheep");
     animalsOne.setNumber(12);
-
 
     String animalsOneName = animalsOne.getName();
     double animalsOneNumber = animalsOne.getNumber();

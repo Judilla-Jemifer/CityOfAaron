@@ -20,7 +20,7 @@ public class CityOfAaron {
     }
 
     public static void setCurrentGame(Game theGame) {
-        currentGame = currentGame;
+        currentGame = theGame;
     }
 
     private CropData theCrops = null; 

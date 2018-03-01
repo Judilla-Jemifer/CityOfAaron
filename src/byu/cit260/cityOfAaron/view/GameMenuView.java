@@ -11,16 +11,16 @@ public class GameMenuView{
   private String gameMenu;
   private int max;
 
-  public gameMenuView(){
-    helpMenu = "\n***************************"+
+  public GameMenuView(){
+    gameMenu = "\n***************************"+
                "\n***      GAME MENU      ***"+
                "\n***************************"+
                "\n1 - View the Map"+
-               "\n2 - View / Print a List"+
+               "\n2 - View/Print a List"+
                "\n3 - Move to a new Location"+
                "\n4 - Manage the Crops"+
-               "\n5 - Return to the Main Menu"
-               "\n";
+               "\n5 - Return to the Main Menu";
+              
     max = 5;
   }//close gameMenuView
 
@@ -32,7 +32,7 @@ public class GameMenuView{
       menuOption = getMenuOption();
 
       doAction(menuOption);
-    }while (menuOption != max)
+    }while (menuOption != max);
   }//close displayGameMenuView
 
   public int getMenuOption(){

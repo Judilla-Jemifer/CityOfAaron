@@ -51,12 +51,11 @@ public class CityOfAaron {
     mmv.displayMenuView();
     
 
-<<<<<<< HEAD
+
     /* commenting out for testing above
     
     
-=======
->>>>>>> e5dc11650ab8729486ea054b1f0c9f82327ce01c
+
     Player playerOne = new Player();
     playerOne.setPlayerName("Alma The Missionary");
 

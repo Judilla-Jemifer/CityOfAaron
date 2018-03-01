@@ -113,8 +113,7 @@ public MainMenuView(){
     CityOfAaron.setCurrentGame(theGame);
 
     //Display the Banner Page
-
-
+   
    
 
     System.out.println("\n" +
@@ -147,7 +146,8 @@ public MainMenuView(){
     System.out.println("\nWelcome, " + name + ". Have fun!");
 
     //Display the Game menu
-    //"You won't fill in the code to do this until you have created the GameMenuView class." -From slide 67 of 69 Week 7 - Jacalyn
+    GameMenuView gmv = new GameMenuView();
+    gmv.displayGameMenuView();
     
     //Create the CropData object,
     //initialize it and save a reference to it in the Game

@@ -34,7 +34,7 @@ public class CropView {
     toBuy = keyboard.nextInt();
 
     //Call the buyLand() method in the control layer to buy the land
-    CropControl.buyLand(toBuy, price);
+    CropControl.buyLand(toBuy, price);//error because we don't have a buyLand method in CropControl..
   }
 
   public static void sellLandView(){
@@ -46,7 +46,8 @@ public class CropView {
     int toSell;
     toSell = keyboard.nextInt();
     //Call the sellLand() method in the control layer to sell the land
-    CropControl.sellLand(toSell, price);
+    CropControl.sellLand(toSell, price);//error because the parameters we are passing here are different from the parameters needed by that method
+    //i.e. sellLand(int landPrice, int acresToSell, CropData cropData)
   }
 
 

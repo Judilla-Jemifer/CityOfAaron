@@ -44,6 +44,8 @@ public class GameMenuView{
         System.out.println("\nOption must be between 1 and " + max);
       }
     }while (userInput < 1 || userInput > max);
+    
+    return userInput;
   }//close getMenuOption
 
   public void doAction(int option){

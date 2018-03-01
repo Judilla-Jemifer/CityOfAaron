@@ -43,9 +43,6 @@ import byu.cit260.cityOfAaron.model.*;
      this.cropData = cropData;
    }
 
-<<<<<<< HEAD
-   
-=======
    //from week 8, slide 6
    public CropData getCrop(){
      return theCrops;
@@ -54,7 +51,7 @@ import byu.cit260.cityOfAaron.model.*;
      theCrops = _cropRef;
    }
 
->>>>>>> e5dc11650ab8729486ea054b1f0c9f82327ce01c
+
    /*get TeamMember here
 
    set TeamMember here */

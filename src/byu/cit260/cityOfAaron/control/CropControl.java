@@ -105,10 +105,10 @@ public class CropControl {
       //return wheatInStore
       return wheat;
     } //close feedPeople
-<<<<<<< HEAD
+
     
     //Add PlantCrop only after it has been verified through testing.
-=======
+
 
     public static int plantCrop(int acresToPlant, CropData cropData){
 
@@ -139,5 +139,5 @@ public class CropControl {
         return wheatLeft;
     }//close plantCrop
 
->>>>>>> e5dc11650ab8729486ea054b1f0c9f82327ce01c
+
 }

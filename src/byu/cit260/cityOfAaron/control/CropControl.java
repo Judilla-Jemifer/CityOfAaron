@@ -58,6 +58,8 @@ public class CropControl {
       return owned;
     } //close sellLand
 
+    
+    
     /*
     using offering percentage input from user, divide integer by 100 to convert value to percentage decimal
     using harvest amount collected, multiply by percentage of offering to calculate amount of harvest to be offered as tithes
@@ -69,7 +71,7 @@ public class CropControl {
         return -1;
       }
       //converts whole # to percentage
-      double offeringPercentage = offering / 100;
+      double offeringPercentage = offering / 100.0;
       //get cropYield from cropData instance
       int cropYield = cropData.getCropYield();
       //calc offeringBushels from offeringPercentage of cropYield
@@ -77,7 +79,7 @@ public class CropControl {
       //return offeringBushels
       return offeringBushels;
     } //close payOffering
-    
+
     /* @author Jem
   The feedPeople method
   Purpose: To allocate wheat for feeding people
@@ -99,11 +101,43 @@ public class CropControl {
       wheat -= wheatForPeople;
       cropData.setWheatInStore(wheat);
       cropData.setWheatForPeople(wheatForPeople);
-      
-      
+
       //return wheatInStore
       return wheat;
     } //close feedPeople
+<<<<<<< HEAD
     
     //Add PlantCrop only after it has been verified through testing.
+=======
+
+    public static int plantCrop(int acresToPlant, CropData cropData){
+
+        int owned = cropData.getAcresOwned();
+        int wheat = cropData.getWheatInStore();
+        int acresPlanted = cropData.getAcresPlanted();
+
+        //If acresPlanted <0, return -1
+        if(acresPlanted < 0) {
+            return -1;
+        }
+
+        //if acresPlanted >(acresOwned or 2*wheatInStore), return -1
+
+        if(acresPlanted > owned) {
+            return -1;
+        }
+        if(acresPlanted > wheat * 2) {
+            return -1;
+        }
+
+        // wheatLeft = wheatInStore - (acresPlanted * 2)
+        int wheatLeft = wheat - acresPlanted * 2;
+
+        cropData.setWheatInStore(wheatLeft);
+        cropData.setAcresPlanted(acresToPlant);
+
+        return wheatLeft;
+    }//close plantCrop
+
+>>>>>>> e5dc11650ab8729486ea054b1f0c9f82327ce01c
 }

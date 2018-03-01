@@ -11,18 +11,38 @@ import byu.cit260.cityOfAaron.view.*;
 import byu.cit260.cityOfAaron.control.*;
 
 public class CityOfAaron {
-    
+
     //variable for keeping a reference to the Game object
-    private static Game currentGame = null; 
-    
+    private static Game currentGame = null;
+
     public static Game getCurrentGame() {
         return currentGame;
     }
 
     public static void setCurrentGame(Game theGame) {
-        CityOfAaron.currentGame = currentGame;
+        currentGame = currentGame;
     }
-  
+
+    private CropData theCrops = null; 
+    
+    //the getCrops() method
+    //Purpose: get a reference to the crop object
+    //Parameters: none
+    //Returns: a reference to a crop object
+    public CropData getCrop()
+    {
+        return theCrops;
+    }
+    
+    //the setCrops() method 
+    //Purpose: store a reference to a crop object
+    //Parameters: a reference to a crop object
+    //Returns: none
+    public void setCrop(CropData  _cropRef)
+    {
+        theCrops = _cropRef;
+    } 
+    
     //main function - entry point for the program
     //runs the main menus
     public static void main(String[] args) {
@@ -31,9 +51,12 @@ public class CityOfAaron {
     mmv.displayMenuView();
     
 
+<<<<<<< HEAD
     /* commenting out for testing above
     
     
+=======
+>>>>>>> e5dc11650ab8729486ea054b1f0c9f82327ce01c
     Player playerOne = new Player();
     playerOne.setPlayerName("Alma The Missionary");
 
@@ -47,14 +70,11 @@ public class CityOfAaron {
     String locationDescription = location.getDescription();
     System.out.println(location.toString());
 
-
-
     //From Jem
     ListItem animalsOne = new ListItem();
 
     animalsOne.setName("sheep");
     animalsOne.setNumber(12);
-
 
     String animalsOneName = animalsOne.getName();
     double animalsOneNumber = animalsOne.getNumber();

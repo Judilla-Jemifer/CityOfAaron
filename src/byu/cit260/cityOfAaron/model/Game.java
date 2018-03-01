@@ -4,7 +4,6 @@ import byu.cit260.cityOfAaron.model.*;
   *City of Aaron*
   */
 
-
  import java.io.Serializable;
  import java.util.ArrayList;
 
@@ -13,6 +12,7 @@ import byu.cit260.cityOfAaron.model.*;
    private Map theMap;
    private Player thePlayer;
    private CropData cropData;
+   private CropData theCrops = null; //from week 8, slide 5
    private TeamMember team[];
      //The Game class does not really need to include a reference to the TeamMember enum.
      // You can safely ignore this in the class diagram. - Roger deBry
@@ -43,7 +43,18 @@ import byu.cit260.cityOfAaron.model.*;
      this.cropData = cropData;
    }
 
+<<<<<<< HEAD
    
+=======
+   //from week 8, slide 6
+   public CropData getCrop(){
+     return theCrops;
+   }
+   public void setCrop(Cropdata_cropRef){
+     theCrops = _cropRef;
+   }
+
+>>>>>>> e5dc11650ab8729486ea054b1f0c9f82327ce01c
    /*get TeamMember here
 
    set TeamMember here */
@@ -68,7 +79,4 @@ import byu.cit260.cityOfAaron.model.*;
      this.provisions = provisions;
    }
 
-
-   //I removed the main() function here and put it in the main class CityOfAaron.javas
-   }
- 
+}

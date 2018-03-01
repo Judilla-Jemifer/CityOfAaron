@@ -5,6 +5,7 @@ package byu.cit260.cityOfAaron.model;
  * @authors Jemifer/Jacalyn/Clayton
  */
  import java.io.Serializable;
+import java.util.Random;
 
  public class CropData implements Serializable{
  //attributes
@@ -132,5 +133,17 @@ package byu.cit260.cityOfAaron.model;
    public void setWheatForPeople(int setWheatForPeople){
      this.wheatForPeople = setWheatForPeople;
    }
+   
+   //calcLandCost() method
+   //Purpose: Calculate a random land cost between 17 and 26 bushels/acres
+   //Parameters: None
+   //Returns: the land cost
 
+   private static Random random = new Random();
+   
+   public static int calcLandCost()
+   {
+       int landPrice = random.nextInt(28) + 17;
+       return landPrice;
+   }
  }

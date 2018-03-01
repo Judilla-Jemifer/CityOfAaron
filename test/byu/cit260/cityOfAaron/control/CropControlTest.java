@@ -170,7 +170,7 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
     @Test
     public void testFeedPeople() {
         System.out.println("feedPeople");
@@ -180,10 +180,10 @@ public class CropControlTest {
 
         CropData cropData = new CropData();
         cropData.setWheatInStore(2700);
-     
+
         // define the input variables
         int wheatForPeople = 1300;
-      
+
 
         int expResult = 1400;
 
@@ -192,17 +192,17 @@ public class CropControlTest {
 
         // test to see if the result returned equals the expected result
         assertEquals(expResult, result);
-       
+
 
     // --- Test case 2 ---
         System.out.println("\tTest case 2 for Invalid");
 
 
         cropData.setWheatInStore(2700);
-      
+
         // define the input variables
         wheatForPeople = -100;
-      
+
 
         expResult = -1;
 
@@ -212,16 +212,16 @@ public class CropControlTest {
         // test to see if the result returned equals the expected result
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        
+
 
         // --- Test case 3 ---
         System.out.println("\tTest case 3 for Invalid");
-        
+
         cropData.setWheatInStore(2700);
-      
+
         // define the input variables
         wheatForPeople = 2900;
-      
+
 
         expResult = -1;
 
@@ -234,12 +234,12 @@ public class CropControlTest {
 
         // --- Test case 4 ---
         System.out.println("\tTest case 4 for Boundary");
-        
+
         cropData.setWheatInStore(2700);
-      
+
         // define the input variables
         wheatForPeople = 2700;
-      
+
 
         expResult = 0;
 
@@ -253,12 +253,12 @@ public class CropControlTest {
 
         // --- Test case 5 ---
         System.out.println("\tTest case 5 for Boundary");
-        
+
         cropData.setWheatInStore(2700);
-      
+
         // define the input variables
         wheatForPeople = 0;
-      
+
 
         expResult = 2700;
 
@@ -270,4 +270,83 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+<<<<<<< HEAD
+=======
+
+    /**
+ * @author Jacalyn
+ */
+
+    /**
+     * Test of plantCrop method, of class PlantCrop.
+     */
+    @Test
+    public void testPlantCrop() {
+        System.out.println("plantCrop");
+        //Test Case 1 - Valid
+        System.out.println("\tTest Case 1 - Valid");
+        //input Variables
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(10000);
+        cropData.setAcresOwned(500);
+        int acresToPlant = 450;
+
+        int expResult = 9100;
+
+        int result = CropControl.plantCrop(acresToPlant, cropData);
+        assertEquals(expResult, result);
+
+        //Test Case 2 - Invalid
+        System.out.println("\tTest Case 2 - Invalid");
+        //input Variables
+
+        cropData.setWheatInStore(10000);
+        cropData.setAcresOwned(500);
+        acresToPlant = -20;
+
+        expResult = -1;
+
+        result = CropControl.plantCrop(acresToPlant, cropData);
+        assertEquals(expResult, result);
+
+        //Test Case 3 - Invalid
+        System.out.println("\tTest Case 3 - Invalid");
+        //input Variables
+        cropData = new CropData();
+        cropData.setWheatInStore(10000);
+        cropData.setAcresOwned(500);
+        acresToPlant = 502;
+
+        expResult = -1;
+
+        result = CropControl.plantCrop(acresToPlant, cropData);
+        assertEquals(expResult, result);
+
+        //Test Case 4 - Boundary
+        System.out.println("\tTest Case 4 Boundary");
+        //input Variables
+        cropData = new CropData();
+        cropData.setWheatInStore(10000);
+        cropData.setAcresOwned(500);
+        acresToPlant = 0;
+
+        expResult = 10000;
+
+        result = CropControl.plantCrop(acresToPlant, cropData);
+        assertEquals(expResult, result);
+
+        //Test Case 5 - Boundary
+        System.out.println("\tTest Case 5 Boundary");
+        //input Variables
+        cropData = new CropData();
+        cropData.setWheatInStore(10000);
+        cropData.setAcresOwned(500);
+        acresToPlant = 0;
+
+        expResult = 10000;
+
+        result = CropControl.plantCrop(acresToPlant, cropData);
+        assertEquals(expResult, result);
+    }
+>>>>>>> e5dc11650ab8729486ea054b1f0c9f82327ce01c
 }

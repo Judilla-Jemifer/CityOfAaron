@@ -50,11 +50,9 @@ public MainMenuView(){
       //perform action
       doAction(menuOption);
       //determine and display next view
-
-    }while (menuOption != max);
+      } while (menuOption != max);
 
   }//close displayMainMenu
-
   //The getMenuOption method
   //Purpose: gets the user's input
   //Parameters: None
@@ -115,12 +113,24 @@ public MainMenuView(){
     CityOfAaron.setCurrentGame(theGame);
 
     //Display the Banner Page
+<<<<<<< HEAD
 
     //We need to "include much more and so need to look at the requirements document" - Jacalyn
     System.out.println("\nWelcome to the City of Aaron. You have been summoned here by the High Priest \nto assume your role as ruler of the city. Your responsibility is to buy and sell land, \ndetermine how much wheat to plant each year and how much to set aside to feed \nyour people. In addition, it will be your job to pay an annual tithe on the wheat that \nis harvested. If you fail to provide enough wheat for the people, people will starve,  \nsome people will die, and your workforce will be diminished. Plan carefully. And \nOh, there is always a danger of rats eating your wheat.");
 
     //We need to "include much more and so need to look at the requirements document" is what Professor's power point presentation said. All I saw in the Rubric was to add a help menu. There were no specifications for what to put on the help menu so I have placeholder text until we get more information. I hope that is all we needed. - Jacalyn
     System.out.println("\nWelcome to the City of Aaron.");
+=======
+    System.out.println("\n" +
+       "Welcome to the City of Aaron. You have been summoned here by the High Priest \n" + 
+       "to assume your role as ruler of the city. Your responsibility is to buy and sell land, \n" +
+       "determine how much wheat to plant each year and how much to set aside to feed \n" +
+       "your people. In addition, it will be your job to pay an annual tithe on the wheat that \n" +
+       "is harvested. If you fail to provide enough wheat for the people, people will starve,  \n" +
+       "some people will die, and your workforce will be diminished. Plan carefully. And \n" + 
+       "Oh, there is always a danger of rats eating your wheat.\n" +
+       "Welcome to the City of Aaron.");
+>>>>>>> e5dc11650ab8729486ea054b1f0c9f82327ce01c
 
 
     //Create a new Player object
@@ -129,11 +139,11 @@ public MainMenuView(){
     //Prompt for and get the user's name
     String name;
     System.out.println("\nPlease type in your first name: ");
-    name=keyboard.next();
+    name = keyboard.next();
 
     //Save the user's name in the Player object
     thePlayer.setPlayerName(name);
-
+   
     //Save a reference to the player object in the Game object
     theGame.setPlayer(thePlayer);
 
@@ -142,6 +152,24 @@ public MainMenuView(){
 
     //Display the Game menu
     //"You won't fill in the code to do this until you have created the GameMenuView class." -From slide 67 of 69 Week 7 - Jacalyn
+    
+    //Create the CropData object,
+    //initialize it and save a reference to it in the Game
+    CropData theCrops = new CropData();
+    theCrops.setYear(0);
+    theCrops.setPopulation(100);
+    theCrops.setNewPeople(5);
+    theCrops.setCropYield(3);
+    theCrops.setNumberWhoDied(0);
+    theCrops.setOffering(10);
+    theCrops.setWheatInStore(2700);
+    theCrops.setAcresOwned(1000);
+    theCrops.setAcresPlanted(1000);
+    theCrops.setHarvest(3000);
+    theCrops.setOfferingBushels(300);
+    theCrops.setAcresPlanted(1000);
+    
+    theGame.setCropData(theCrops);
   }//close startNewGame
 
 

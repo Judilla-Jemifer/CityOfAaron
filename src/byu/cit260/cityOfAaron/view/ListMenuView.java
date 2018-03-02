@@ -2,8 +2,6 @@
 package byu.cit260.cityOfAaron.view;
 
 import java.util.Scanner;
-import cityofaaron.CityOfAaron;//aka our GameProject class
-import byu.cit260.cityOfAaron.model.*;
 
 /*The ListMenuView class - part of the view layer
  * Object: Manage the list menu

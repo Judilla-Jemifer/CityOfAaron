@@ -52,7 +52,7 @@ public class GameMenuView{
     switch (option) {
       case 1: System.out.println("\n...this is the map...");
         break;
-      case 2: ListMenuView();
+      case 2: displayListMenuView();
         break;
       case 3: System.out.println("\n...move to a new location...");
         break;
@@ -64,9 +64,10 @@ public class GameMenuView{
         break;
     }//close switch
   }//close doAction
-public void ListMenuView() {
-        ListMenuView listMenuView = new ListMenuView();
-        listMenuView.displayListMenuView();
-}
+  
+  public void displayListMenuView() {
+        ListMenuView lmv = new ListMenuView();
+        lmv.displayListMenuView();
+  }
 }//close class GameMenuView
 

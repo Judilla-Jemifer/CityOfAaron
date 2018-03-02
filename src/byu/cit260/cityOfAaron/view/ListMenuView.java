@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byu.cit260.cityOfAaron.view;
 
 import java.util.Scanner;
@@ -16,6 +12,7 @@ import byu.cit260.cityOfAaron.model.*;
  */
 
 public class ListMenuView {
+    
     Scanner keyboard = new Scanner(System.in);
     
     //The ListMenuView Method
@@ -26,7 +23,7 @@ public class ListMenuView {
 private String listMenu;
 private int max;
 
-public void ListMenuView(){
+public ListMenuView(){
     //Display the menu
     //Prompt user and get user's input
     //Perform the desired action
@@ -38,10 +35,9 @@ public void ListMenuView(){
                "\n1 - List or view the animals in the storehouse"+
                "\n2 - List or view the tools in the storehouse"+
                "\n3 - List or view the provisions in the storehouse"+
-               "\n4 - List or view the authors of this game"+
-               "\n5 - Go back to game menu";     
-              
-    max = 5;
+               "\n4 - List or view the authors of this game";
+                            
+    max = 4;
   }
 
 public void displayListMenuView(){
@@ -70,24 +66,32 @@ public void displayListMenuView(){
 
   public void doAction(int option){
     switch (option) {
-      case 1: System.out.println("\n...this is the list of animals in the storehouse...");
+      case 1: displayAnimalsList();
         break;
-      case 2: System.out.println("\n...these are the tools in the storehouse...");
+      case 2: displayToolsList();
         break;
-      case 3: System.out.println("\n...these are the provisions in the storehouse...");
+      case 3: displayProvisionsList();
         break;
-      case 4: System.out.println("\n...these are the authors of this game...");
+      case 4: displayAuthorsList();
         break;
         
-     case 5: System.out.println("\n...these are the authors of this game...");
-            GameMenuView gmv = new GameMenuView();
-            gmv.displayGameMenuView();
-            break;
-      
-      
     }//close switch
   }//close doAction
+ public void displayAnimalsList(){
+    System.out.println("\n Display animals list here.");
+  }
  
+ public void displayToolsList(){
+    System.out.println("\n Display tools list here.");
+  }
+ 
+ public void displayProvisionsList(){
+    System.out.println("\n Display provisions list here.");
+  }
+ 
+ public void displayAuthorsList(){
+    System.out.println("\n Display authors list here.");
+  }
 }//close class GameMenuView
 
 

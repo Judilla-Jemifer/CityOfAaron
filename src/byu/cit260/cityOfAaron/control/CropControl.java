@@ -71,6 +71,7 @@ public class CropControl {
       //if acresToBuy < 0, return -1
       if(acresToBuy < 0){
         return -1;
+       
       }
       
       //if acrestToBuy > (wheatInStore/landPrice), return -1
@@ -84,6 +85,7 @@ public class CropControl {
       int population = cropData.getPopulation();
       if(acresToBuy > population*10){
         return -1;
+        
       }
       //acresOwned = acresOwned + acresToBuy
       int owned = cropData.getAcresOwned();
@@ -97,6 +99,7 @@ public class CropControl {
       return wheat;
     } //close sellLand
 
+    
     
     
     /*

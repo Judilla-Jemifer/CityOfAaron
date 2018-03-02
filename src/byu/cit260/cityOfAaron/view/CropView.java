@@ -36,10 +36,8 @@ public class CropView {
     //Call the buyLand() method in the control layer to buy the land
     CropControl.buyLand(price, toBuy, theCropData); 
     //I thought of changing the order of price and toBuy to match it to buyLand method in cropControl
-    //There's error asking for a paramter for the CropData to match the buyLand in cropControl so I just put theCropData there
-    //I'm doing the same to the sellLand
-    //It's throwing error after entering acres to buy when I ran it
-    // I think it's because we don't have value for other inputs yet in the method? --Jem
+    //I'm doing the same to the sellLand -- Jem
+  
   }
 
   public static void sellLandView(){

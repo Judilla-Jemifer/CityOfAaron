@@ -56,7 +56,7 @@ public class GameMenuView{
         break;
       case 3: System.out.println("\n...move to a new location...");
         break;
-      case 4: runCropsView();
+      case 4: manageCrops();
         break;
       case 5: System.out.println("\n...going back to main menu...");
         MainMenuView mainMenuView = new MainMenuView();
@@ -72,9 +72,8 @@ public class GameMenuView{
   }
   
   //Jem
-  public void runCropsView() {
-       CropView cv = new CropView();
-       cv.runCropsView();
+  public void manageCrops() {
+       CropView.runCropsView();
   }
           
 }//close class GameMenuView

@@ -34,7 +34,12 @@ public class CropView {
     toBuy = keyboard.nextInt();
 
     //Call the buyLand() method in the control layer to buy the land
-    CropControl.buyLand(toBuy, price);//error because we don't have a buyLand method in CropControl..
+    CropControl.buyLand(price, toBuy, theCropData); 
+    //I thought of changing the order of price and toBuy to match it to buyLand method in cropControl
+    //There's error asking for a paramter for the CropData to match the buyLand in cropControl so I just put theCropData there
+    //I'm doing the same to the sellLand
+    //It's throwing error after entering acres to buy when I ran it
+    // I think it's because we don't have value for other inputs yet in the method? --Jem
   }
 
   public static void sellLandView(){
@@ -46,10 +51,35 @@ public class CropView {
     int toSell;
     toSell = keyboard.nextInt();
     //Call the sellLand() method in the control layer to sell the land
-    CropControl.sellLand(toSell, price);//error because the parameters we are passing here are different from the parameters needed by that method
+    CropControl.sellLand(price, toSell, theCropData);//error because the parameters we are passing here are different from the parameters needed by that method
     //i.e. sellLand(int landPrice, int acresToSell, CropData cropData)
   }
 
+  //@Jem
+  public static void feedPeopleView(){
+    //Get the cost of the land for this round
+   
+    //Prompt user to enter the amount of acres to sell
+    System.out.print("\nHow many bushles of grain do you want to give to people?");
+    //Get the user's input and save it
+    int toFeed;
+    toFeed = keyboard.nextInt();
+    //Call the feedPeople() method in the control layer to sell the land
+    CropControl.feedPeople(toFeed, theCropData);
+  }
+  
+  //@Jem
+  public static void plantCropsView(){
+    //Get the cost of the land for this round
+   
+    //Prompt user to enter the amount of acres to sell
+    System.out.print("\nHow many acres of land do you want to plant?");
+    //Get the user's input and save it
+    int toPlant;
+    toPlant = keyboard.nextInt();
+    //Call the plantCrop() method in the control layer to sell the land
+    CropControl.plantCrop(toPlant, theCropData);
+  }
 
     //The runCropsView method()
     //Purpose: runs the Game

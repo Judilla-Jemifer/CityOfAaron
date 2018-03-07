@@ -9,16 +9,13 @@ import java.util.Scanner;
 import cityofaaron.CityOfAaron;//aka our GameProject class
 import byu.cit260.cityOfAaron.model.*;
 
-public class MainMenuView {
-    Scanner keyboard = new Scanner(System.in);
+public class MainMenuView extends MenuView {
+    
 
     //The displayMenuView method
     //Purpose: Displays the main menu, gets user input, performs selected action
     //Parameters: none
     //Returns: none
-
-private String mainMenu;
-private int max;
 
 //build constructor
 public MainMenuView(){
@@ -26,8 +23,7 @@ public MainMenuView(){
     //Prompt user and get user's input
     //Perform the desired action
     //determine and display the next view
-
-  mainMenu = "\n" +
+  super( "\n" +
   "**********************************\n" +
   "* CITY OF AARON: MAIN GAME MENU *\n" +
   "**********************************\n" +
@@ -35,52 +31,17 @@ public MainMenuView(){
   " 2 - Get and start a saved game\n" +
   " 3 - Get help on playing the game\n" +
   " 4 - Save game\n" +
-  " 5 - Quit\n";
-  max = 5;
+  " 5 - Quit\n",
+  5);
 }
 
-
-  public void displayMenuView(){
-    int menuOption;
-    do{
-      //display the menu
-      System.out.println(mainMenu);
-      //prompt the user for input
-      menuOption = getMenuOption();
-      //perform action
-      doAction(menuOption);
-      //determine and display next view
-      } while (menuOption != max);
-
-  }//close displayMainMenu
-  //The getMenuOption method
-  //Purpose: gets the user's input
-  //Parameters: None
-  //Returns: Integer - the option selected
-
-  public int getMenuOption(){
-    //declare variable to hold user input
-    int userInput;
-    //begin loop
-    do{
-      //get user input from keyboard
-      userInput = keyboard.nextInt();
-      //if invalid input, output error message
-      if(userInput < 1 || userInput > max){
-        System.out.println("\n Option must be between 1 and " + max);
-        }
-        //loop back to top if input invalid
-      }while(userInput < 1 || userInput > max);
-      //return the value input by the user
-    return userInput;
-  }//close getMenuOption
 
   //The doAction method
       //Purpose: performs the selection action
       //Parameters: none
       //Returns: none
 
-  public void doAction(int option){
+  @Override public void doAction(int option){
     switch (option) {
         //if the option is 1, call startNewGame()
       case 1: startNewGame();
@@ -147,7 +108,7 @@ public MainMenuView(){
 
     //Display the Game menu
     GameMenuView gmv = new GameMenuView();
-    gmv.displayGameMenuView();
+    gmv.displayMenu();
     
     //Create the CropData object,
     //initialize it and save a reference to it in the Game
@@ -174,9 +135,9 @@ public MainMenuView(){
   }//close startSavedGame
 
   public void displayHelpMenuView(){
-    HelpMenuView helpMenuView = new HelpMenuView();
-          helpMenuView.displayHelpMenuView();
-            
+    HelpMenuView hmv = new HelpMenuView();
+          hmv.displayMenu();
+            //new HelpMenuView();
   }//close displayHelpMenu
 
   public void displaySaveGameView(){

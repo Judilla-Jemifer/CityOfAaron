@@ -10,6 +10,8 @@ import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 
 public class CropView {
+    private static final int ACRES_PER_BUSHEL = 2; //1 bushel of wheat will plant on 2 acres of land
+    private static final int PEOPLE_PER_ACRE = 9; //9 people can farm 1 acre
     //Create a scanner object
     private static Scanner keyboard = new Scanner(System.in);
 
@@ -99,9 +101,9 @@ public class CropView {
 
         plantCropsView();
 
-        showStarvedView();
+        //showStarvedView();
 
-        displayCropsReportView();
+        //displayCropsReportView();
         
     }
 }

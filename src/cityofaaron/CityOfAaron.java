@@ -46,9 +46,10 @@ public class CityOfAaron {
     //main function - entry point for the program
     //runs the main menus
     public static void main(String[] args) {
-
+ 
+   
     MainMenuView mmv = new MainMenuView();
-    mmv.displayMenuView();
+    mmv.displayMenu();//This will show the main Menu
     
 
 

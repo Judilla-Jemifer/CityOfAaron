@@ -31,4 +31,26 @@ public abstract class MenuView implements ViewInterface{
       } while (menuOption != max);
 
   }
+
+//The getUserInput method
+//Purpose: gets user input, make sure it is within range
+//Parameters: none
+//Returns: the user input, between 1 and max value
+@Override public int getMenuOption(){
+    //declare variable to hold user input
+    int inputValue =0;
+    //begin loop
+    do{
+      //get user input from keyboard
+      System.out.format("\nPlease enter an option(1-%d):",max);
+      inputValue = keyboard.nextInt();
+      //if invalid input, output error message
+      if(inputValue < 1 || inputValue > max){
+        System.out.println("\n Option must be between 1 and " + max);
+        }
+        //loop back to top if input invalid
+      }while(inputValue < 1 || inputValue > max);
+      //return the value input by the user
+    return inputValue;
+  }
 }

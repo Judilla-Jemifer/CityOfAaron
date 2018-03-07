@@ -270,8 +270,8 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-<<<<<<< HEAD
-=======
+
+
 
     /**
  * @author Jacalyn
@@ -348,5 +348,4 @@ public class CropControlTest {
         result = CropControl.plantCrop(acresToPlant, cropData);
         assertEquals(expResult, result);
     }
->>>>>>> e5dc11650ab8729486ea054b1f0c9f82327ce01c
 }

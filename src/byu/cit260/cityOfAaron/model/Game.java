@@ -47,10 +47,11 @@ import byu.cit260.cityOfAaron.model.*;
    public CropData getCrop(){
      return theCrops;
    }
-   public void setCrop(Cropdata_cropRef){
+   public void setCrop(CropData _cropRef){
      theCrops = _cropRef;
    }
-
+//I just added space between CropData and _cropRef and made it CropData instead of CropData
+  
 
    /*get TeamMember here
 

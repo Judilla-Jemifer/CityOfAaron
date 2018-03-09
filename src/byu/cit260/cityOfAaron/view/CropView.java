@@ -84,7 +84,22 @@ public class CropView {
     //Purpose: runs the Game
     //Parameters: none
     //Returns: none
-    public static void runCropsView()
+ 
+    //Tithes and Offerings by Jacalyn
+    public static void payOfferingView() {
+        //Prompt for user to input amount of Offerings to pay
+        System.out.format("The amount of tithing you offer will directly affect your harvest outcome and how much of your storage is eaten by rats/%n");
+        System.out.print("\nWhat percentage of your harvest would you like to contribute to your tithe offering?");
+         int offering = keyboard.nextInt();
+       //Get user's input and save it
+       int offeringBushels;
+       offeringBushels = keyboard.nextInt();
+       
+       //Call the payOffering method in the control layer to pay tithes and offering
+       CropControl.payOffering(offeringBushels, offering, theCropData);
+    }
+    
+     public static void runCropsView()
     {
         //call the buyLandView() method
         buyLandView();
@@ -100,25 +115,12 @@ public class CropView {
 
         plantCropsView();
         
+        //by Jacalyn
         payOfferingView();
 
         //showStarvedView();
 
         //displayCropsReportView();
         
-    }
-    //Tithes and Offerings by Jacalyn
-    public static void payOfferingView() {
-        int offering = keyboard.nextInt();
-        //Prompt for user to input amount of Offerings to pay
-        System.out.format("The amount of tithing you offer will directly affect your harvest outcome and how much of your storage is eaten by rats/%n");
-        System.out.print("\nWhat percentage of your harvest would you like to contribute to your tithe offering?");
-        
-       //Get user's input and save it
-       int offeringBushels;
-       offeringBushels = keyboard.nextInt();
-       
-       //Call the payOffering method in the control layer to pay tithes and offering
-       CropControl.payOffering(offeringBushels, offering, theCropData);
     }
 }

@@ -105,10 +105,6 @@ public MainMenuView(){
 
     //Display a welcome message
     System.out.println("\nWelcome, " + name + ". Have fun!");
-
-    //Display the Game menu
-    GameMenuView gmv = new GameMenuView();
-    gmv.displayMenu();
     
     //Create the CropData object,
     //initialize it and save a reference to it in the Game
@@ -127,6 +123,10 @@ public MainMenuView(){
     theCrops.setAcresPlanted(1000);
     
     theGame.setCropData(theCrops);
+    
+    //Display the Game menu
+    GameMenuView gmv = new GameMenuView();
+    gmv.displayMenu();
   }//close startNewGame
 
 

@@ -4,7 +4,7 @@ package byu.cit260.cityOfAaron.control;
  * @authors Jacalyn/Jemifer/Clayton
  */
 
-import byu.cit260.cityOfAaron.model.CropData;
+import byu.cit260.cityOfAaron.model.*;
 import java.util.Random;
 
 public class CropControl {
@@ -12,7 +12,16 @@ public class CropControl {
   //constants
   private static final int LAND_BASE = 17;
   private static final int LAND_RANGE = 10;
-
+  private static final int ACRES_PER_BUSHEL = 2;
+  private static final int PEOPLE_PER_ACRE = 10;
+  private static final int YIELD_BASE = 3;
+  private static final int YIELD_RANGE = 3;
+  private static final int PHAROAH_RANGE = 3;
+  private static final int PHAROAH_BASE = 0;
+  private static final double TO_PERCENT = 100.0;
+  private static final int GROWTH_RANGE = 5;
+  private static final int BUSHELS_PER_PERSON = 20;
+  
   //random number generator
   public static Random random = new Random();
 
@@ -83,7 +92,7 @@ public class CropControl {
       //if acresToBuy > population*10, return -1
       
       int population = cropData.getPopulation();
-      if(acresToBuy > population*10){
+      if(acresToBuy > population*PEOPLE_PER_ACRE){
         return -1;
         
       }
@@ -96,7 +105,7 @@ public class CropControl {
       wheat += (acresToBuy * landPrice);
       cropData.setWheatInStore(wheat);
       //return acresOwned
-      return wheat;
+      return owned;
     } //close sellLand
 
     
@@ -107,19 +116,21 @@ public class CropControl {
     using harvest amount collected, multiply by percentage of offering to calculate amount of harvest to be offered as tithes
     return calculated offering if valid, or return -1 if invalid
     */
-    public static long payOffering(int offering, CropData cropData){
+    public static int payOffering(int offeringBushels, int wheatInStore, CropData cropData){
       //if offering is less than zero or more than 100, return error code -1
-      if(offering < 0 || offering > 100){
+      if(offeringBushels < 0 || offeringBushels > 100){
         return -1;
       }
       //converts whole # to percentage
-      double offeringPercentage = offering / 100.0;
+      double offeringPercentage = offeringBushels / 100.0;
       //get cropYield from cropData instance
       int cropYield = cropData.getCropYield();
-      //calc offeringBushels from offeringPercentage of cropYield
-      long offeringBushels = Math.round(cropYield * offeringPercentage);
+      //get Wheat in Store so you can calculate how much wheat there is after paying offering
+      int wheat = cropData.getWheatInStore();
+      int payOffering = (wheatInStore - offeringBushels);
+      return wheatInStore;
       //return offeringBushels
-      return offeringBushels;
+     // return offeringBushels;
     } //close payOffering
 
     /* @author Jem

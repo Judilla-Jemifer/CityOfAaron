@@ -2,6 +2,8 @@
 package byu.cit260.cityOfAaron.view;
 
 import java.util.Scanner;
+import cityofaaron.CityOfAaron;//aka our GameProject class
+import byu.cit260.cityOfAaron.model.*;
 
 /*The ListMenuView class - part of the view layer
  * Object: Manage the list menu
@@ -9,17 +11,8 @@ import java.util.Scanner;
  * Date last modified: February 2018
  */
 
-public class ListMenuView {
+public class ListMenuView extends MenuView{
     
-    Scanner keyboard = new Scanner(System.in);
-    
-    //The ListMenuView Method
-    //Purpose: Displays the list menu, gets user input, performs selected action
-    //Parameters: none
-    //Returns: none
-    
-private String listMenu;
-private int max;
 
 public ListMenuView(){
     //Display the menu
@@ -27,40 +20,16 @@ public ListMenuView(){
     //Perform the desired action
     //determine and display the next view
     
-    listMenu = "\n***************************"+
+    super( "\n***************************"+
                "\n***      LIST MENU      ***"+
                "\n***************************"+
                "\n1 - List or view the animals in the storehouse"+
                "\n2 - List or view the tools in the storehouse"+
                "\n3 - List or view the provisions in the storehouse"+
-               "\n4 - List or view the authors of this game";
-                            
-    max = 4;
+               "\n4 - List or view the authors of this game" +
+               "\n5 - Return to Main Menu",
+                5);
   }
-
-public void displayListMenuView(){
-    int menuOption;
-    do{
-      System.out.println(listMenu);
-
-      menuOption = getMenuOption();
-
-      doAction(menuOption);
-    }while (menuOption != max);
-  }//close displayGameMenuView
-
-  public int getMenuOption(){
-    int userInput;
-    do{
-      userInput = keyboard.nextInt();
-
-      if(userInput < 1 || userInput > max){
-        System.out.println("\nOption must be between 1 and " + max);
-      }
-    }while (userInput < 1 || userInput > max);
-    
-    return userInput;
-  }//close getMenuOption
 
   public void doAction(int option){
     switch (option) {

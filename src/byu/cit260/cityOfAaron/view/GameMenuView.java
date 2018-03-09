@@ -4,49 +4,19 @@ import java.util.Scanner;
 import cityofaaron.CityOfAaron;//aka our GameProject class
 import byu.cit260.cityOfAaron.model.*;
 
-public class GameMenuView{
-
-  Scanner keyboard = new Scanner(System.in);
-
-  private String gameMenu;
-  private int max;
+public class GameMenuView extends MenuView{
 
   public GameMenuView(){
-    gameMenu = "\n***************************"+
+    super( "\n***************************"+
                "\n***      GAME MENU      ***"+
                "\n***************************"+
                "\n1 - View the Map"+
                "\n2 - View/Print a List"+
                "\n3 - Move to a new Location"+
                "\n4 - Manage the Crops"+
-               "\n5 - Return to the Main Menu";
-              
-    max = 5;
+               "\n5 - Return to the Main Menu",
+                5);
   }//close gameMenuView
-
-  public void displayGameMenuView(){
-    int menuOption;
-    do{
-      System.out.println(gameMenu);
-
-      menuOption = getMenuOption();
-
-      doAction(menuOption);
-    }while (menuOption != max);
-  }//close displayGameMenuView
-
-  public int getMenuOption(){
-    int userInput;
-    do{
-      userInput = keyboard.nextInt();
-
-      if(userInput < 1 || userInput > max){
-        System.out.println("\nOption must be between 1 and " + max);
-      }
-    }while (userInput < 1 || userInput > max);
-    
-    return userInput;
-  }//close getMenuOption
 
   public void doAction(int option){
     switch (option) {
@@ -58,17 +28,17 @@ public class GameMenuView{
         break;
       case 4: manageCrops();
         break;
-      case 5: System.out.println("\n...going back to main menu...");
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMenuView();
-        break;
+     // case 5: System.out.println("\n...going back to main menu...");
+      //  MainMenuView mainMenuView = new MainMenuView();
+     //   mainMenuView.displayMenuView();
+       // break;
     }//close switch
   }//close doAction
   
   //Jem
   public void displayListMenuView() {
         ListMenuView lmv = new ListMenuView();
-        lmv.displayListMenuView();
+        lmv.displayMenu();
   }
   
   //Jem

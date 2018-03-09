@@ -18,7 +18,7 @@ public class GameMenuView extends MenuView{
                 5);
   }//close gameMenuView
 
-  public void doAction(int option){
+  @Override public void doAction(int option){
     switch (option) {
       case 1: System.out.println("\n...this is the map...");
         break;

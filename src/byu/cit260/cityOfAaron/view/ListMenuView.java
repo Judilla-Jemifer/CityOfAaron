@@ -31,7 +31,7 @@ public ListMenuView(){
                 5);
   }
 
-  public void doAction(int option){
+@Override public void doAction(int option){
     switch (option) {
       case 1: displayAnimalsList();
         break;

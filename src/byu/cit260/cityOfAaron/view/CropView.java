@@ -133,6 +133,37 @@ public class CropView {
   
   }
   
+  //The displayCropsReportView method()
+    //Purpose: to display the crops report
+    //Parameters: none
+    //Returns: none
+    //@Jem
+  public static void displayCropsReportView(){
+    //get values
+   int yearNumber = theCropData.getYear();
+   int peopleStarved = theCropData.getNumStarved();
+   int newComers = theCropData.getNewPeople();
+   int population = theCropData.getPopulation();
+   int currentPopulation = population + newComers;
+   //will still check if there is a need to add this or it's automatically updated
+   int acresOwned = theCropData.getAcresOwned();
+   //bushels per acre here
+   int offering = theCropData.getOffering();
+   //bushles of wheat eaten by rats here
+   int wheat = theCropData.getWheatInStore();
+   
+   //display values
+   
+   System.out.print("\nThe year number is " + yearNumber);
+   System.out.print("\nThe number of people who starved is " + peopleStarved);
+   System.out.print("\nThe number of people who came to the city is " + newComers);
+   System.out.print("\nThe current population is " + currentPopulation);
+   System.out.print("\nThe number of acres of cropland owned by the city is " + acresOwned);
+   System.out.print("\nThe number of bushels paid in offerings is " + offering);
+   System.out.print("\nThe number of wheat in store is " + wheat);
+  
+  }
+  
      public static void runCropsView()
     {
         //call the buyLandView() method

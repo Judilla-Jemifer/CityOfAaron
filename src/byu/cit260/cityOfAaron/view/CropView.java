@@ -12,6 +12,7 @@ import cityofaaron.CityOfAaron;
 public class CropView {
     private static final int ACRES_PER_BUSHEL = 2; //1 bushel of wheat will plant on 2 acres of land
     private static final int PEOPLE_PER_ACRE = 9; //9 people can farm 1 acre
+    private static final int BUSHELS_PER_PERSON = 20; // 20 bushels set aside for food can feed 1person
     //Create a scanner object
     private static Scanner keyboard = new Scanner(System.in);
 
@@ -67,16 +68,19 @@ public class CropView {
     CropControl.feedPeople(toFeed, theCropData);
   }
   
+  
+  //The plantsCropView method()
+    //Purpose: allows user to input acres of land to plant with seed
+    //Parameters: none
+    //Returns: none
   //@Jem
   public static void plantCropsView(){
-    //Get the cost of the land for this round
-   
-    //Prompt user to enter the amount of acres to sell
+    //Prompt user to enter the number of acres to plant with seed
     System.out.print("\nHow many acres of land do you want to plant with seed?");
     //Get the user's input and save it
     int toPlant;
     toPlant = keyboard.nextInt();
-    //Call the plantCrop() method in the control layer to sell the land
+    //Call the plantCrop() method in the control layer to plant crop
     CropControl.plantCrop(toPlant, theCropData);
   }
 
@@ -100,11 +104,35 @@ public class CropView {
        //I think there should be computation rather than another input?
        //What do you think? -Jem
        
+ 
        //Call the payOffering method in the control layer to pay tithes and offering
        CropControl.payOffering(offeringBushels, offering, theCropData);
       
     }
     
+    //The showStarvedView method()
+    //Purpose: shows the number of people in the population that starved
+    //Parameters: none
+    //Returns: none
+    //@Jem
+  public static void showStarvedView(){
+    //Calculate how many people were adequately fed during the year
+   int wheatForPeople = theCropData.getWheatForPeople();
+   int peopleFed = wheatForPeople / BUSHELS_PER_PERSON;
+   //Since it takes 20 busheles of wheat (Bushels_per_person) to feed one person 
+   //I divided wheatForPeople by bushels per person or 20
+   int population = theCropData.getPopulation();
+   
+   if (population > peopleFed ){
+   int starvedPeople = population - peopleFed;
+   System.out.print("\nThere are " + starvedPeople + " people who starved due to lack of food");
+   
+   
+    //Call the showStarvedView() method in the control layer to show number of people that starved
+    CropControl.showStarved(peopleFed, population, theCropData);
+  }
+  }
+  
      public static void runCropsView()
     {
         //call the buyLandView() method
@@ -118,13 +146,13 @@ public class CropView {
 
         //by Clayton
         feedPeopleView();
-
+        //Jem
         plantCropsView();
         
         //by Jacalyn
         payOfferingView();
 
-        //showStarvedView();
+        showStarvedView();
 
         //displayCropsReportView();
         

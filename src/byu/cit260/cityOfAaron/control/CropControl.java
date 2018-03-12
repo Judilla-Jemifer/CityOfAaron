@@ -159,7 +159,37 @@ public class CropControl {
       return wheat;
     } //close feedPeople
 
-    
+    /* @Jem
+  The buyLand method
+  Purpose: To buy land
+  Parameters: the price of land, the number of acres to buy, and a
+  reference to a CropData object
+  Returns: the acres owned after the sale
+  Pre-conditions: acres to sell must be positive, acresToBuy <= (wheatInStore/landPrice),
+    and acresOwned after the sale <= population*10
+  */
+    public static int showStarved(int peopleFed, int population, CropData cropData){
+      //if(peopleFed < population) return starved
+      if(peopleFed < population){
+        int starved = population - peopleFed;
+        cropData.setNumStarved(starved);
+        return starved;
+      }
+      
+      
+      //if(peopleFed > population) return population
+       if(peopleFed > population){
+        int populationFed = population;
+        cropData.setPeopleFed(populationFed);
+        return 0;
+      }
+      //Update value for the current population
+      int starved = cropData.getNumStarved();
+      int currentPopulation = population - starved;
+      cropData.setPopulation(currentPopulation);
+      return starved;
+    }
+
     //Add PlantCrop only after it has been verified through testing.
 
 

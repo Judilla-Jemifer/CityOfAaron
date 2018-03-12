@@ -27,7 +27,7 @@ public ListMenuView(){
                "\n2 - List or view the tools in the storehouse"+
                "\n3 - List or view the provisions in the storehouse"+
                "\n4 - List or view the authors of this game" +
-               "\n5 - Return to Main Menu",
+               "\n5 - Return to Game Menu",
                 5);
   }
 
@@ -41,6 +41,9 @@ public ListMenuView(){
         break;
       case 4: displayAuthorsList();
         break;
+      case 5:
+          return;
+          
         
     }//close switch
   }//close doAction

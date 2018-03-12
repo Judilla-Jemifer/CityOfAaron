@@ -15,22 +15,21 @@ public class GameMenuView extends MenuView{
                "\n3 - Move to a new Location"+
                "\n4 - Manage the Crops"+
                "\n5 - Return to the Main Menu",
-                5);
+    5);
   }//close gameMenuView
 
   @Override public void doAction(int option){
     switch (option) {
-      case 1: System.out.println("\n...this is the map...");
+      case 1: viewMap();
         break;
       case 2: displayListMenuView();
         break;
-      case 3: System.out.println("\n...move to a new location...");
+      case 3: moveNewLocation();
         break;
       case 4: manageCrops();
         break;
-     // case 5: System.out.println("\n...going back to main menu...");
-      //  MainMenuView mainMenuView = new MainMenuView();
-     //   mainMenuView.displayMenuView();
+     case 5: 
+       return;
        // break;
     }//close switch
   }//close doAction
@@ -41,6 +40,15 @@ public class GameMenuView extends MenuView{
         lmv.displayMenu();
   }
   
+  //Jem
+  public void viewMap() {
+        System.out.println("\nDisplay viewMap() here");
+  }
+  
+  //Jem
+  public void moveNewLocation() {
+        System.out.println("\nDisplay moveNewLocation() here");
+  }
   //Jem
   public void manageCrops() {
        CropView.runCropsView();

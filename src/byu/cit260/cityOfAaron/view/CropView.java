@@ -72,7 +72,7 @@ public class CropView {
     //Get the cost of the land for this round
    
     //Prompt user to enter the amount of acres to sell
-    System.out.print("\nHow many acres of land do you want to plant?");
+    System.out.print("\nHow many acres of land do you want to plant with seed?");
     //Get the user's input and save it
     int toPlant;
     toPlant = keyboard.nextInt();
@@ -88,7 +88,7 @@ public class CropView {
     //Tithes and Offerings by Jacalyn
     public static void payOfferingView() {
         //Prompt for user to input amount of Offerings to pay
-        System.out.format("The amount of tithing you offer will directly affect your harvest outcome and how much of your storage is eaten by rats/%n");
+        System.out.format("\nThe amount of tithing you offer will directly affect your harvest outcome and how much of your storage is eaten by rats/%n");
         System.out.print("\nWhat percentage of your harvest would you like to contribute to your tithe offering?");
          int offering = keyboard.nextInt();
        //Get user's input and save it

@@ -160,13 +160,12 @@ public class CropControl {
     } //close feedPeople
 
     /* @Jem
-  The buyLand method
-  Purpose: To buy land
-  Parameters: the price of land, the number of acres to buy, and a
+  The showStarved method
+  Purpose: To show number of people who starved and update the current population
+  Parameters: the peoplefed, population, and a
   reference to a CropData object
-  Returns: the acres owned after the sale
-  Pre-conditions: acres to sell must be positive, acresToBuy <= (wheatInStore/landPrice),
-    and acresOwned after the sale <= population*10
+  Returns: the number of people who starved
+  Pre-conditions: none
   */
     public static int showStarved(int peopleFed, int population, CropData cropData){
       //if(peopleFed < population) return starved

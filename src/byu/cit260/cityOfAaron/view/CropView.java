@@ -126,12 +126,13 @@ public class CropView {
    //if (population > peopleFed ){
    //int starvedPeople = population - peopleFed;
    //System.out.print("\nThere are " + starvedPeople + " people who starved due to lack of food");
-   //Just put this to see the value of starved people for testing. commented it out after it worked -- Jem
+   // Just put this one for testing earlier -- Jem
    
     //Call the showStarvedView() method in the control layer to show number of people that starved
     CropControl.showStarved(peopleFed, population, theCropData);
-  
   }
+   
+  
   
   //The displayCropsReportView method()
     //Purpose: to display the crops report
@@ -186,8 +187,9 @@ public class CropView {
 
            //Jem
         showStarvedView();
-
-        //displayCropsReportView();
+        
+        //Jem
+        displayCropsReportView();
         
     }
 }

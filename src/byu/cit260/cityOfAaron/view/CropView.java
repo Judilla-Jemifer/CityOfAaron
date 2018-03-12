@@ -93,10 +93,16 @@ public class CropView {
          int offering = keyboard.nextInt();
        //Get user's input and save it
        int offeringBushels;
-       offeringBushels = keyboard.nextInt();
+       int owned = theCropData.getAcresOwned();
+       offeringBushels = offering*owned;
+       //This part does not show the game menu back right away. 
+       //I figured out it's asking for 2 inputs so I changes it to that
+       //I think there should be computation rather than another input?
+       //What do you think? -Jem
        
        //Call the payOffering method in the control layer to pay tithes and offering
        CropControl.payOffering(offeringBushels, offering, theCropData);
+      
     }
     
      public static void runCropsView()

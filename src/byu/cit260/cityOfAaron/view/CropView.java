@@ -123,14 +123,14 @@ public class CropView {
    //I divided wheatForPeople by bushels per person or 20
    int population = theCropData.getPopulation();
    
-   if (population > peopleFed ){
-   int starvedPeople = population - peopleFed;
-   System.out.print("\nThere are " + starvedPeople + " people who starved due to lack of food");
-   
+   //if (population > peopleFed ){
+   //int starvedPeople = population - peopleFed;
+   //System.out.print("\nThere are " + starvedPeople + " people who starved due to lack of food");
+   //Just put this to see the value of starved people for testing. commented it out after it worked -- Jem
    
     //Call the showStarvedView() method in the control layer to show number of people that starved
     CropControl.showStarved(peopleFed, population, theCropData);
-  }
+  
   }
   
      public static void runCropsView()
@@ -146,12 +146,14 @@ public class CropView {
 
         //by Clayton
         feedPeopleView();
+        
         //Jem
         plantCropsView();
         
         //by Jacalyn
         payOfferingView();
 
+           //Jem
         showStarvedView();
 
         //displayCropsReportView();

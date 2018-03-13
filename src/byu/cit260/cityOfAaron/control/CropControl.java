@@ -172,6 +172,8 @@ public class CropControl {
       if(peopleFed < population){
         int starved = population - peopleFed;
         cropData.setNumStarved(starved);
+        population -= starved;
+        cropData.setPopulation(population);
         return starved;
       }
       
@@ -184,8 +186,8 @@ public class CropControl {
       }
       //Update value for the current population
       int starved = cropData.getNumStarved();
-      int currentPopulation = population - starved;
-      cropData.setPopulation(currentPopulation);
+      //int currentPopulation = population - starved;
+      //cropData.setPopulation(currentPopulation);
       return starved;
     }
 

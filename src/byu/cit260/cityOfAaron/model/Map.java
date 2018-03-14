@@ -22,6 +22,13 @@ package byu.cit260.cityOfAaron.model;
    //constructor
    public Map(){}
 
+     //parameterized constructor
+     public Map(int _rows, int _cols){
+       rowCount = _rows;
+       colCount = _cols;
+       locations = new Location[_rows][_cols];
+     }
+
    //getters and setters
    public int getRowCount(){
      return rowCount;

@@ -46,13 +46,14 @@ public class CityOfAaron {
     //main function - entry point for the program
     //runs the main menus
     public static void main(String[] args) {
-
+ 
+   
     MainMenuView mmv = new MainMenuView();
-    mmv.displayMenuView();
+    mmv.displayMenu();//This will show the main Menu
     
 
 
-    /* commenting out for testing above
+  //  /* commenting out for testing above
     
     
 
@@ -102,7 +103,7 @@ public class CityOfAaron {
 
     System.out.println(provisionsOne.toString());
 
-*/ //end of comment
+// */ //end of comment
 
   }//close main
 }//end of class

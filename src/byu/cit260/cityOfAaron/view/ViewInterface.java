@@ -1,4 +1,4 @@
-package view;
+package byu.cit260.cityOfAaron.view;
 
 public interface ViewInterface{
 

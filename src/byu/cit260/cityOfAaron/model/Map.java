@@ -33,25 +33,27 @@ package byu.cit260.cityOfAaron.model;
    public int getRowCount(){
      return rowCount;
    }
-   public void setRowCount(int rowCount){
-     this.rowCount = rowCount;
-   }
+   //public void setRowCount(int rowCount){
+     //this.rowCount = rowCount;
+   //}//commented per week10 slide24
 
    public int getColCount(){
      return colCount;
    }
-   public void setColCount(int colCount){
-     this.colCount = colCount;
-   }
-   //how to do methods for double array? Ans://Maybe like this?? - Jem
-   public Location[][] getLocations() {
-       return locations;
+   //public void setColCount(int colCount){
+     //this.colCount = colCount;
+   //}//commented per week10 slide24
+
+
+   public Location getLocations(int row, int col) {
+       return locations[][];
  }
    //setLocations
-   public void setLocations(Location Locations) {
-       this.locations = locations;
+   public void setLocation(int row, int col, Location locations) {
+       locations[row][col] = _location;
    }
 
+    //confused about this last class (within a class) -Clayton
      private static class locations {
 
          public locations() {

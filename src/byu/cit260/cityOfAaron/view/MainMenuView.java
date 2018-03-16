@@ -13,6 +13,7 @@ import byu.cit260.cityOfAaron.control.*;
 public class MainMenuView extends MenuView {
 
 
+  
     //The displayMenuView method
     //Purpose: Displays the main menu, gets user input, performs selected action
     //Parameters: none
@@ -35,7 +36,6 @@ public MainMenuView(){
   " 5 - Quit\n",
   5);
 }
-
 
   //The doAction method
       //Purpose: performs the selection action
@@ -72,20 +72,20 @@ public MainMenuView(){
     //Game theGame = new Game();//i think this should be commented out per week10 slides28-33
 
     //Save a reference to it in the City of Aaron class
-    CityOfAaron.setCurrentGame(theGame);
+   // CityOfAaron.setCurrentGame(theGame);
 
     //Display the Banner Page
 
     System.out.println(
        "\n***************************************************************************************\n" +
-       "* Welcome to the City of Aaron. You have been summoned here by the High Priest *\n" +
+       "* Welcome to the City of Aaron. You have been summoned here by the High Priest           *\n" +
        "* to assume your role as ruler of the city. Your responsibility is to buy and sell land, *\n" +
-       "* determine how much wheat to plant each year and how much to set aside to feed *\n" +
+       "* determine how much wheat to plant each year and how much to set aside to feed          *\n" +
        "* your people. In addition, it will be your job to pay an annual tithe on the wheat that *\n" +
-       "* is harvested. If you fail to provide enough wheat for the people, people will starve, *\n" +
-       "* some people will die, and your workforce will be diminished. Plan carefully. And *\n" +
-       "* Oh, there is always a danger of rats eating your wheat. *\n" +
-       "* Welcome to the City of Aaron. *\n" +
+       "* is harvested. If you fail to provide enough wheat for the people, people will starve,  *\n" +
+       "* some people will die, and your workforce will be diminished. Plan carefully. And       *\n" +
+       "* Oh, there is always a danger of rats eating your wheat.                                *\n" +
+       "* Welcome to the City of Aaron.                                                          *\n" +
        "******************************************************************************************\n");
 
     //Create a new Player object

@@ -77,4 +77,7 @@ import byu.cit260.cityOfAaron.model.*;
      this.provisions = provisions;
    }
 
+    public void setMap(Map theMap) {
+       
+    }
 }

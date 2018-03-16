@@ -13,7 +13,7 @@ public class GameControl{
 
   public static void createNewGame(String pName){
 
-  }
+  
 
   theGame = new Game();
   CityOfAaron.setCurrentGame(theGame);
@@ -21,6 +21,8 @@ public class GameControl{
   Player thePlayer = new Player();
   thePlayer.setPlayerName(pName);
   theGame.setPlayer(thePlayer);
+  
+  }
 
   public static void createCropDataObject(){
 
@@ -115,6 +117,9 @@ public class GameControl{
     loc.setDescription(market + "\nTwenty bushels can feed one person in the population.");
     loc.setSymbol("!!!");
     theMap.setLocation(1, 3, loc);
+    
+    theGame.setMap(theMap); //per slide51 week 10
+    
 
   }
 

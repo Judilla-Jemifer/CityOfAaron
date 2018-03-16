@@ -85,8 +85,8 @@ public class GameControl {
   public static void createProvisionList(){
     ArrayList<ListItem> provisions = new ArrayList<ListItem>();
 
-    provisions.add(new ListItem("example1",1));
-    provisions.add(new ListItem("example2",2));
+    provisions.add(new ListItem("bread",1)); //Christ is the Bread of Life --Jacalyn
+    provisions.add(new ListItem("water",2)); //Christ is the Living Water --Jacalyn
 
     theGame.setProvisions(provisions);
   }
@@ -141,6 +141,17 @@ public class GameControl {
     loc.setDescription(market + "\nTwenty bushels can feed one person in the population.");
     loc.setSymbol("!!!");
     theMap.setLocation(1, 3, loc);
+    
+    //I feel like we need a Temple.  Did you expect less from me? HAHA Jacalyn
+    // set a Temple with a hint
+    String temple = "\n The ancient Americans built Temples to worship God";
+    loc = new Location();
+
+    //set the description and symbol
+    loc.setDescription(temple + 
+            "\nWhen you pay tithes, you are blessed with a bountiful crop protected from vermin.");
+    loc.setSymbol("+++");
+    theMap.setLocation(2, 2, loc);
     
     theGame.setMap(theMap);
             }

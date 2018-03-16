@@ -155,6 +155,7 @@ public class CropView {
    
    //display values
    
+   
    System.out.print("\nThe year number is " + yearNumber);
    System.out.print("\nThe number of people who starved is " + peopleStarved);
    System.out.print("\nThe number of people who came to the city is " + newComers);

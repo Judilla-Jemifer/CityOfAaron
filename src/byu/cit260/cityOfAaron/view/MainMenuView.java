@@ -8,6 +8,7 @@ package byu.cit260.cityOfAaron.view;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;//aka our GameProject class
 import byu.cit260.cityOfAaron.model.*;
+import byu.cit260.cityOfAaron.control.*;
 
 public class MainMenuView extends MenuView {
 
@@ -75,15 +76,17 @@ public MainMenuView(){
 
     //Display the Banner Page
 
-    System.out.println("\n" +
-       "Welcome to the City of Aaron. You have been summoned here by the High Priest \n" +
-       "to assume your role as ruler of the city. Your responsibility is to buy and sell land, \n" +
-       "determine how much wheat to plant each year and how much to set aside to feed \n" +
-       "your people. In addition, it will be your job to pay an annual tithe on the wheat that \n" +
-       "is harvested. If you fail to provide enough wheat for the people, people will starve,  \n" +
-       "some people will die, and your workforce will be diminished. Plan carefully. And \n" +
-       "Oh, there is always a danger of rats eating your wheat.\n" +
-       "Welcome to the City of Aaron.");
+    System.out.println(
+       "\n***************************************************************************************\n" +
+       "* Welcome to the City of Aaron. You have been summoned here by the High Priest *\n" +
+       "* to assume your role as ruler of the city. Your responsibility is to buy and sell land, *\n" +
+       "* determine how much wheat to plant each year and how much to set aside to feed *\n" +
+       "* your people. In addition, it will be your job to pay an annual tithe on the wheat that *\n" +
+       "* is harvested. If you fail to provide enough wheat for the people, people will starve, *\n" +
+       "* some people will die, and your workforce will be diminished. Plan carefully. And *\n" +
+       "* Oh, there is always a danger of rats eating your wheat. *\n" +
+       "* Welcome to the City of Aaron. *\n" +
+       "******************************************************************************************\n");
 
     //Create a new Player object
     Player thePlayer = new Player();

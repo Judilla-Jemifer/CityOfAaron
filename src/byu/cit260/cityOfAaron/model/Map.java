@@ -17,9 +17,12 @@ package byu.cit260.cityOfAaron.model;
    //attributes
    private int rowCount;
    private int colCount;
-   private Location locations[][]; //i think this is right
-
+   private Location[][] locations; //i think this is right
+   //should we change this one above to this as what is shown in the ppt? -Jem
    //constructor
+   //purpose: set data members to degault values
+   //parameters: none
+   //returns: none
    public Map(){}
 
      //parameterized constructor
@@ -45,11 +48,11 @@ package byu.cit260.cityOfAaron.model;
    //}//commented per week10 slide24
 
 
-   public Location getLocations(int row, int col) {
-       return locations[][];
+   public Location getLocation(int row, int col) {
+       return locations[row][col];
  }
    //setLocations
-   public void setLocation(int row, int col, Location locations) {
+   public void setLocation(int row, int col, Location _location) {
        locations[row][col] = _location;
    }
 

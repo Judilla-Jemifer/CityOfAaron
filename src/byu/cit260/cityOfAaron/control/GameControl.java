@@ -16,7 +16,7 @@ public class GameControl{
   }
 
   theGame = new Game();
-  CityOfAaron.setCurrentGame(Game theGame);
+  CityOfAaron.setCurrentGame(theGame);
 
   Player thePlayer = new Player();
   thePlayer.setPlayerName(pName);
@@ -69,8 +69,8 @@ public class GameControl{
   public static void createProvisionsList(){
     ArrayList<ListItem> provisions = new ArrayList<ListItem>();
 
-    provisions.add(new ListItem("example1",1));
-    provisions.add(new ListItem("example2",2));
+    provisions.add(new ListItem("provision1",1));
+    provisions.add(new ListItem("provision2",2));
 
     theGame.setProvisions(provisions);
   }
@@ -92,6 +92,30 @@ public class GameControl{
     for(int i = 0; i < MAX_ROW; i++){
       theMap.setLocation(i,4,loc);
     }
+    
+    // define the string for a farm land location
+    String farmland = "\nYou are on the fertile banks of the River." +
+    "\nIn the spring this low farmland floods and is covered with rich" +
+    "\nnew soil. Wheat is planted as far as you can see."; 
+    
+    // set a farmland location with a hint
+    loc = new Location();
+    loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
+    loc.setSymbol("!!!");
+    theMap.setLocation(0, 2, loc);
+    
+    // define the string for a farm land location
+    // I added market here. What do you think? --Jem
+    String market = "\nYou are in the market where people interact with each other to trade." +
+    "\nThe market is full of merchants and farm owners who are seeling their lands and other items." +
+    "\nFeel free to interact with the people here"; 
+    
+    // set a farmland location with a hint
+    loc = new Location();
+    loc.setDescription(market + "\nTwenty bushels can feed one person in the population.");
+    loc.setSymbol("!!!");
+    theMap.setLocation(1, 3, loc);
+
   }
 
 

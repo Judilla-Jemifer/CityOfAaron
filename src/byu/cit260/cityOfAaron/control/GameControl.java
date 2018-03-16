@@ -43,7 +43,7 @@ public class GameControl{
   }
 
   public static void createAnimalList(){
-    ArrayList<ListItem> animals = new ArrayList<ListItem>();
+    ArrayList<ListItem> animals = new ArrayList<>();
 
     animals.add(new ListItem("chickens",13));
     animals.add(new ListItem("cows",6));
@@ -55,7 +55,7 @@ public class GameControl{
   }
 
   public static void createToolsList(){
-    ArrayList<ListItem> tools = new ArrayList<ListItem>();
+    ArrayList<ListItem> tools = new ArrayList<>();
 
     tools.add(new ListItem("hammers",10));
     tools.add(new ListItem("nails",10000));
@@ -67,7 +67,7 @@ public class GameControl{
   }
 
   public static void createProvisionsList(){
-    ArrayList<ListItem> provisions = new ArrayList<ListItem>();
+    ArrayList<ListItem> provisions = new ArrayList<>();//removed ListItem inside as per Dev Forum
 
     provisions.add(new ListItem("provision1",1));
     provisions.add(new ListItem("provision2",2));

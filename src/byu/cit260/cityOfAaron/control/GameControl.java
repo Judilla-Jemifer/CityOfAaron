@@ -67,7 +67,7 @@ public class GameControl{
   }
 
   public static void createProvisionsList(){
-    ArrayList<ListItem> provisions = new ArrayList<>();//removed ListItem inside as per Dev Forum
+    ArrayList<ListItem> provisions = new ArrayList<>();//removed ListItem inside as per Dev Forum -Jem
 
     provisions.add(new ListItem("provision1",1));
     provisions.add(new ListItem("provision2",2));

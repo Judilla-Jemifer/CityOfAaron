@@ -2,45 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="NoVa Costumers">
-            <file>file:/Users/Jacalyn/Documents/OneDrive/CIT260/CityOfAaron/test/byu/cit260/cityOfAaron/control/CropControlTest.java</file>
-            <file>file:/Users/Jacalyn/Documents/OneDrive/CIT260/CityOfAaron/src/byu/cit260/cityOfAaron/view/CropView.java</file>
-            <file>file:/Users/Jacalyn/Documents/OneDrive/CIT260/CityOfAaron/src/byu/cit260/cityOfAaron/view/HelpMenuView.java</file>
-            <file>file:/Users/Jacalyn/Documents/OneDrive/CIT260/CityOfAaron/test/byu/cit260/cityOfAaron/control/PlantCropTest.java</file>
-        </group>
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Clayton%20Thomas/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/control/CropControl.java</file>
-            <file>file:/C:/Users/Clayton%20Thomas/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/model/CropData.java</file>
-            <file>file:/C:/Users/Clayton%20Thomas/Documents/NetBeansProjects/CityOfAaron/src/cityofaaron/CityOfAaron.java</file>
-            <file>file:/C:/Users/Clayton%20Thomas/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/CropView.java</file>
-            <file>file:/C:/Users/Clayton%20Thomas/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/model/Game.java</file>
-=======
-<<<<<<< HEAD
-            <file>file:/Users/ct/NetBeansProjects/CityOfAaron/src/cityofaaron/CityOfAaron.java</file>
-=======
-            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/cityofaaron/CityOfAaron.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/MenuView.java</file>
-            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/CropView.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/control/GameControl.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/model/Map.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/MainMenuView.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/CropView.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/model/ListItem.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/model/Player.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/HelpMenuView.java</file>
-            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/model/CropData.java</file>
-            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/ListMenuView.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/GameMenuView.java</file>
-            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/control/CropControl.java</file>
-            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/test/byu/cit260/cityOfAaron/control/CropControlTest.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/ListMenuView.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/ViewInterface.java</file>
         </group>
-<<<<<<< HEAD
-=======
-        <group name="NoVa Costumers">
-            <file>file:/Users/Jacalyn/Documents/OneDrive/CIT260/CityOfAaron/test/byu/cit260/cityOfAaron/control/CropControlTest.java</file>
-            <file>file:/Users/Jacalyn/Documents/OneDrive/CIT260/CityOfAaron/src/byu/cit260/cityOfAaron/view/CropView.java</file>
-            <file>file:/Users/Jacalyn/Documents/OneDrive/CIT260/CityOfAaron/src/byu/cit260/cityOfAaron/view/HelpMenuView.java</file>
-            <file>file:/Users/Jacalyn/Documents/OneDrive/CIT260/CityOfAaron/test/byu/cit260/cityOfAaron/control/PlantCropTest.java</file>
->>>>>>> 04bb78590bd208277dee96bc7fd26ebafca6f54f
->>>>>>> bbd2cbaaf0111819163ada84a6d408db065c4d73
-        </group>
->>>>>>> 2342cdc31311a77d1a7b445c4c92148b668d7797
     </open-files>
 </project-private>

@@ -26,15 +26,15 @@ public class GameControl {
      
      //call methods
      //create the CropData object
-     createCropDataObject();
+     //createCropDataObject();
      //create the list of animals
-     createAnimalList();
+     //createAnimalList();
      //create the list of tools
-     createToolList();
+    // createToolList();
      //create the list of provisions
-     createProvisionList();
+     //createProvisionList();
      //create the Locations and the Map object
-     createMap();
+    // createMap();
   }
 
   public static void createCropDataObject(){

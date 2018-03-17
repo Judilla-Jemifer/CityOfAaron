@@ -11,6 +11,8 @@ import byu.cit260.cityOfAaron.view.*;
 import byu.cit260.cityOfAaron.control.*;
 
 public class CityOfAaron {
+    
+    
 
     //variable for keeping a reference to the Game object
     private static Game currentGame = null;
@@ -42,7 +44,6 @@ public class CityOfAaron {
     {
         theCrops = _cropRef;
     } 
-    
     //main function - entry point for the program
     //runs the main menus
     public static void main(String[] args) {
@@ -52,4 +53,5 @@ public class CityOfAaron {
     mmv.displayMenu();//This will show the main Menu
     
   }//close main
+    
 }//end of class

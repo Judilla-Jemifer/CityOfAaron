@@ -69,8 +69,10 @@ public MainMenuView(){
   public void startNewGame(){
 
 //Create a new Game object.
-    Game theGame = new Game();//i think this should be commented out per week10 slides28-33
-
+    Game theGame = new Game();
+//i think this should be commented out per week10 slides28-33
+//yes but the game would not run without this
+//If this does not belong here, where should we put it then? It's not stated - Jem
     //Save a reference to it in the City of Aaron class
     CityOfAaron.setCurrentGame(theGame);
 

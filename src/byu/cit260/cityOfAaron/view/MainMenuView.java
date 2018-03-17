@@ -72,11 +72,11 @@ public MainMenuView() {
  //   Game theGame = new Game();
 //i think this should be commented out per week10 slides28-33
 //yes but the game would not run without this
-//If this does not belong here, where should we put it then? It's not stated - Jem
+//It says we should follows slides 29-30 so I commented this out again -- Jem
     //Save a reference to it in the City of Aaron class
   //  CityOfAaron.setCurrentGame(theGame);
 
-    //Display the Banner Page
+  
 
   public void startNewGame() {
       

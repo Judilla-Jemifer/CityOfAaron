@@ -24,20 +24,15 @@ public class GameControl {
      thePlayer.setPlayerName(pName);
      theGame.setPlayer(thePlayer);
      
-     //call methods
-     //create the CropData object
-     //createCropDataObject();
-     //create the list of animals
-     //createAnimalList();
-     //create the list of tools
-    // createToolList();
-     //create the list of provisions
-     //createProvisionList();
-     //create the Locations and the Map object
-    // createMap();
+     //Create 
+     createCropDataObject();
+     createAnimalList();
+     createToolList();
+     createProvisionList();
+     createMap();
   }
 
-  public static void createCropDataObject(){
+  public static void createCropDataObject() {
 
     CropData theCrops = new CropData();
 
@@ -70,7 +65,7 @@ public class GameControl {
     theGame.setAnimals(animals);
   }
 
-  public static void createToolList(){
+  public static void createToolList() {
     ArrayList<ListItem> tools = new ArrayList<>();
 
     tools.add(new ListItem("hammers",10));
@@ -83,7 +78,7 @@ public class GameControl {
     theGame.setTools(tools);
   }
 
-  public static void createProvisionList(){
+  public static void createProvisionList() {
     ArrayList<ListItem> provisions = new ArrayList<>();//erasing extra ListItem as per Dev Forum -Jem
 
     provisions.add(new ListItem("bread",1)); //Christ is the Bread of Life --Jacalyn
@@ -96,7 +91,7 @@ public class GameControl {
   //Purpose: creates the location objects and the map
   //Parameters: none
   //Returns: none
-  public static void createMap(){
+  public static void createMap() {
 
       //create the Map object, it is 5x5
       //refer to the Map constructor
@@ -156,5 +151,4 @@ public class GameControl {
     
     theGame.setMap(theMap);
             }
-
 }

@@ -11,8 +11,6 @@ import byu.cit260.cityOfAaron.model.*;
 import byu.cit260.cityOfAaron.control.*;
 
 public class MainMenuView extends MenuView {
-    
- 
 
     //The displayMenuView method
     //Purpose: Displays the main menu, gets user input, performs selected action
@@ -67,23 +65,9 @@ public MainMenuView() {
   //Purpose: Creates game object and starts the game
   //Parameters: none
   //Returns: none
-
-  //public void startNewGame(){
-
-//Create a new Game object.
- // Game theGame = new Game();
-//i think this should be commented out per week10 slides28-33
-//yes but the game would not run without this
-//It says we should follows slides 29-30 so I commented this out again -- Jem
-    //Save a reference to it in the City of Aaron class
-  //CityOfAaron.setCurrentGame(theGame);
-
-  
-
- public void startNewGame() {
-            
+  public void startNewGame() {
+      
       //Display the Banner Page
-
 
     System.out.println(
        "\n*********************************************************************************************\n" +
@@ -103,14 +87,13 @@ public MainMenuView() {
     //Welcome message
     System.out.println("\nWelcome, " + name + ". Have fun!");
     
-    //call the createNewGame() method. Pass the name as a parameter
+        //call the createNewGame() method. Pass the name as a parameter
     GameControl.createNewGame(name); 
     
     //show the game menu
     GameMenuView gmv = new GameMenuView();
     gmv.displayMenu();
-  }//close startNewGame
-
+  }
 
   public void startSavedGame() {
     System.out.println("\n Start Saved Game option selected.");

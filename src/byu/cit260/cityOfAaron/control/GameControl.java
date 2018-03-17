@@ -24,6 +24,7 @@ public class GameControl {
      thePlayer.setPlayerName(pName);
      theGame.setPlayer(thePlayer);
      
+     //call methods
      //create the CropData object
      createCropDataObject();
      //create the list of animals
@@ -70,7 +71,7 @@ public class GameControl {
   }
 
   public static void createToolList(){
-    ArrayList<ListItem> tools = new ArrayList<ListItem>();
+    ArrayList<ListItem> tools = new ArrayList<>();
 
     tools.add(new ListItem("hammers",10));
     tools.add(new ListItem("nails",10000));
@@ -83,7 +84,7 @@ public class GameControl {
   }
 
   public static void createProvisionList(){
-    ArrayList<ListItem> provisions = new ArrayList<ListItem>();
+    ArrayList<ListItem> provisions = new ArrayList<>();//erasing extra ListItem as per Dev Forum -Jem
 
     provisions.add(new ListItem("bread",1)); //Christ is the Bread of Life --Jacalyn
     provisions.add(new ListItem("water",2)); //Christ is the Living Water --Jacalyn
@@ -136,7 +137,7 @@ public class GameControl {
     "\nThe market is full of merchants and farm owners who are seeling their lands and other items." +
     "\nFeel free to interact with the people here"; 
     
-    // set a farmland location with a hint
+    // set a farmland location with a hint 
     loc = new Location();
     loc.setDescription(market + "\nTwenty bushels can feed one person in the population.");
     loc.setSymbol("!!!");

@@ -16,7 +16,7 @@ public class CropView {
     //Create a scanner object
     private static Scanner keyboard = new Scanner(System.in);
 
-//Get reference to the Game object and the Crops object
+//Get refernce to the Game object and the Crops object
   private static Game theGame = CityOfAaron.getCurrentGame();
   private static CropData theCropData = theGame.getCropData();
 
@@ -154,7 +154,6 @@ public class CropView {
    int wheat = theCropData.getWheatInStore();
    
    //display values
-   
    
    System.out.print("\nThe year number is " + yearNumber);
    System.out.print("\nThe number of people who starved is " + peopleStarved);

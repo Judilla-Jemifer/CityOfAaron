@@ -87,7 +87,14 @@ public class ListMenuView extends MenuView implements Serializable{
         "Your tools in the City of Aaron:\n" +
         "**************************************\n");
 
-    
+        ArrayList<ListItem> tools = theGame.getTools();
+
+        for (int i = 0; i < tools.size(); i++) {
+            ListItem listItem = tools.get(i);
+            System.out.println("\n\tItem: " + listItem.getName() +
+                               "\n\tQuantity: " + listItem.getNumber());
+        }
+
   }//close displayToolsList
 
  public void displayProvisionsList(){

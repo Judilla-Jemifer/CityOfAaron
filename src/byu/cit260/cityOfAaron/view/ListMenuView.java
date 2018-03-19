@@ -16,9 +16,7 @@ public class ListMenuView extends MenuView implements Serializable{
     private String gameMenu;
     private String listMenu;
     private String mainMenu;
-
-
-
+    
     public ListMenuView() {
     //Display the menu
     //Prompt user and get user's input
@@ -41,7 +39,7 @@ public class ListMenuView extends MenuView implements Serializable{
     // Purpose: performs the selected action
     // Parameters: none
     // Returns: none
-    // ===================================
+    // ===================================       
     @ Override public void doAction(int option) {
         switch(option) {
             case 1: // view or print list of Animals
@@ -51,7 +49,7 @@ public class ListMenuView extends MenuView implements Serializable{
                 displayToolsList();
                 break;
             case 3: // view or print a list of Provisions
-                listProvisions();
+                displayProvisionsList();
                 break;
             case 4: // view or print a list of Authors
                 displayAuthorsList();
@@ -60,29 +58,29 @@ public class ListMenuView extends MenuView implements Serializable{
                 break;
         }//close switch
     }//close doAction
-
+    
     // Display list of  Animals method
     // Purpose: displays a list of animals in the storehouse
     // Parameters: none
     // Returns: none
     //--Jacalyn
-    // ===================================
+    // ===================================   
     public void listAnimals( ) {
         System.out.println("\n" +
             "**************************************\n" +
             "Your animals in the City of Aaron:\n" +
             "**************************************\n");
-
+        
         ArrayList<ListItem> animals = theGame.getAnimals();
-
+        
         for (int i = 0; i < animals.size(); i++) {
             ListItem listItem = animals.get(i);
             System.out.println("\n\tItem: " + listItem.getName() +
                                "\n\tQuantity: " + listItem.getNumber());
         }
     }
-
-   //displayToolsList by Clayton
+   
+  //displayToolsList by Clayton
   public void displayToolsList() {
     System.out.println("\n" +
         "**************************************\n" +
@@ -101,11 +99,19 @@ public class ListMenuView extends MenuView implements Serializable{
 
   
   //Jem
+<<<<<<< HEAD
  public void listProvisions(){
     System.out.println("\n" +
       "**************************************\n" +
       "Your provisions in the City of Aaron:\n" +
       "**************************************\n");
+=======
+ public void displayProvisionsList(){
+    System.out.println("\n" +
+        "**************************************\n" +
+        "Your provisions in the City of Aaron:\n" +
+        "**************************************\n");
+>>>>>>> 9f699f07318dcaf383ef28a39ed69c235bb746f9
      
        ArrayList<ListItem> provisions = theGame.getProvisions();
       
@@ -120,9 +126,8 @@ public class ListMenuView extends MenuView implements Serializable{
         }
   }//close displayProvisionsList
 
+ 
  public void displayAuthorsList(){
     System.out.println("\n Display authors list here.");
-  }//close displayAuthorsList
-
-
+  }
 }//close class GameMenuView

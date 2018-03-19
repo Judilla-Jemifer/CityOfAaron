@@ -98,12 +98,23 @@ public class ListMenuView extends MenuView implements Serializable{
   }//close displayToolsList
 
  public void displayProvisionsList(){
-    System.out.println("\n Display provisions list here.");
-  }
+     System.out.println("\n" +
+        "**************************************\n" +
+        "Your provisions in the City of Aaron:\n" +
+        "**************************************\n");
+     
+        ArrayList<ListItem> provisions = theGame.getProvisions();
+     
+        for (int i = 0; i < provisions.size(); i++) {
+            ListItem listItem = provisions.get(i);
+            System.out.println("\n\tItem: " + listItem.getName() +
+                               "\n\tQuantity: " + listItem.getNumber());
+        }
+  }//close displayProvisionsList
 
  public void displayAuthorsList(){
     System.out.println("\n Display authors list here.");
-  }
+  }//close displayAuthorsList
 
 
 }//close class GameMenuView

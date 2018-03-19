@@ -33,7 +33,7 @@ public class CropView {
     boolean paramsNotOk;
     do{paramsNotOk = false;
       System.out.print("\nHow many acres of land do you wish to buy?");
-      int acresToBuy = keyboard.nextInt();
+      acresToBuy = keyboard.nextInt();
       //Call the buyLand() method in the control layer to buy the land
       try{CropControl.buyLand(landPrice, acresToBuy, theCropData);
       }catch (CropException e) {

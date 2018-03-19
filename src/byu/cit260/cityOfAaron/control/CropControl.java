@@ -5,6 +5,7 @@ package byu.cit260.cityOfAaron.control;
  */
 
 import byu.cit260.cityOfAaron.model.*;
+import exceptions.*;
 import java.util.Random;
 
 public class CropControl {
@@ -77,34 +78,24 @@ public class CropControl {
     and acresOwned after the sale <= population*10
   */
     public static void buyLand(int landPrice, int acresToBuy, CropData cropData)throws Exception{
-      //if acresToBuy < 0, return -1
-      if(acresToBuy < 0)/*{
-        return -1;
-      }  */ //commented per week11 slide21
-      throw new CropException("a negative value was input.");
-      //if acrestToBuy > (wheatInStore/landPrice), return -1
+  
+      if(acresToBuy < 0) throw new Exception("A negative value was input.");
+     
       int wheat = cropData.getWheatInStore();
       int money = wheat/landPrice;
-      if (acresToBuy > money) /*{
-          return -1;
-      }*/ //commented per week11 slide21
-      throw new CropException("there is insufficient wheat to buy this much land.");
-      //if acresToBuy > population*10, return -1
-      int population = cropData.getPopulation();
-      if(acresToBuy > population*PEOPLE_PER_ACRE){
-        return -1;
-      }
-      //acresOwned = acresOwned + acresToBuy
+      if (wheat < acresToBuy * landPrice)  
+          throw new Exception("There is insufficient wheat to buy this much land.");
+      
+      //add the number of acres to buy to current number of acres
       int owned = cropData.getAcresOwned();
       owned += acresToBuy;
       cropData.setAcresOwned(owned);
 
-      //wheatInStore = wheatInStore - (acresToBuy*landPrice)
-      wheat += (acresToBuy * landPrice);
+      //deduct the cost from wheatInStore
+      wheat = cropData.getWheatInStore();
+      wheat -= (acresToBuy * landPrice);
       cropData.setWheatInStore(wheat);
-      //return acresOwned
-      return owned;
-    } //close sellLand
+    } //close buyLand
 
 
 

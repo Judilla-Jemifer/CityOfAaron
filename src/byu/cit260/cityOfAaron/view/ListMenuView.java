@@ -99,13 +99,11 @@ public class ListMenuView extends MenuView implements Serializable{
 
   
   //Jem
-
  public void displayProvisionsList(){
     System.out.println("\n" +
         "**************************************\n" +
         "Your provisions in the City of Aaron:\n" +
         "**************************************\n");
-
      
        ArrayList<ListItem> provisions = theGame.getProvisions();
       
@@ -114,8 +112,8 @@ public class ListMenuView extends MenuView implements Serializable{
             ListItem listItem = provisions.get(i);
             System.out.println("\n\tItem: " + listItem.getName() +
                                "\n\tQuantity: " + listItem.getNumber());
-           
-           
+         
+            //System.out.println(provisions.get(i).getName() + provisions.get(i).getNumber());
         }
   }//close displayProvisionsList
 

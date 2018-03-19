@@ -31,19 +31,20 @@ public class CropView {
     System.out.format("Land is selling for %d bushels per acres.%n",landPrice);
     int acresToBuy;
     boolean paramsNotOk;
-    do{paramsNotOk = false;
-      System.out.print("\nHow many acres of land do you wish to buy?");
-      acresToBuy = keyboard.nextInt();
-      //Call the buyLand() method in the control layer to buy the land
-      try{CropControl.buyLand(landPrice, acresToBuy, theCropData);
-      }catch (CropException e) {
-        System.out.println("I am sorry master, I cannot do this.\n" + e.getMessage() );
+    do {
+        paramsNotOk = false;
+        System.out.print("\nHow many acres of land do you wish to buy?");
+        acresToBuy = keyboard.nextInt();
+        //Call the buyLand() method in the control layer to buy the land
+        try{CropControl.buyLand(landPrice, acresToBuy, theCropData);
+        }
+        catch (Exception e) {
+        System.out.println("I am sorry master, I cannot do this.\n");
+        System.out.println(e.getMessage());
         paramsNotOk = true;
       }
     }while(paramsNotOk);
-    //I thought of changing the order of price and toBuy to match it to buyLand method in cropControl
-    //I'm doing the same to the sellLand -- Jem
-  }//updated per week11 slides
+  }
 
   public static void sellLandView(){
     //Get the cost of the land for this round

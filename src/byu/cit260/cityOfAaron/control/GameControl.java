@@ -35,6 +35,7 @@ public class GameControl {
      //createProvisionList();
      //create the Locations and the Map object
     // createMap();
+    //commented out the above to show the Game Menu again since it's throwing errors after inputting name - Jem
   }
 
   public static void createCropDataObject(){

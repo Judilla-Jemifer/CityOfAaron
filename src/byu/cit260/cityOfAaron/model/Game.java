@@ -9,14 +9,14 @@ import byu.cit260.cityOfAaron.model.*;
 
  public class Game implements Serializable{
  //attributes
-   private static Map theMap;
-   private static Player thePlayer;
-   private static CropData cropData;
-   private static CropData theCrops = null; 
-   private static TeamMember team[];
-   private static ArrayList<ListItem> animals;
-   private static ArrayList<ListItem> tools;
-   private static ArrayList<ListItem> provisions;
+   private  Map theMap;
+   private  Player thePlayer;
+   private  CropData cropData;
+   private  CropData theCrops = null; 
+   private  TeamMember team[];
+   private  ArrayList<ListItem> animals;
+   private  ArrayList<ListItem> tools;
+   private  ArrayList<ListItem> provisions;
  //constructor
    public Game(){}
  //getters and setters

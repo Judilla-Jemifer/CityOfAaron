@@ -21,7 +21,7 @@ public class CropControl {
   private static final double TO_PERCENT = 100.0;
   private static final int GROWTH_RANGE = 5;
   private static final int BUSHELS_PER_PERSON = 20;
-  
+
   //random number generator
   public static Random random = new Random();
 
@@ -76,31 +76,29 @@ public class CropControl {
   Pre-conditions: acres to sell must be positive, acresToBuy <= (wheatInStore/landPrice),
     and acresOwned after the sale <= population*10
   */
-    public static int buyLand(int landPrice, int acresToBuy, CropData cropData){
+    public static void buyLand(int landPrice, int acresToBuy, CropData cropData)throws Exception{
       //if acresToBuy < 0, return -1
-      if(acresToBuy < 0){
+      if(acresToBuy < 0)/*{
         return -1;
-       
-      }
-      
+      }  */ //commented per week11 slide21
+      throw new CropException("a negative value was input.");
       //if acrestToBuy > (wheatInStore/landPrice), return -1
       int wheat = cropData.getWheatInStore();
       int money = wheat/landPrice;
-      if (acresToBuy > money) {
+      if (acresToBuy > money) /*{
           return -1;
-      }
+      }*/ //commented per week11 slide21
+      throw new CropException("there is insufficient wheat to buy this much land.");
       //if acresToBuy > population*10, return -1
-      
       int population = cropData.getPopulation();
       if(acresToBuy > population*PEOPLE_PER_ACRE){
         return -1;
-        
       }
       //acresOwned = acresOwned + acresToBuy
       int owned = cropData.getAcresOwned();
       owned += acresToBuy;
       cropData.setAcresOwned(owned);
-      
+
       //wheatInStore = wheatInStore - (acresToBuy*landPrice)
       wheat += (acresToBuy * landPrice);
       cropData.setWheatInStore(wheat);
@@ -108,9 +106,9 @@ public class CropControl {
       return owned;
     } //close sellLand
 
-    
-    
-    
+
+
+
     /*
     using offering percentage input from user, divide integer by 100 to convert value to percentage decimal
     using harvest amount collected, multiply by percentage of offering to calculate amount of harvest to be offered as tithes
@@ -176,8 +174,8 @@ public class CropControl {
         cropData.setPopulation(population);
         return starved;
       }
-      
-      
+
+
       //if(peopleFed > population) return population
        if(peopleFed > population){
         int populationFed = population;

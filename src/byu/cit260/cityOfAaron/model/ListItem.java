@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byu.cit260.cityOfAaron.model;
 
-/**
- *
- * @author HP14-ab111tx
- */
  //by Clayton
 
  import java.io.Serializable;
@@ -18,7 +9,10 @@ package byu.cit260.cityOfAaron.model;
    private String name;
    private int number;
 
-   public ListItem(String name, int number) {}
+   public ListItem(String name, int i) {
+       this.name = name;
+       this.number = i;
+   }
 
    public String getName() {
      return name;

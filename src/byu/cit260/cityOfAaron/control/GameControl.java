@@ -14,6 +14,8 @@ public class GameControl {
   //Refrence to a Game object
   private static Game theGame;
 
+
+
   public static void createNewGame(String  pName) {
       
       //Created the game object.  Save it in the main driver file
@@ -31,11 +33,11 @@ public class GameControl {
      //create the list of animals
      //createAnimalList();
      //create the list of tools
-    // createToolList();
+    //createToolList();
      //create the list of provisions
      //createProvisionList();
      //create the Locations and the Map object
-    // createMap();
+    //createMap();
     //commented out the above to show the Game Menu again since it's throwing errors after inputting name - Jem
   }
 

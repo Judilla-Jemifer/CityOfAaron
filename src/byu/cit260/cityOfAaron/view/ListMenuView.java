@@ -17,6 +17,8 @@ public class ListMenuView extends MenuView implements Serializable{
     private String listMenu;
     private String mainMenu;
 
+
+
     public ListMenuView() {
     //Display the menu
     //Prompt user and get user's input
@@ -49,7 +51,7 @@ public class ListMenuView extends MenuView implements Serializable{
                 displayToolsList();
                 break;
             case 3: // view or print a list of Provisions
-                displayProvisionsList();
+                listProvisions();
                 break;
             case 4: // view or print a list of Authors
                 displayAuthorsList();
@@ -97,18 +99,23 @@ public class ListMenuView extends MenuView implements Serializable{
 
   }//close displayToolsList
 
- public void displayProvisionsList(){
-     System.out.println("\n" +
-        "**************************************\n" +
-        "Your provisions in the City of Aaron:\n" +
-        "**************************************\n");
+  
+  //Jem
+ public void listProvisions(){
+    //System.out.println("\n" +
+     //   "**************************************\n" +
+     //   "Your provisions in the City of Aaron:\n" +
+     //   "**************************************\n");
      
-        ArrayList<ListItem> provisions = theGame.getProvisions();
-     
-        for (int i = 0; i < provisions.size(); i++) {
-            ListItem listItem = provisions.get(i);
-            System.out.println("\n\tItem: " + listItem.getName() +
-                               "\n\tQuantity: " + listItem.getNumber());
+       ArrayList<ListItem> provisions = theGame.getProvisions();
+      
+        
+       for (int i = 0; i < provisions.size(); i++) {
+            //ListItem listItem = provisions.get(i);
+            //System.out.println("\n\tItem: " + listItem.getName() +
+                               //"\n\tQuantity: " + listItem.getNumber());
+         
+            System.out.println(provisions.get(i).getName() + provisions.get(i).getNumber());
         }
   }//close displayProvisionsList
 

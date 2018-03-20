@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byu.cit260.cityOfAaron.model;
 
-/**
- *
- * @author HP14-ab111tx
- */
  //by Clayton
 
  import java.io.Serializable;
@@ -18,18 +9,22 @@ package byu.cit260.cityOfAaron.model;
    private String name;
    private int number;
 
-   public ListItem(){}
+   public ListItem(String name, int i) {
+       this.name = name;
+       this.number = i;
+   }
 
-   public String getName(){
+   public String getName() {
      return name;
    }
-   public void setName(String name){
+   
+   public void setName(String name) {
      this.name = name;
    }
-   public int getNumber(){
+   public int getNumber() {
      return number;
    }
-   public void setNumber(int number){
+   public void setNumber(int number) {
      this.number = number;
    }
    //Putting toString() here?? -- Jem

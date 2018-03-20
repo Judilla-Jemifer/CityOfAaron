@@ -1,5 +1,4 @@
 package byu.cit260.cityOfAaron.model;
-//I added acresPlanted to this.
 /**
  *
  * @authors Jemifer/Jacalyn/Clayton

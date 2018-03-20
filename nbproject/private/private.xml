@@ -4,9 +4,24 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="NoVa Costumers"/>
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Clayton%20Thomas/Documents/NetBeansProjects/CityOfAaron/src/cityofaaron/CityOfAaron.java</file>
             <file>file:/C:/Users/Clayton%20Thomas/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/ViewInterface.java</file>
             <file>file:/C:/Users/Clayton%20Thomas/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/MenuView.java</file>
+=======
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/MenuView.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/control/GameControl.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/model/Map.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/MainMenuView.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/CropView.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/model/ListItem.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/model/Player.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/HelpMenuView.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/GameMenuView.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/ListMenuView.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/ViewInterface.java</file>
+            <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/control/CropControl.java</file>
+>>>>>>> efb839674a671497e67b11067606d8f3090d183d
         </group>
     </open-files>
 </project-private>

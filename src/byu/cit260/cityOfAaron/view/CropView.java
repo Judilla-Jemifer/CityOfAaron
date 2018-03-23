@@ -46,6 +46,24 @@ public class CropView {
     }while(paramsNotOk);
   }
 
+  public static void payOfferingView() {
+        //Prompt for user to input amount of Offerings to pay
+        System.out.format("\nThe amount of tithing you offer will directly affect your harvest outcome and how much of your storage is eaten by rats/%n");
+       int offering;
+       boolean paramsNotOk;
+       do {
+           paramsNotOk = false;
+           System.out.print("\nWhat percentage of your harvest would you like to contribute to your tithe offering?");
+            offering = keyboard.nextInt();
+            try {CropControl.setOffering(offering, theCropData);}
+           catch (Exception e) {
+               System.out.println("I am sorry master, I cannot do this.\n");
+               System.out.println(e.getMessage());
+               paramsNotOk = true;
+            }
+        } while(paramsNotOk); 
+        theCropData.setOffering(offering);   
+    }
   public static void sellLandView(){
     //Get the cost of the land for this round
     int landPrice = CropControl.CalcLandCost();
@@ -92,28 +110,23 @@ public class CropView {
     //Purpose: runs the Game
     //Parameters: none
     //Returns: none
-
     //Tithes and Offerings by Jacalyn
-    public static void payOfferingView() {
+    //Tithes and Offerings by Jacalyn
+  /*  public static void payOfferingView() {
         //Prompt for user to input amount of Offerings to pay
         System.out.format("\nThe amount of tithing you offer will directly affect your harvest outcome and how much of your storage is eaten by rats/%n");
         System.out.print("\nWhat percentage of your harvest would you like to contribute to your tithe offering?");
-         int offering = keyboard.nextInt();
-       //Get user's input and save it
-       int offeringBushels;
-       int owned = theCropData.getAcresOwned();
-       offeringBushels = offering*owned;
-       //This part does not show the game menu back right away.
-       //I figured out it's asking for 2 inputs so I changes it to that
-       //I think there should be computation rather than another input?
-       //What do you think? -Jem
-
-
-       //Call the payOffering method in the control layer to pay tithes and offering
-       CropControl.payOffering(offeringBushels, offering, theCropData);
-
+       int offerings;
+       do {
+            offerings = keyboard.nextInt();
+            offerings = CropControl.setOffering(offerings, theCropData);
+            if (offerings == -1) {
+                System.out.print("Please enter an integer between 0 and 100");
+            }
+        } while(offerings == 1); 
+        theCropData.setOffering(offerings);   
     }
-
+*/
     //The showStarvedView method()
     //Purpose: shows the number of people in the population that starved
     //Parameters: none
@@ -174,9 +187,6 @@ public class CropView {
         //call the buyLandView() method
         buyLandView();
 
-        //add calls to the other crop view methods
-        //as they are written
-
         //call the sellLandView() method
         sellLandView();
 
@@ -194,6 +204,5 @@ public class CropView {
 
         //Jem
         displayCropsReportView();
-
     }
 }

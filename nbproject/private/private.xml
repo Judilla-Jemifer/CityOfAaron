@@ -2,13 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="NoVa Costumers"/>
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Clayton%20Thomas/Documents/NetBeansProjects/CityOfAaron/src/cityofaaron/CityOfAaron.java</file>
-            <file>file:/C:/Users/Clayton%20Thomas/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/ViewInterface.java</file>
-            <file>file:/C:/Users/Clayton%20Thomas/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/MenuView.java</file>
-=======
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/MenuView.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/control/GameControl.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/model/Map.java</file>
@@ -21,7 +15,7 @@
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/ListMenuView.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/ViewInterface.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/control/CropControl.java</file>
->>>>>>> efb839674a671497e67b11067606d8f3090d183d
         </group>
+        <group name="NoVa Costumers"/>
     </open-files>
 </project-private>

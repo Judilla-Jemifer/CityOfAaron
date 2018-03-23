@@ -106,27 +106,6 @@ public class CropView {
     CropControl.plantCrop(toPlant, theCropData);
   }
 
-    //The runCropsView method()
-    //Purpose: runs the Game
-    //Parameters: none
-    //Returns: none
-    //Tithes and Offerings by Jacalyn
-    //Tithes and Offerings by Jacalyn
-  /*  public static void payOfferingView() {
-        //Prompt for user to input amount of Offerings to pay
-        System.out.format("\nThe amount of tithing you offer will directly affect your harvest outcome and how much of your storage is eaten by rats/%n");
-        System.out.print("\nWhat percentage of your harvest would you like to contribute to your tithe offering?");
-       int offerings;
-       do {
-            offerings = keyboard.nextInt();
-            offerings = CropControl.setOffering(offerings, theCropData);
-            if (offerings == -1) {
-                System.out.print("Please enter an integer between 0 and 100");
-            }
-        } while(offerings == 1); 
-        theCropData.setOffering(offerings);   
-    }
-*/
     //The showStarvedView method()
     //Purpose: shows the number of people in the population that starved
     //Parameters: none

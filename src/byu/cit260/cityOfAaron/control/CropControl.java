@@ -96,30 +96,32 @@ public class CropControl {
       wheat -= (acresToBuy * landPrice);
       cropData.setWheatInStore(wheat);
     } //close buyLand
+ 
+    //The setOffering method
+    //Purpose: To pay thithes and offerings
+    //Paramenters: The perentage of tithes comes from wheat harvest
+    //Pre-conditons: Tithes must be a positive number between 0 and 100 to represent the percentage
+    public static int setOffering(int offering, CropData cropData) throws Exception {
+        
+        //if <  0 return -1
+        if (offering < 0) throw new Exception ("You must input a positve percentage.");
+        //if >100, return -1
+        if (offering>100) throw new Exception ("You cannot pay more than 100 percent");
+         int wheat = cropData.getWheatInStore();
+        int offeringBushels = (offering /100) * wheat; 
+        cropData.setOffering(offeringBushels);
+        return offering;
+    }
 
-
-
-
-    /*
-    using offering percentage input from user, divide integer by 100 to convert value to percentage decimal
-    using harvest amount collected, multiply by percentage of offering to calculate amount of harvest to be offered as tithes
-    return calculated offering if valid, or return -1 if invalid
-    */
-    public static int payOffering(int offeringBushels, int wheatInStore, CropData cropData){
-      //if offering is less than zero or more than 100, return error code -1
-      if(offeringBushels < 0 || offeringBushels > 100){
-        return -1;
-      }
-      //converts whole # to percentage
-      double offeringPercentage = offeringBushels / 100.0;
-      //get cropYield from cropData instance
-      int cropYield = cropData.getCropYield();
-      //get Wheat in Store so you can calculate how much wheat there is after paying offering
-      int wheat = cropData.getWheatInStore();
-      int payOffering = (wheatInStore - offeringBushels);
-      return wheatInStore;
-      //return offeringBushels
-     // return offeringBushels;
+    //Pay Offering Method
+    //Purpose: Take a set offering and subtract it from wheat in store
+    //Parameters: set offering
+    //Returns: wheat in store minus offering
+    public static void payOffering(int offering, CropData cropData) throws Exception {
+        int wheatInStore = cropData.getWheatInStore();
+        int offeringBushels = CropControl.setOffering(offering, cropData);
+        int wheat = (wheatInStore - offeringBushels); 
+        cropData.setWheatInStore(wheat);
     } //close payOffering
 
     /* @author Jem
@@ -166,7 +168,6 @@ public class CropControl {
         return starved;
       }
 
-
       //if(peopleFed > population) return population
        if(peopleFed > population){
         int populationFed = population;
@@ -181,8 +182,6 @@ public class CropControl {
     }
 
     //Add PlantCrop only after it has been verified through testing.
-
-
     public static int plantCrop(int acresToPlant, CropData cropData){
 
         int owned = cropData.getAcresOwned();

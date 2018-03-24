@@ -47,17 +47,16 @@ public class CropControl {
   Pre-conditions: acres to sell must be positive
   and <= acresOwned
   */
-    public static int sellLand(int landPrice, int acresToSell, CropData cropData){
+    public static int sellLand(int landPrice, int acresToSell, CropData cropData) throws Exception {
       //if acresToSell < 0, return -1
-      if(acresToSell < 0){
-        return -1;
-      }
+      if(acresToSell < 0)throw new Exception("A negative value was input.");
+      
       //if acresToSell > acresOwned, return -1
       int owned = cropData.getAcresOwned();
-      if(acresToSell > owned){
-        return -1;
-      }
-      //acresOwned = acresOwned - acresToSell
+      if(acresToSell > owned)
+          throw new Exception("There is insufficient acres owned to sell this much land.");
+      
+//acresOwned = acresOwned - acresToSell
       owned -= acresToSell;
       cropData.setAcresOwned(owned);
       //wheatInStore = wheatInStore + acresToSell * landPrice

@@ -67,14 +67,24 @@ public class CropView {
   public static void sellLandView(){
     //Get the cost of the land for this round
     int landPrice = CropControl.CalcLandCost();
+     boolean paramsNotOk;
+     do {
+           paramsNotOk = false;
     //Prompt user to enter the amount of acres to sell
     System.out.print("\nHow many acres do you wish to sell?");
     //Get the user's input and save it
     int acresToSell;
     acresToSell = keyboard.nextInt();
     //Call the sellLand() method in the control layer to sell the land
-    CropControl.sellLand(landPrice, acresToSell, theCropData);//error because the parameters we are passing here are different from the parameters needed by that method
+    try {CropControl.sellLand(landPrice, acresToSell, theCropData);}//error because the parameters we are passing here are different from the parameters needed by that method
     //i.e. sellLand(int landPrice, int acresToSell, CropData cropData)
+  catch (Exception e) {
+      System.out.println("I am sorry master, I cannot do this.\n");
+               System.out.println(e.getMessage());
+               paramsNotOk = true;
+  }
+  }while(paramsNotOk); 
+      
   }
 
   //@Jem

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package exceptions;
 
 /**
@@ -11,10 +6,18 @@ package exceptions;
  */
 public class CropException extends Exception{
     
-    public CropException(){}
+    //Default Constructor
+    //Purpose: Initializes data members to Default values
+    //Parameters: none
+    //Returns: none;
+    public CropException() {}
     
-    public CropException(String string){
+    
+    //Paramaterized constructor
+    //Purpose: initializes data members to value passed as a parameter
+    //Parameters: a string containing the error message
+    //Returns: none
+    public CropException(String string) {
         super(string);
     }
-    
 }

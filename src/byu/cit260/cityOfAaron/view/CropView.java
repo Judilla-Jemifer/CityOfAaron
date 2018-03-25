@@ -17,8 +17,8 @@ public class CropView {
     private static Scanner keyboard = new Scanner(System.in);
 
 //Get refernce to the Game object and the Crops object
-  private static Game theGame = CityOfAaron.getCurrentGame();
-  private static CropData theCropData = theGame.getCropData();
+ private static Game theGame = CityOfAaron.getCurrentGame();
+ private static CropData theCropData = theGame.getCropData();
 
 //The buyLandView() method
 //Purpose: interface with the user input for buying land
@@ -31,31 +31,60 @@ public class CropView {
     System.out.format("Land is selling for %d bushels per acres.%n",landPrice);
     int acresToBuy;
     boolean paramsNotOk;
-    do{paramsNotOk = false;
-      System.out.print("\nHow many acres of land do you wish to buy?");
-      int acresToBuy = keyboard.nextInt();
-      //Call the buyLand() method in the control layer to buy the land
-      try{CropControl.buyLand(landPrice, acresToBuy, theCropData);
-      }catch (CropException e) {
-        System.out.println("I am sorry master, I cannot do this.\n" + e.getMessage() );
+    do {
+        paramsNotOk = false;
+        System.out.print("\nHow many acres of land do you wish to buy?");
+        acresToBuy = keyboard.nextInt();
+        //Call the buyLand() method in the control layer to buy the land
+        try{CropControl.buyLand(landPrice, acresToBuy, theCropData);
+        }
+        catch (Exception e) {
+        System.out.println("I am sorry master, I cannot do this.\n");
+        System.out.println(e.getMessage());
         paramsNotOk = true;
       }
     }while(paramsNotOk);
-    //I thought of changing the order of price and toBuy to match it to buyLand method in cropControl
-    //I'm doing the same to the sellLand -- Jem
-  }//updated per week11 slides
+  }
 
+  public static void payOfferingView() {
+        //Prompt for user to input amount of Offerings to pay
+        System.out.format("\nThe amount of tithing you offer will directly affect your harvest outcome and how much of your storage is eaten by rats/%n");
+       int offering;
+       boolean paramsNotOk;
+       do {
+           paramsNotOk = false;
+           System.out.print("\nWhat percentage of your harvest would you like to contribute to your tithe offering?");
+            offering = keyboard.nextInt();
+            try {CropControl.setOffering(offering, theCropData);}
+           catch (Exception e) {
+               System.out.println("I am sorry master, I cannot do this.\n");
+               System.out.println(e.getMessage());
+               paramsNotOk = true;
+            }
+        } while(paramsNotOk); 
+        theCropData.setOffering(offering);   
+    }
   public static void sellLandView(){
     //Get the cost of the land for this round
     int landPrice = CropControl.CalcLandCost();
+     boolean paramsNotOk;
+     do {
+           paramsNotOk = false;
     //Prompt user to enter the amount of acres to sell
     System.out.print("\nHow many acres do you wish to sell?");
     //Get the user's input and save it
     int acresToSell;
     acresToSell = keyboard.nextInt();
     //Call the sellLand() method in the control layer to sell the land
-    CropControl.sellLand(landPrice, acresToSell, theCropData);//error because the parameters we are passing here are different from the parameters needed by that method
+    try {CropControl.sellLand(landPrice, acresToSell, theCropData);}//error because the parameters we are passing here are different from the parameters needed by that method
     //i.e. sellLand(int landPrice, int acresToSell, CropData cropData)
+  catch (Exception e) {
+      System.out.println("I am sorry master, I cannot do this.\n");
+               System.out.println(e.getMessage());
+               paramsNotOk = true;
+  }
+  }while(paramsNotOk); 
+      
   }
 
   //@Jem
@@ -86,32 +115,6 @@ public class CropView {
     //Call the plantCrop() method in the control layer to plant crop
     CropControl.plantCrop(toPlant, theCropData);
   }
-
-    //The runCropsView method()
-    //Purpose: runs the Game
-    //Parameters: none
-    //Returns: none
-
-    //Tithes and Offerings by Jacalyn
-    public static void payOfferingView() {
-        //Prompt for user to input amount of Offerings to pay
-        System.out.format("\nThe amount of tithing you offer will directly affect your harvest outcome and how much of your storage is eaten by rats/%n");
-        System.out.print("\nWhat percentage of your harvest would you like to contribute to your tithe offering?");
-         int offering = keyboard.nextInt();
-       //Get user's input and save it
-       int offeringBushels;
-       int owned = theCropData.getAcresOwned();
-       offeringBushels = offering*owned;
-       //This part does not show the game menu back right away.
-       //I figured out it's asking for 2 inputs so I changes it to that
-       //I think there should be computation rather than another input?
-       //What do you think? -Jem
-
-
-       //Call the payOffering method in the control layer to pay tithes and offering
-       CropControl.payOffering(offeringBushels, offering, theCropData);
-
-    }
 
     //The showStarvedView method()
     //Purpose: shows the number of people in the population that starved
@@ -173,9 +176,6 @@ public class CropView {
         //call the buyLandView() method
         buyLandView();
 
-        //add calls to the other crop view methods
-        //as they are written
-
         //call the sellLandView() method
         sellLandView();
 
@@ -193,6 +193,5 @@ public class CropView {
 
         //Jem
         displayCropsReportView();
-
     }
 }

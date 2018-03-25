@@ -24,7 +24,7 @@ public class GameControl {
      thePlayer.setPlayerName(pName);
      theGame.setPlayer(thePlayer);
      
-     //Create 
+     //Calls
      createCropDataObject();
      createAnimalList();
      createToolList();

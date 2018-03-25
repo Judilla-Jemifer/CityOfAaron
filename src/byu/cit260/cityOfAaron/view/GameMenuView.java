@@ -22,7 +22,7 @@ public class GameMenuView extends MenuView{
     switch (option) {
       case 1: viewMap();
         break;
-      case 2: displayListMenuView();
+      case 2: viewList();
         break;
       case 3: moveNewLocation();
         break;
@@ -35,9 +35,9 @@ public class GameMenuView extends MenuView{
   }//close doAction
   
   //Jem
-  public void displayListMenuView() {
-        ListMenuView lmv = new ListMenuView();
-        lmv.displayMenu();
+  public void viewList() {
+        ListMenuView lv = new ListMenuView();
+        lv.displayMenu();
   }
   
   //Jem

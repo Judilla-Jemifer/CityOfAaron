@@ -50,12 +50,12 @@ public class CropControl {
     public static int sellLand(int landPrice, int acresToSell, CropData cropData) throws Exception {
       //if acresToSell < 0, return -1
       if(acresToSell < 0)throw new Exception("A negative value was input.");
-      
+
       //if acresToSell > acresOwned, return -1
       int owned = cropData.getAcresOwned();
       if(acresToSell > owned)
           throw new Exception("There is insufficient acres owned to sell this much land.");
-      
+
 //acresOwned = acresOwned - acresToSell
       owned -= acresToSell;
       cropData.setAcresOwned(owned);
@@ -77,14 +77,14 @@ public class CropControl {
     and acresOwned after the sale <= population*10
   */
     public static void buyLand(int landPrice, int acresToBuy, CropData cropData)throws Exception{
-  
+
       if(acresToBuy < 0) throw new Exception("A negative value was input.");
-     
+
       int wheat = cropData.getWheatInStore();
       int money = wheat/landPrice;
-      if (wheat < acresToBuy * landPrice)  
+      if (wheat < acresToBuy * landPrice)
           throw new Exception("There is insufficient wheat to buy this much land.");
-      
+
       //add the number of acres to buy to current number of acres
       int owned = cropData.getAcresOwned();
       owned += acresToBuy;
@@ -95,19 +95,19 @@ public class CropControl {
       wheat -= (acresToBuy * landPrice);
       cropData.setWheatInStore(wheat);
     } //close buyLand
- 
+
     //The setOffering method
     //Purpose: To pay thithes and offerings
     //Paramenters: The perentage of tithes comes from wheat harvest
     //Pre-conditons: Tithes must be a positive number between 0 and 100 to represent the percentage
     public static int setOffering(int offering, CropData cropData) throws Exception {
-        
+
         //if <  0 return -1
         if (offering < 0) throw new Exception ("You must input a positve percentage.");
         //if >100, return -1
         if (offering>100) throw new Exception ("You cannot pay more than 100 percent");
          int wheat = cropData.getWheatInStore();
-        int offeringBushels = (offering /100) * wheat; 
+        int offeringBushels = (offering /100) * wheat;
         cropData.setOffering(offeringBushels);
         return offering;
     }
@@ -119,7 +119,7 @@ public class CropControl {
     public static void payOffering(int offering, CropData cropData) throws Exception {
         int wheatInStore = cropData.getWheatInStore();
         int offeringBushels = CropControl.setOffering(offering, cropData);
-        int wheat = (wheatInStore - offeringBushels); 
+        int wheat = (wheatInStore - offeringBushels);
         cropData.setWheatInStore(wheat);
     } //close payOffering
 
@@ -130,16 +130,12 @@ public class CropControl {
   Returns: the wheat in store after the wheat for people is set aside
   Pre-conditions: wheat for people must be positive and wheat in store should be > wheat for people
   */
-    public static int feedPeople(int wheatForPeople, CropData cropData){
+    public static int feedPeople(int wheatForPeople, CropData cropData) throws Exception{
       //if wheatForPeople < 0, return -1
-      if(wheatForPeople < 0){
-        return -1;
-      }
+      if(wheatForPeople < 0) throw new Exception ("Must be more than zero");
       //if wheatInStore <wheatForPeople, return -1
       int wheat = cropData.getWheatInStore();
-      if(wheat < wheatForPeople){
-        return -1;
-      }
+      if(wheat < wheatForPeople) throw new Exception("You cannot give more than you have to give");
       //wheatInStore = wheatInStore - whjeatForPeople
       wheat -= wheatForPeople;
       cropData.setWheatInStore(wheat);

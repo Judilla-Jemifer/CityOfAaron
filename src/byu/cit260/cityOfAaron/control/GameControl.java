@@ -3,6 +3,10 @@ package byu.cit260.cityOfAaron.control;
 import java.util.ArrayList;
 import cityofaaron.CityOfAaron;
 import byu.cit260.cityOfAaron.model.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class GameControl {
 
@@ -31,7 +35,32 @@ public class GameControl {
      createProvisionList();
      createMap();
   }
-
+public static void saveGame(Game game, String filePath)
+            throws Exception {
+        try( FileOutputStream fops = new FileOutputStream(filePath)){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);// write the game object out to file
+        } 
+        catch (Exception e) {
+            System.out.println("\nThere was an error writing the saved game file");
+    }
+}
+  //the getSavedGame method
+  //Purpose: load a saved game from disk
+  //Parameters: the file path
+ //Returns: none
+  //Side Effect: The game reference in the driver is updated
+  public static void getSavedGame(String filePath) {
+    Game theGame = null;
+    try (FileInputStream fips = new FileInputStream(filePath)) {
+        ObjectInputStream input = new ObjectInputStream(fips);
+        theGame = (Game) input.readObject();
+    }
+    catch(Exception e) {
+        System.out.println("\nThere was an error reading the saved game file. Please check the name and try again.");
+    }
+}
   public static void createCropDataObject() {
 
     CropData theCrops = new CropData();

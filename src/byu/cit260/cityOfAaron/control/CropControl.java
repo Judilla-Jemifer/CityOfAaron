@@ -206,5 +206,33 @@ public class CropControl {
         return wheatLeft;
     }//close plantCrop
 
+    // The populationGrowth method
+    // Purpose: To determine population for the new year
+    // Parameters: none
+    // Returns: the number of newPeople in the city of Aaron
+    // Pre-conditions: population must be positive
+    public static int populationGrowth(CropData cropData) {
+        int population = cropData.getPopulation();
+        int randomGrowth = random.nextInt(GROWTH_RANGE);
+ 
+        //newPeople = random number * population
+        int newPeople = population * randomGrowth/100;
+        cropData.setNewPeople(newPeople);
 
+        //population = population + newPeople
+        population += newPeople;
+        cropData.setPopulation(population);
+        
+        //return population
+        return population;
+    }
+
+//Advances Years
+public int newYear() {
+    int year = 1;
+    while(year <= 10) {
+        year++;
+    }
+    return year;
+    }
 }

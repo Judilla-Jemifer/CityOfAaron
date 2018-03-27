@@ -10,13 +10,15 @@ import byu.cit260.cityOfAaron.model.*;
  public class Game implements Serializable{
  //attributes
    private  Map theMap;
-   private  Player thePlayer;
+   private  Player thePlayer; //it's private Player aPlayerRef in slide 14 week 11 but I think this is just the same -- Jem
    private  CropData cropData;
    private  CropData theCrops = null; 
    private  TeamMember team[];
    private  ArrayList<ListItem> animals;
    private  ArrayList<ListItem> tools;
    private  ArrayList<ListItem> provisions;
+   private boolean done = false;  // added this per slide 14 of week11 -Jem
+   
  //constructor
    public Game(){}
  //getters and setters

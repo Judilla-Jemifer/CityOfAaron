@@ -65,7 +65,7 @@ public static void saveGame(Game game, String filePath)
 
     CropData theCrops = new CropData();
 
-    theCrops.setYear(0);
+    theCrops.setYear(1);
     theCrops.setPopulation(100);
     theCrops.setNewPeople(5);
     theCrops.setCropYield(3);

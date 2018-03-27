@@ -27,8 +27,6 @@ public class CropView {
   public static void buyLandView(){
     //Get the cost of land for this round
     int landPrice = CropControl.CalcLandCost();
-    //Prompt the user to enter the number of acres to buy
-    System.out.format("Land is selling for %d bushels per acres.%n",landPrice);
     int acresToBuy;
     boolean paramsNotOk;
     do {
@@ -50,11 +48,11 @@ public class CropView {
         //Prompt for user to input amount of Offerings to pay
         System.out.format("\n*Hint* The amount of tithing you offer will directly affect your harvest " +
                 "\noutcome and how much of your storage is eaten by rats.\n");
-       int offering;
        boolean paramsNotOk;
        do {
            paramsNotOk = false;
            System.out.print("\nWhat percentage of your harvest would you like to contribute to your tithe offering?\n");
+           int offering;
             offering = keyboard.nextInt();
             try {CropControl.setOffering(offering, theCropData);}
            catch (Exception e) {
@@ -63,7 +61,9 @@ public class CropView {
                paramsNotOk = true;
             }
         } while(paramsNotOk); 
-        theCropData.setOffering(offering);   
+        System.out.print("\nYou are offering " + theCropData.getOffering() +"%.");
+        System.out.print("\nYou have offered " + theCropData.getOfferingBushels() + " bushels to your God.");
+        System.out.print("\nYou have " + theCropData.getWheatInStore() + " remaining bushels of wheat.");
     }
   public static void sellLandView(){
     //Get the cost of the land for this round
@@ -127,7 +127,7 @@ public class CropView {
     //Call the plantCrop() method in the control layer to plant crop
     CropControl.plantCrop(toPlant, theCropData);
   }
-
+  
     //The showStarvedView method()
     //Purpose: shows the number of people in the population that starved
     //Parameters: none
@@ -150,8 +150,23 @@ public class CropView {
     CropControl.showStarved(peopleFed, population, theCropData);
   }
 
-
-
+  public static void newYearView() {
+    boolean paramsNotOk;
+    int year = 1;
+    do {
+        paramsNotOk = false;
+        //call the newYear method
+        try{CropControl.newYear(year, theCropData);
+        }
+        catch (Exception e) {
+        System.out.println("You survived and a statue is built in your honour.\n");
+        System.out.println(e.getMessage());
+        paramsNotOk = true;
+      }
+    }while(paramsNotOk);
+  }
+  
+  
   //The displayCropsReportView method()
     //Purpose: to display the crops report
     //Parameters: none
@@ -167,20 +182,21 @@ public class CropView {
    //will still check if there is a need to add this or it's automatically updated
    int acresOwned = theCropData.getAcresOwned();
    //bushels per acre here
-   int offering = theCropData.getOffering();
+   int offering = theCropData.getOfferingBushels();
    //bushles of wheat eaten by rats here
    int wheat = theCropData.getWheatInStore();
+   int landPrice = CropControl.CalcLandCost();
 
    //display values
 
-   System.out.print("\nThe year number is " + yearNumber);
+   System.out.print("\nThe year of your leadership is now " + yearNumber);
    System.out.print("\nThe number of people who starved is " + peopleStarved);
    System.out.print("\nThe number of people who came to the city is " + newComers);
    System.out.print("\nThe current population is " + currentPopulation);
    System.out.print("\nThe number of acres of cropland owned by the city is " + acresOwned);
-   System.out.print("\nThe number of bushels paid in offerings is " + offering);
+   System.out.print("\nThe number of bushels paid in offerings last year was " + offering);
    System.out.print("\nThe number of wheat in store is " + wheat + "\n");
-
+   System.out.format("\nLand is selling for %d bushels per acres.%n",landPrice);
   }
 
      public static void runCropsView()
@@ -205,5 +221,12 @@ public class CropView {
 
          //Jem
         showStarvedView();
+        
+        //Jacalyn - The years now increment
+        newYearView();
+        
+        //Jacalyn - We now get a random population growth
+        
+       CropControl.populationGrowth(theCropData);
     }
 }

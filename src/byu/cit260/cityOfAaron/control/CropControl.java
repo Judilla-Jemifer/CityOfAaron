@@ -106,22 +106,14 @@ public class CropControl {
         if (offering < 0) throw new Exception ("You must input a positve percentage.");
         //if >100, return -1
         if (offering>100) throw new Exception ("You cannot pay more than 100 percent");
-         int wheat = cropData.getWheatInStore();
-        int offeringBushels = (offering /100) * wheat;
-        cropData.setOffering(offeringBushels);
-        return offering;
+        cropData.setOffering(offering);
+       int wheat = cropData.getWheatInStore();
+       int offeringBushels = wheat/offering;
+       cropData.setOfferingBushels(offeringBushels);
+       int newWheat = wheat-offeringBushels;
+       cropData.setWheatInStore(newWheat);
+       return offering;
     }
-
-    //Pay Offering Method
-    //Purpose: Take a set offering and subtract it from wheat in store
-    //Parameters: set offering
-    //Returns: wheat in store minus offering
-    public static void payOffering(int offering, CropData cropData) throws Exception {
-        int wheatInStore = cropData.getWheatInStore();
-        int offeringBushels = CropControl.setOffering(offering, cropData);
-        int wheat = (wheatInStore - offeringBushels);
-        cropData.setWheatInStore(wheat);
-    } //close payOffering
 
     /* @author Jem
   The feedPeople method
@@ -228,11 +220,14 @@ public class CropControl {
     }
 
 //Advances Years
-public int newYear() {
-    int year = 1;
-    while(year <= 10) {
-        year++;
+public static int newYear(int year, CropData cropData) throws Exception{
+   int newyear = cropData.getYear();
+    if (newyear <= 10) {
+        newyear++;
+        cropData.setYear(newyear);
+        return newyear;
     }
-    return year;
+    if (newyear > 10) throw new Exception("Game over.");
+    return newyear;
     }
 }

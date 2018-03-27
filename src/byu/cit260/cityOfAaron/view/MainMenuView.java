@@ -95,8 +95,21 @@ public MainMenuView() {
     gmv.displayMenu();
   }
 
+  //The startSavedGame method
+  //Purpose: loads a saved game object from disk and start the game
+  //Parameters: none
+  //Returns: none
   public void startSavedGame() {
-    System.out.println("\n Start Saved Game option selected.");
+      String filePath ;
+      //Prompt user and get a file path
+      System.out.println("\n\nEnter the name of your saved game");
+      keyboard.nextLine(); 
+      filePath = keyboard.nextLine();
+      //Calls the getSavedGame() method in the Game Control class to load the game
+      GameControl.getSavedGame(filePath);
+      //display the game menu for the loaded game
+      GameMenuView gmv = new GameMenuView();
+      gmv.viewList();
   }//close startSavedGame
 
   public void displayHelpMenuView(){
@@ -105,7 +118,18 @@ public MainMenuView() {
   }//close displayHelpMenu
 
   public void displaySaveGameView(){
-    System.out.println("\n Display Save Game option selected.");
+    System.out.println("\n Enter a name for your game.");
+    String filePath;
+    keyboard.nextLine(); 
+    filePath = keyboard.nextLine();
+    try {
+        //try saving the game to the specified file
+        GameControl.saveGame(CityOfAaron.getCurrentGame(), filePath);
+        System.out.println("\nYour game has been saved in " + filePath);
+    }
+     catch(Exception e) {
+        System.out.println("\nThere was an error reading the writing your game file");
+    }
   }//close displaySaveGame
 
 }

@@ -4,11 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="NoVa Costumers"/>
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/cityofaaron/CityOfAaron.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/exceptions/CropException.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/control/GameControl.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/view/CropView.java</file>
             <file>file:/C:/Users/HP14-ab111tx/Documents/NetBeansProjects/CityOfAaron/src/byu/cit260/cityOfAaron/control/CropControl.java</file>
+=======
+            <file>file:/Users/ct/NetBeansProjects/CityOfAaron/src/cityofaaron/CityOfAaron.java</file>
+>>>>>>> 6a52a7658d938ea485bbf963fe1fbc1a5dcbd5c0
         </group>
     </open-files>
 </project-private>

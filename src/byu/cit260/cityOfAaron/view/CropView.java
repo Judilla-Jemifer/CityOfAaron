@@ -90,14 +90,22 @@ public class CropView {
   //@Jem
   public static void feedPeopleView(){
     //Get the cost of the land for this round
-
+    boolean paramsNotOk;
+    do {
+        paramsNotOk = false;
     //Prompt user to enter the amount of acres to sell
     System.out.print("\nHow many bushles of grain do you want to give to people?");
     //Get the user's input and save it
     int toFeed;
     toFeed = keyboard.nextInt();
     //Call the feedPeople() method in the control layer to sell the land
-    CropControl.feedPeople(toFeed, theCropData);
+    try {CropControl.feedPeople(toFeed, theCropData);}
+    catch (Exception e) {
+        System.out.println("I am sorry master, I cannot do this.\n");
+               System.out.println(e.getMessage());
+               paramsNotOk = true;
+    }
+    }while(paramsNotOk);  
   }
 
 

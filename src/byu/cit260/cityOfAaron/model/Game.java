@@ -17,6 +17,7 @@ import byu.cit260.cityOfAaron.model.*;
    private  ArrayList<ListItem> animals;
    private  ArrayList<ListItem> tools;
    private  ArrayList<ListItem> provisions;
+   private  boolean done = false;
  //constructor
    public Game(){}
  //getters and setters

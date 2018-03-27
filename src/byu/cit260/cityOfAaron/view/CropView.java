@@ -33,7 +33,7 @@ public class CropView {
     boolean paramsNotOk;
     do {
         paramsNotOk = false;
-        System.out.print("\nHow many acres of land do you wish to buy?");
+        System.out.print("\nHow many acres of land do you wish to buy?\n");
         acresToBuy = keyboard.nextInt();
         //Call the buyLand() method in the control layer to buy the land
         try{CropControl.buyLand(landPrice, acresToBuy, theCropData);
@@ -48,12 +48,13 @@ public class CropView {
 
   public static void payOfferingView() {
         //Prompt for user to input amount of Offerings to pay
-        System.out.format("\nThe amount of tithing you offer will directly affect your harvest outcome and how much of your storage is eaten by rats/%n");
+        System.out.format("\n*Hint* The amount of tithing you offer will directly affect your harvest " +
+                "\noutcome and how much of your storage is eaten by rats.\n");
        int offering;
        boolean paramsNotOk;
        do {
            paramsNotOk = false;
-           System.out.print("\nWhat percentage of your harvest would you like to contribute to your tithe offering?");
+           System.out.print("\nWhat percentage of your harvest would you like to contribute to your tithe offering?\n");
             offering = keyboard.nextInt();
             try {CropControl.setOffering(offering, theCropData);}
            catch (Exception e) {
@@ -71,7 +72,7 @@ public class CropView {
      do {
            paramsNotOk = false;
     //Prompt user to enter the amount of acres to sell
-    System.out.print("\nHow many acres do you wish to sell?");
+    System.out.print("\nHow many acres do you wish to sell?\n");
     //Get the user's input and save it
     int acresToSell;
     acresToSell = keyboard.nextInt();
@@ -95,6 +96,7 @@ public class CropView {
         paramsNotOk = false;
     //Prompt user to enter the amount of acres to sell
     System.out.print("\nHow many bushles of grain do you want to give to people?");
+    System.out.print("\n*Hint* Each person needs 20 bushels of wheat to thrive.\n");
     //Get the user's input and save it
     int toFeed;
     toFeed = keyboard.nextInt();
@@ -117,6 +119,8 @@ public class CropView {
   public static void plantCropsView(){
     //Prompt user to enter the number of acres to plant with seed
     System.out.print("\nHow many acres of land do you want to plant with seed?");
+    System.out.print("\n*Hint* 1 person can only manage 10 acres of land.");
+    System.out.print("\n*Hint* 1 bushel of wheat can be used to plant on 2 acres of land.\n");
     //Get the user's input and save it
     int toPlant;
     toPlant = keyboard.nextInt();
@@ -175,12 +179,18 @@ public class CropView {
    System.out.print("\nThe current population is " + currentPopulation);
    System.out.print("\nThe number of acres of cropland owned by the city is " + acresOwned);
    System.out.print("\nThe number of bushels paid in offerings is " + offering);
-   System.out.print("\nThe number of wheat in store is " + wheat);
+   System.out.print("\nThe number of wheat in store is " + wheat + "\n");
 
   }
 
      public static void runCropsView()
     {
+        //Jem
+        displayCropsReportView();  
+        
+        //by Jacalyn -- You always tithe first
+        payOfferingView();
+        
         //call the buyLandView() method
         buyLandView();
 
@@ -193,13 +203,7 @@ public class CropView {
         //Jem
         plantCropsView();
 
-        //by Jacalyn
-        payOfferingView();
-
-           //Jem
+         //Jem
         showStarvedView();
-
-        //Jem
-        displayCropsReportView();
     }
 }

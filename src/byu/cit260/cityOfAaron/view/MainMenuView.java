@@ -109,7 +109,7 @@ public MainMenuView() {
       GameControl.getSavedGame(filePath);
       //display the game menu for the loaded game
       GameMenuView gmv = new GameMenuView();
-      gmv.viewList();
+      gmv.displayMenu();
   }//close startSavedGame
 
   public void displayHelpMenuView(){

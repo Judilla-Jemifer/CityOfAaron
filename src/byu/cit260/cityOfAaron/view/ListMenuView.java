@@ -1,7 +1,10 @@
 package byu.cit260.cityOfAaron.view;
 
+import byu.cit260.cityOfAaron.control.GameControl;
 import byu.cit260.cityOfAaron.model.*;
 import cityofaaron.CityOfAaron;//aka our GameProject class
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -28,10 +31,11 @@ public class ListMenuView extends MenuView implements Serializable{
             "* CITY OF AARON: LIST MENU  *\n" +
             "**********************************\n" +
             " 1 - List or View the animals in the storehouse\n" +
-            " 2 - List or View the tools in the storehouse\n" +
-            " 3 - List or View the provisions in the storehouse\n" +
-            " 4 - List or View the development team\n" +
-            " 5 - Return to the Main Menu\n",
+            " 2 - Save the animals in the storehouse to a file\n" +
+            " 3 - List or View the tools in the storehouse\n" +
+            " 4 - List or View the provisions in the storehouse\n" +
+            " 5 - List or View the development team\n" +
+            " 6 - Return to the Main Menu\n",
         5);
     }
 
@@ -45,16 +49,19 @@ public class ListMenuView extends MenuView implements Serializable{
             case 1: // view or print list of Animals
                 listAnimals();
                 break;
-            case 2: // view or print a list of Tools
+            case 2: //save list of Animals
+               saveAnimals();
+                break;
+            case 3: // view or print a list of Tools
                 displayToolsList();
                 break;
-            case 3: // view or print a list of Provisions
+            case 4: // view or print a list of Provisions
                 displayProvisionsList();
                 break;
-            case 4: // view or print a list of Authors
+            case 5: // view or print a list of Authors
                 displayAuthorsList();
                 break;
-            case 5: // back to main menu
+            case 6: // back to main menu
                 break;
         }//close switch
     }//close doAction
@@ -79,7 +86,17 @@ public class ListMenuView extends MenuView implements Serializable{
                                "\n\tQuantity: " + listItem.getNumber());
         }
     }
-   
+    
+    //Save the Animal list to a file
+    //Jacalyn
+  public void saveAnimals() {
+      String outputAnimals;
+      System.out.println("\n Enter a name for your saved file.");
+      keyboard.nextLine(); 
+      outputAnimals = keyboard.nextLine();
+      GameControl.saveAnimalList(outputAnimals);
+  }
+  
   //displayToolsList by Clayton
   public void displayToolsList() {
     System.out.println("\n" +

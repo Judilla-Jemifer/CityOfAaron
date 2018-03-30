@@ -5,8 +5,10 @@ import cityofaaron.CityOfAaron;
 import byu.cit260.cityOfAaron.model.*;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 
 public class GameControl {
 
@@ -87,13 +89,31 @@ public static void saveGame(Game game, String filePath)
     animals.add(new ListItem("chickens",13));
     animals.add(new ListItem("cows",6));
     animals.add(new ListItem("pigs",3));
-    animals.add(new ListItem("horsies",7));
+    animals.add(new ListItem("horses",7));
     animals.add(new ListItem("oxen",12));
     animals.add(new ListItem("chihuahuas", 5)); //It's historical!  --Jacalyn
 
     theGame.setAnimals(animals);
   }
 
+  //Save the Animal list to a file
+    //Jacalyn
+  public static void saveAnimalList(String outputLocation)  {
+       ArrayList<ListItem> animals = theGame.getAnimals();
+      try (PrintWriter out = new PrintWriter(outputLocation)) {
+          out.println("\n\n **********Animal List Report**********");
+         out.printf("%n%-10s%10s","  Animal  ","Quantity");
+          out.printf("%n%-10s%10s","**********","**********");
+          for (ListItem item : animals) {
+              out.printf("%n%-10s%10d", item.getName()
+                                                      , item.getNumber());
+          }
+         
+      } catch (IOException ex) {
+          System.out.println("I/O Error" + ex.getMessage());
+      }
+  }
+  
   public static void createToolList() {
     ArrayList<ListItem> tools = new ArrayList<>();
 

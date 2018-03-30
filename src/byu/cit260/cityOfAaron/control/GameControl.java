@@ -58,6 +58,7 @@ public static void saveGame(Game game, String filePath)
     try (FileInputStream fips = new FileInputStream(filePath)) {
         ObjectInputStream input = new ObjectInputStream(fips);
         theGame = (Game) input.readObject();
+        CityOfAaron.setCurrentGame(theGame);
     }
     catch(Exception e) {
         System.out.println("\nThere was an error reading the saved game file. Please check the name and try again.");

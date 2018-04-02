@@ -42,8 +42,9 @@ public class GameMenuView extends MenuView{
   
   //Jem
   public void viewMap() {
-        System.out.println("\nDisplay viewMap() here");
-  }
+        System.out.println("\nHere is Your Map:");
+        
+    }
   
   //Jem
   public void moveNewLocation() {

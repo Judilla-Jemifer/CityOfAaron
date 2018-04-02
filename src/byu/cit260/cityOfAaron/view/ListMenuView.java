@@ -3,8 +3,9 @@ package byu.cit260.cityOfAaron.view;
 import byu.cit260.cityOfAaron.control.GameControl;
 import byu.cit260.cityOfAaron.model.*;
 import cityofaaron.CityOfAaron;//aka our GameProject class
-import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -19,6 +20,10 @@ public class ListMenuView extends MenuView implements Serializable{
     private String gameMenu;
     private String listMenu;
     private String mainMenu;
+   // private String message;
+    
+   // protected final BufferedReader keyboard = CityOfAaron.getInFile();
+   // protected final PrintWriter console = CityOfAaron.getOutFile();
     
     public ListMenuView() {
     //Display the menu
@@ -58,6 +63,7 @@ public class ListMenuView extends MenuView implements Serializable{
                 break;
             case 4: //save list of Tools
                saveTools();
+               break;
             case 5: // view or print a list of Provisions
                 displayProvisionsList();
                 break;
@@ -100,15 +106,7 @@ public class ListMenuView extends MenuView implements Serializable{
       GameControl.saveAnimalList(outputAnimals);
   }
   
-   //Save the Tools list to the disk
-    //Jemifer
-  public void saveTools() {
-      String outputTools;
-      System.out.println("\n Enter a name for your saved file.");
-      keyboard.nextLine(); 
-      outputTools = keyboard.nextLine();
-      GameControl.saveToolsList(outputTools);
-  }
+  
   
   //displayToolsList by Clayton
   public void displayToolsList() {
@@ -127,7 +125,15 @@ public class ListMenuView extends MenuView implements Serializable{
 
   }//close displayToolsList
 
-  
+   //Save the Tools list to the disk
+    //Jemifer
+  public void saveTools() {
+      String outputTools;
+      System.out.println("\n Enter a name for your saved file.");
+      keyboard.nextLine(); 
+      outputTools = keyboard.nextLine();
+      GameControl.saveToolList(outputTools);
+  }
   //Jem
  public void displayProvisionsList(){
     System.out.println("\n" +

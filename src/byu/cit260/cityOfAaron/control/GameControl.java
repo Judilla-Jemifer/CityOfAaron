@@ -3,6 +3,7 @@ package byu.cit260.cityOfAaron.control;
 import java.util.ArrayList;
 import cityofaaron.CityOfAaron;
 import byu.cit260.cityOfAaron.model.*;
+import byu.cit260.cityOfAaron.view.ErrorView;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -114,7 +115,34 @@ public static void saveGame(Game game, String filePath)
           System.out.println("I/O Error" + ex.getMessage());
       }
   }
+    //Save the List of tools to the disk
+    //Jemifer
+
+    /**
+     *
+     * @param outputLocation
+     */
+  public static void saveToolList(String outputLocation)  {
+       ArrayList<ListItem> tools = theGame.getTools();
   
+      try (PrintWriter out = new PrintWriter(outputLocation)) {
+          out.println("\n\n **********Tool List Report**********");
+         out.printf("%n%-10s%10s","  Tool  ","Quantity");
+          out.printf("%n%-10s%10s","**********","**********");
+          for (ListItem item : tools) {
+              out.printf("%n%-10s%10d", item.getName()
+                                                      , item.getNumber());
+          }
+         
+      } catch (IOException ex) {
+           System.out.println("I/O Error" + ex.getMessage());
+           
+      } finally {
+          if (CityOfAaron.outFile !=null) {
+              CityOfAaron.outFile.close();
+          }
+      }
+  }
   public static void createToolList() {
     ArrayList<ListItem> tools = new ArrayList<>();
 
@@ -128,23 +156,7 @@ public static void saveGame(Game game, String filePath)
     theGame.setTools(tools);
   }
 
-   //Save the List of tools to the disk
-    //Jemifer
-  public static void saveToolList(String outputLocation)  {
-       ArrayList<ListItem> tools = theGame.getTools();
-      try (PrintWriter out = new PrintWriter(outputLocation)) {
-          out.println("\n\n **********Tool List Report**********");
-         out.printf("%n%-10s%10s","  Tool  ","Quantity");
-          out.printf("%n%-10s%10s","**********","**********");
-          for (ListItem item : tools) {
-              out.printf("%n%-10s%10d", item.getName()
-                                                      , item.getNumber());
-          }
-         
-      } catch (IOException ex) {
-          System.out.println("I/O Error" + ex.getMessage());
-      }
-  }
+ 
   public static void createProvisionList() {
     ArrayList<ListItem> provisions = new ArrayList<>();//erasing extra ListItem as per Dev Forum -Jem
 

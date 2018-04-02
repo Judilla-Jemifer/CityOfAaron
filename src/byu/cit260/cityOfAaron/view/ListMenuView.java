@@ -33,10 +33,11 @@ public class ListMenuView extends MenuView implements Serializable{
             " 1 - List or View the animals in the storehouse\n" +
             " 2 - Save the animals in the storehouse to a file\n" +
             " 3 - List or View the tools in the storehouse\n" +
-            " 4 - List or View the provisions in the storehouse\n" +
-            " 5 - List or View the development team\n" +
-            " 6 - Return to the Main Menu\n",
-        5);
+            " 4 - Save the list of tools in the disk\n" +
+            " 5 - List or View the provisions in the storehouse\n" +
+            " 6 - List or View the development team\n" +
+            " 7 - Return to the Main Menu\n",
+        7);
     }
 
     // The doAction method
@@ -55,13 +56,15 @@ public class ListMenuView extends MenuView implements Serializable{
             case 3: // view or print a list of Tools
                 displayToolsList();
                 break;
-            case 4: // view or print a list of Provisions
+            case 4: //save list of Tools
+               saveTools();
+            case 5: // view or print a list of Provisions
                 displayProvisionsList();
                 break;
-            case 5: // view or print a list of Authors
+            case 6: // view or print a list of Authors
                 displayAuthorsList();
                 break;
-            case 6: // back to main menu
+            case 7: // back to main menu
                 break;
         }//close switch
     }//close doAction
@@ -95,6 +98,16 @@ public class ListMenuView extends MenuView implements Serializable{
       keyboard.nextLine(); 
       outputAnimals = keyboard.nextLine();
       GameControl.saveAnimalList(outputAnimals);
+  }
+  
+   //Save the Tools list to the disk
+    //Jemifer
+  public void saveTools() {
+      String outputTools;
+      System.out.println("\n Enter a name for your saved file.");
+      keyboard.nextLine(); 
+      outputTools = keyboard.nextLine();
+      GameControl.saveToolsList(outputTools);
   }
   
   //displayToolsList by Clayton

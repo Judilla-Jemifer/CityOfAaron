@@ -128,6 +128,23 @@ public static void saveGame(Game game, String filePath)
     theGame.setTools(tools);
   }
 
+   //Save the List of tools to the disk
+    //Jemifer
+  public static void saveToolList(String outputLocation)  {
+       ArrayList<ListItem> tools = theGame.getTools();
+      try (PrintWriter out = new PrintWriter(outputLocation)) {
+          out.println("\n\n **********Tool List Report**********");
+         out.printf("%n%-10s%10s","  Tool  ","Quantity");
+          out.printf("%n%-10s%10s","**********","**********");
+          for (ListItem item : tools) {
+              out.printf("%n%-10s%10d", item.getName()
+                                                      , item.getNumber());
+          }
+         
+      } catch (IOException ex) {
+          System.out.println("I/O Error" + ex.getMessage());
+      }
+  }
   public static void createProvisionList() {
     ArrayList<ListItem> provisions = new ArrayList<>();//erasing extra ListItem as per Dev Forum -Jem
 

@@ -5,6 +5,7 @@ package byu.cit260.cityOfAaron.control;
  */
 
 import byu.cit260.cityOfAaron.model.*;
+import byu.cit260.cityOfAaron.view.*;
 import exceptions.*;
 import java.util.Random;
 
@@ -222,12 +223,12 @@ public class CropControl {
 //Advances Years
 public static int newYear(int year, CropData cropData) throws Exception{
    int newyear = cropData.getYear();
-    if (newyear <= 10) {
+    if (newyear <= 9) {
         newyear++;
         cropData.setYear(newyear);
         return newyear;
     }
-    if (newyear > 10) throw new Exception("Game over.");
+    if (newyear > 9) throw new Exception("Game over.");
     return newyear;
-    }
+}
 }

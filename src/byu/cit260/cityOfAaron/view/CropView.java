@@ -161,6 +161,8 @@ public class CropView {
         catch (Exception e) {
         System.out.println("You survived and a statue is built in your honour.\n");
         System.out.println(e.getMessage());
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenu();
         paramsNotOk = true;
       }
     }while(paramsNotOk);

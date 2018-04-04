@@ -146,7 +146,7 @@ public class CropControl {
   Returns: the number of people who starved
   Pre-conditions: none
   */
-    public static int showStarved(int peopleFed, int population, CropData cropData){
+    public static int showStarved(int peopleFed, int population, CropData cropData) throws Exception {
       //if(peopleFed < population) return starved
       if(peopleFed < population){
         int starved = population - peopleFed;
@@ -164,8 +164,11 @@ public class CropControl {
       }
       //Update value for the current population
       int starved = cropData.getNumStarved();
-      //int currentPopulation = population - starved;
-      //cropData.setPopulation(currentPopulation);
+      int currentPopulation = population - starved;
+      cropData.setPopulation(currentPopulation);
+      
+      if (currentPopulation <= 0) throw new Exception(
+      "You have failed. Everyone has died. Nearby cities will tell of your epic fail for generations.");
       return starved;
     }
 
@@ -223,12 +226,12 @@ public class CropControl {
 //Advances Years
 public static int newYear(int year, CropData cropData) throws Exception{
    int newyear = cropData.getYear();
-    if (newyear <= 9) {
+    if (newyear <= 10) {
         newyear++;
         cropData.setYear(newyear);
         return newyear;
     }
-    if (newyear > 9) throw new Exception("Game over.");
+    if (newyear > 10) throw new Exception("Game over.");
     return newyear;
 }
 }

@@ -5,6 +5,7 @@ package byu.cit260.cityOfAaron.control;
  */
 
 import byu.cit260.cityOfAaron.model.*;
+import byu.cit260.cityOfAaron.view.*;
 import exceptions.*;
 import java.util.Random;
 
@@ -145,7 +146,7 @@ public class CropControl {
   Returns: the number of people who starved
   Pre-conditions: none
   */
-    public static int showStarved(int peopleFed, int population, CropData cropData){
+    public static int showStarved(int peopleFed, int population, CropData cropData) throws Exception {
       //if(peopleFed < population) return starved
       if(peopleFed < population){
         int starved = population - peopleFed;
@@ -163,8 +164,11 @@ public class CropControl {
       }
       //Update value for the current population
       int starved = cropData.getNumStarved();
-      //int currentPopulation = population - starved;
-      //cropData.setPopulation(currentPopulation);
+      int currentPopulation = population - starved;
+      cropData.setPopulation(currentPopulation);
+      
+      if (currentPopulation <= 0) throw new Exception(
+      "You have failed. Everyone has died. Nearby cities will tell of your epic fail for generations.");
       return starved;
     }
 
@@ -229,5 +233,5 @@ public static int newYear(int year, CropData cropData) throws Exception{
     }
     if (newyear > 10) throw new Exception("Game over.");
     return newyear;
-    }
+}
 }

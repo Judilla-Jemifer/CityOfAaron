@@ -133,21 +133,27 @@ public class CropView {
     //Parameters: none
     //Returns: none
     //@Jem
-  public static void showStarvedView(){
+  public static void showStarvedView() throws Exception{
     //Calculate how many people were adequately fed during the year
    int wheatForPeople = theCropData.getWheatForPeople();
    int peopleFed = wheatForPeople / BUSHELS_PER_PERSON;
    //Since it takes 20 busheles of wheat (Bushels_per_person) to feed one person
    //I divided wheatForPeople by bushels per person or 20
    int population = theCropData.getPopulation();
-
-   //if (population > peopleFed ){
-   //int starvedPeople = population - peopleFed;
-   //System.out.print("\nThere are " + starvedPeople + " people who starved due to lack of food");
-   // Just put this one for testing earlier -- Jem
-
-    //Call the showStarvedView() method in the control layer to show number of people that starved
-    CropControl.showStarved(peopleFed, population, theCropData);
+boolean paramsNotOk;
+do {
+    paramsNotOk = false;
+    try {CropControl.showStarved(peopleFed, population, theCropData);
+   }
+    catch (Exception e)
+    {
+        System.out.println("Game Over.\n");
+        System.out.println(e.getMessage());
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenu();
+        paramsNotOk = true;
+    }
+}while(paramsNotOk);
   }
 
   public static void newYearView() {
@@ -161,6 +167,8 @@ public class CropView {
         catch (Exception e) {
         System.out.println("You survived and a statue is built in your honour.\n");
         System.out.println(e.getMessage());
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenu();
         paramsNotOk = true;
       }
     }while(paramsNotOk);
@@ -199,7 +207,7 @@ public class CropView {
    System.out.format("\nLand is selling for %d bushels per acres.%n",landPrice);
   }
 
-     public static void runCropsView()
+     public static void runCropsView() throws Exception
     {
         //Jem
         displayCropsReportView();  

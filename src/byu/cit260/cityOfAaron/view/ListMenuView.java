@@ -2,18 +2,13 @@ package byu.cit260.cityOfAaron.view;
 
 import byu.cit260.cityOfAaron.control.GameControl;
 import byu.cit260.cityOfAaron.model.*;
-import cityofaaron.CityOfAaron;//aka our GameProject class
+import cityofaaron.CityOfAaron;
 //import java.io.BufferedReader;
 //import java.io.IOException;
 //import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/*The ListMenuView class - part of the view layer
- * Object: Manage the list menu
- * @author Jemifer
- * Date last modified: February 2018
- */
 public class ListMenuView extends MenuView implements Serializable{
     private static Game theGame = CityOfAaron.getCurrentGame();
     private static CropData theCropData = theGame.getCropData();
@@ -21,16 +16,11 @@ public class ListMenuView extends MenuView implements Serializable{
     private String listMenu;
     private String mainMenu;
    // private String message;
-    
+
    // protected final BufferedReader keyboard = CityOfAaron.getInFile();
    // protected final PrintWriter console = CityOfAaron.getOutFile();
-    
-    public ListMenuView() {
-    //Display the menu
-    //Prompt user and get user's input
-    //Perform the desired action
-    //determine and display the next view
 
+    public ListMenuView() {
         super( "\n" +
             "**********************************\n" +
             "* CITY OF AARON: LIST MENU  *\n" +
@@ -45,11 +35,7 @@ public class ListMenuView extends MenuView implements Serializable{
         7);
     }
 
-    // The doAction method
     // Purpose: performs the selected action
-    // Parameters: none
-    // Returns: none
-    // ===================================       
     @ Override public void doAction(int option) {
         switch(option) {
             case 1: // view or print list of Animals
@@ -74,40 +60,32 @@ public class ListMenuView extends MenuView implements Serializable{
                 break;
         }//close switch
     }//close doAction
-    
-    // Display list of  Animals method
+
     // Purpose: displays a list of animals in the storehouse
-    // Parameters: none
-    // Returns: none
-    //--Jacalyn
-    // ===================================   
     public void listAnimals( ) {
         System.out.println("\n" +
             "**************************************\n" +
             "Your animals in the City of Aaron:\n" +
             "**************************************\n");
-        
+
         ArrayList<ListItem> animals = theGame.getAnimals();
-        
+
         for (int i = 0; i < animals.size(); i++) {
             ListItem listItem = animals.get(i);
             System.out.println("\n\tItem: " + listItem.getName() +
                                "\n\tQuantity: " + listItem.getNumber());
         }
     }
-    
+
     //Save the Animal list to a file
-    //Jacalyn
   public void saveAnimals() {
       String outputAnimals;
       System.out.println("\n Enter a name for your saved file.");
-      keyboard.nextLine(); 
+      keyboard.nextLine();
       outputAnimals = keyboard.nextLine();
       GameControl.saveAnimalList(outputAnimals);
   }
-  
-  
-  
+
   //displayToolsList by Clayton
   public void displayToolsList() {
     System.out.println("\n" +
@@ -126,35 +104,33 @@ public class ListMenuView extends MenuView implements Serializable{
   }//close displayToolsList
 
    //Save the Tools list to the disk
-    //Jemifer
   public void saveTools() {
       String outputTools;
       System.out.println("\n Enter a name for your saved file.");
-      keyboard.nextLine(); 
+      keyboard.nextLine();
       outputTools = keyboard.nextLine();
       GameControl.saveToolList(outputTools);
   }
-  //Jem
+
  public void displayProvisionsList(){
     System.out.println("\n" +
         "**************************************\n" +
         "Your provisions in the City of Aaron:\n" +
         "**************************************\n");
-     
+
        ArrayList<ListItem> provisions = theGame.getProvisions();
-      
-        
+
        for (int i = 0; i < provisions.size(); i++) {
             ListItem listItem = provisions.get(i);
             System.out.println("\n\tItem: " + listItem.getName() +
                                "\n\tQuantity: " + listItem.getNumber());
-         
             //System.out.println(provisions.get(i).getName() + provisions.get(i).getNumber());
         }
   }//close displayProvisionsList
 
- 
+
  public void displayAuthorsList(){
     System.out.println("\n Display authors list here.");
   }
+  
 }//close class GameMenuView

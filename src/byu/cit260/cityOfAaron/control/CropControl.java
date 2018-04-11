@@ -1,9 +1,5 @@
 package byu.cit260.cityOfAaron.control;
 
-/**
- * @authors Jacalyn/Jemifer/Clayton
- */
-
 import byu.cit260.cityOfAaron.model.*;
 import byu.cit260.cityOfAaron.view.*;
 import exceptions.*;
@@ -27,12 +23,8 @@ public class CropControl {
   //random number generator
   public static Random random = new Random();
 
-  /*
-  calcLandCost method
-  Purpose: to calculate a random land cost between 17 to 26 bushels per acre
-  Parameters: none
-  Returns: the land cost
-  */
+
+  //Purpose: to calculate a random land cost between 17 to 26 bushels per acre
   public static int CalcLandCost(){
     int landPrice = random.nextInt(LAND_RANGE)+ LAND_BASE;
     // nextInt is a standard method from the imported library Random
@@ -40,7 +32,6 @@ public class CropControl {
   } //close CalcLandCost
 
   /*
-  The sellLand method
   Purpose: To sell land
   Parameters: the price of land, the number of acres to sell, and a
   reference to a CropData object
@@ -48,16 +39,15 @@ public class CropControl {
   Pre-conditions: acres to sell must be positive
   and <= acresOwned
   */
-    public static int sellLand(int landPrice, int acresToSell, CropData cropData) throws Exception {
-      //if acresToSell < 0, return -1
+    public static int sellLand(
+      int landPrice, int acresToSell, CropData cropData) throws Exception {
+      //if acresToSell < 0, throw exception
       if(acresToSell < 0)throw new Exception("A negative value was input.");
-
-      //if acresToSell > acresOwned, return -1
+      //if acresToSell > acresOwned, throw exception
       int owned = cropData.getAcresOwned();
       if(acresToSell > owned)
           throw new Exception("There is insufficient acres owned to sell this much land.");
-
-//acresOwned = acresOwned - acresToSell
+      //acresOwned = acresOwned - acresToSell
       owned -= acresToSell;
       cropData.setAcresOwned(owned);
       //wheatInStore = wheatInStore + acresToSell * landPrice
@@ -69,7 +59,6 @@ public class CropControl {
     } //close sellLand
 
   /* @Jem
-  The buyLand method
   Purpose: To buy land
   Parameters: the price of land, the number of acres to buy, and a
   reference to a CropData object
@@ -166,7 +155,7 @@ public class CropControl {
       int starved = cropData.getNumStarved();
       int currentPopulation = population - starved;
       cropData.setPopulation(currentPopulation);
-      
+
       if (currentPopulation <= 0) throw new Exception(
       "You have failed. Everyone has died. Nearby cities will tell of your epic fail for generations.");
       return starved;
@@ -210,7 +199,7 @@ public class CropControl {
     public static int populationGrowth(CropData cropData) {
         int population = cropData.getPopulation();
         int randomGrowth = random.nextInt(GROWTH_RANGE);
- 
+
         //newPeople = random number * population
         int newPeople = population * randomGrowth/100;
         cropData.setNewPeople(newPeople);
@@ -218,7 +207,7 @@ public class CropControl {
         //population = population + newPeople
         population += newPeople;
         cropData.setPopulation(population);
-        
+
         //return population
         return population;
     }

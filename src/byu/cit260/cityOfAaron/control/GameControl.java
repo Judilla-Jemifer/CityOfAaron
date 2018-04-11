@@ -21,16 +21,13 @@ public class GameControl {
   private static Game theGame;
 
   public static void createNewGame(String  pName) {
-      
       //Created the game object.  Save it in the main driver file
       theGame = new Game();
       CityOfAaron.setCurrentGame(theGame);
-      
      //create the player object.  Save it in the game object
      Player thePlayer = new Player();
      thePlayer.setPlayerName(pName);
      theGame.setPlayer(thePlayer);
-     
      //Calls
      createCropDataObject();
      createAnimalList();
@@ -38,21 +35,19 @@ public class GameControl {
      createProvisionList();
      createMap();
   }
-public static void saveGame(Game game, String filePath)
-            throws Exception {
+
+public static void saveGame(Game game, String filePath) throws Exception {
         try( FileOutputStream fops = new FileOutputStream(filePath)){
             ObjectOutputStream output = new ObjectOutputStream(fops);
-            
-            output.writeObject(game);// write the game object out to file
-        } 
+            // write the game object out to file
+            output.writeObject(game);
+        }
         catch (Exception e) {
             System.out.println("\nThere was an error writing the saved game file");
     }
 }
-  //the getSavedGame method
+
   //Purpose: load a saved game from disk
-  //Parameters: the file path
- //Returns: none
   //Side Effect: The game reference in the driver is updated
   public static void getSavedGame(String filePath) {
     Game theGame = null;
@@ -65,8 +60,8 @@ public static void saveGame(Game game, String filePath)
         System.out.println("\nThere was an error reading the saved game file. Please check the name and try again.");
     }
 }
-  public static void createCropDataObject() {
 
+  public static void createCropDataObject() {
     CropData theCrops = new CropData();
 
     theCrops.setYear(1);
@@ -93,13 +88,12 @@ public static void saveGame(Game game, String filePath)
     animals.add(new ListItem("pigs",3));
     animals.add(new ListItem("horses",7));
     animals.add(new ListItem("oxen",12));
-    animals.add(new ListItem("chihuahuas", 5)); //It's historical!  --Jacalyn
+    animals.add(new ListItem("chihuahuas", 5));
 
     theGame.setAnimals(animals);
   }
 
   //Save the Animal list to a file
-    //Jacalyn
   public static void saveAnimalList(String outputLocation)  {
        ArrayList<ListItem> animals = theGame.getAnimals();
       try (PrintWriter out = new PrintWriter(outputLocation)) {
@@ -107,42 +101,34 @@ public static void saveGame(Game game, String filePath)
          out.printf("%n%-10s%10s","  Animal  ","Quantity");
           out.printf("%n%-10s%10s","**********","**********");
           for (ListItem item : animals) {
-              out.printf("%n%-10s%10d", item.getName()
-                                                      , item.getNumber());
+              out.printf("%n%-10s%10d", item.getName(), item.getNumber());
           }
-         
       } catch (IOException ex) {
           System.out.println("I/O Error" + ex.getMessage());
       }
   }
-    //Save the List of tools to the disk
-    //Jemifer
 
-    /**
-     *
-     * @param outputLocation
-     */
+    //Save the List of tools to the disk
+    // @param outputLocation
   public static void saveToolList(String outputLocation)  {
        ArrayList<ListItem> tools = theGame.getTools();
-  
+
       try (PrintWriter out = new PrintWriter(outputLocation)) {
           out.println("\n\n **********Tool List Report**********");
          out.printf("%n%-10s%10s","  Tool  ","Quantity");
           out.printf("%n%-10s%10s","**********","**********");
           for (ListItem item : tools) {
-              out.printf("%n%-10s%10d", item.getName()
-                                                      , item.getNumber());
+              out.printf("%n%-10s%10d", item.getName(), item.getNumber());
           }
-         
       } catch (IOException ex) {
            System.out.println("I/O Error" + ex.getMessage());
-           
       } finally {
           if (CityOfAaron.outFile !=null) {
               CityOfAaron.outFile.close();
           }
       }
   }
+
   public static void createToolList() {
     ArrayList<ListItem> tools = new ArrayList<>();
 
@@ -156,7 +142,7 @@ public static void saveGame(Game game, String filePath)
     theGame.setTools(tools);
   }
 
- 
+
   public static void createProvisionList() {
     ArrayList<ListItem> provisions = new ArrayList<>();//erasing extra ListItem as per Dev Forum -Jem
 
@@ -166,68 +152,75 @@ public static void saveGame(Game game, String filePath)
     theGame.setProvisions(provisions);
   }
 
-  //The createMap method
-  //Purpose: creates the location objects and the map
-  //Parameters: none
-  //Returns: none
-  public static void createMap() {
+//by clayton
+  public static void saveProvisionList(String outputLocation)  {
+       ArrayList<ListItem> provisions = theGame.getProvisions();
 
+      try (PrintWriter out = new PrintWriter(outputLocation)) {
+          out.println("\n\n **********Provision List Report**********");
+         out.printf("%n%-10s%10s","  Provision  ","Quantity");
+          out.printf("%n%-10s%10s","**********","**********");
+          for (ListItem item : provisions) {
+              out.printf("%n%-10s%10d", item.getName(), item.getNumber());
+          }
+      } catch (IOException ex) {
+           System.out.println("I/O Error" + ex.getMessage());
+      } finally {
+          if (CityOfAaron.outFile !=null) {
+              CityOfAaron.outFile.close();
+          }
+      }
+  }
+  
+
+  //Purpose: creates the location objects and the map
+  public static void createMap() {
       //create the Map object, it is 5x5
       //refer to the Map constructor
     Map theMap = new Map(MAX_ROW, MAX_COL);
-
     //create a string that will go in the location objects that contain the river
     String river = "\n You are on the river. " +
       "\n The river is the source of life for our city. " +
       "\n The river marks the eastern boundary of the city; " +
       "\n it is wilderness to the east. ";
-
     //create a new Location object
     Location loc = new Location();
-
     //set the description and symbol
     loc.setDescription(river);
     loc.setSymbol("~~~");
-
     //set this location object in each cell of the array in column 4
     for(int i = 0; i < MAX_ROW; i++){
       theMap.setLocation(i,4,loc);
     }
-    
     //define the string for a farm land location
     String farmland = "\nYou are on the fertile banks of the River." +
             "\nIn the spring this low farmland floods and is covered with rich" +
             "\nnew soil.  Wheat is planted as far as you can see.";
-    
-    //set a farmland location with a hint 
+    //set a farmland location with a hint
     loc = new Location();
     loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
     loc.setSymbol("!!!");
     theMap.setLocation(0,2, loc);
-    
     // define the string for a farm land location
     // I added market here. What do you think? --Jem
     String market = "\nYou are in the market where people interact with each other to trade." +
     "\nThe market is full of merchants and farm owners who are seeling their lands and other items." +
-    "\nFeel free to interact with the people here"; 
-    
-    // set a farmland location with a hint 
+    "\nFeel free to interact with the people here";
+    // set a farmland location with a hint
     loc = new Location();
     loc.setDescription(market + "\nTwenty bushels can feed one person in the population.");
     loc.setSymbol("!!!");
     theMap.setLocation(1, 3, loc);
-    
     //I feel like we need a Temple.  Did you expect less from me? HAHA Jacalyn
     // set a Temple with a hint
     String temple = "\n The ancient Americans built Temples to worship God";
     loc = new Location();
-
     //set the description and symbol
-    loc.setDescription(temple + 
-            "\nWhen you pay tithes, you are blessed with a bountiful crop protected from vermin.");
+    loc.setDescription(temple +
+      "\nWhen you pay tithes, you are blessed with a bountiful crop protected from vermin.");
     loc.setSymbol("+++");
     theMap.setLocation(2, 2, loc);
-    
     theGame.setMap(theMap);
             }
-}
+
+}//end of class

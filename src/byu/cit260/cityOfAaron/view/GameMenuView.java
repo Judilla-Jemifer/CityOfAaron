@@ -3,9 +3,14 @@ package byu.cit260.cityOfAaron.view;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;//aka our GameProject class
 import byu.cit260.cityOfAaron.model.*;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GameMenuView extends MenuView{
-
+ //Refrence to a Game object
+  private static Game theGame;
+  
   public GameMenuView(){
     super( "\n***************************"+
                "\n***      GAME MENU      ***"+
@@ -26,7 +31,13 @@ public class GameMenuView extends MenuView{
         break;
       case 3: moveNewLocation();
         break;
-      case 4: manageCrops();
+      case 4: {
+        try {
+            manageCrops();
+        } catch (Exception ex) {
+            Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
         break;
      case 5: 
        return;
@@ -42,7 +53,23 @@ public class GameMenuView extends MenuView{
   
   //Jem
   public void viewMap() {
-        System.out.println("\nHere is Your Map:");
+        System.out.println("\n         ***VILLAGE MAP***         "
+                          +"\n     1      2     3     4      5   "
+                          +"\n 1 | ... | ... | !!! | ~~~ | !!!  |"
+                          +"\n 2 | l^l | +++ | !!! | ~~~ | !!!  |"
+                          +"\n 3 | oOo | oOo | !!! | ~~~ | !!!  |" 
+                          +"\n 4 | oOo | oOo | !!! | ~~~ | !!!  |"
+                          +"\n 5 | oOo | oOo | !!! | ~~~ | !!!  |"
+                          +"\n "
+                          +"\nKey:"
+                          +"\noOo - village"
+                          +"\n!!! - farmland"
+                          +"\n!!! - river"
+                          +"\n!!! - desert"
+                          +"\n+++ - temple"
+                          +"\nl^l - market");
+       
+        
         
     }
   
@@ -51,7 +78,7 @@ public class GameMenuView extends MenuView{
         System.out.println("\nDisplay moveNewLocation() here");
   }
   //Jem
-  public void manageCrops() {
+  public void manageCrops() throws Exception {
        CropView.runCropsView();
   }
           

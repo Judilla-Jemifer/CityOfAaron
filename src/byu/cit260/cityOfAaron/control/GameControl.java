@@ -191,7 +191,7 @@ public static void saveGame(Game game, String filePath)
 
     //set this location object in each cell of the array in column 4
     for(int i = 0; i < MAX_ROW; i++){
-      theMap.setLocation(i,4,loc);
+      theMap.setLocation(i,3,loc);
     }
     
     //define the string for a farm land location
@@ -203,8 +203,49 @@ public static void saveGame(Game game, String filePath)
     loc = new Location();
     loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
     loc.setSymbol("!!!");
-    theMap.setLocation(0,2, loc);
+    for(int i = 0; i < MAX_ROW; i++){
+      theMap.setLocation(i,2,loc);
+    }
     
+     //set a farmland location with a hint 
+    loc = new Location();
+    loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
+    loc.setSymbol("!!!");
+    for(int i = 0; i < MAX_ROW; i++){
+      theMap.setLocation(i,4,loc);
+    }
+   //define the string for the village
+    String village = "\nYou are in the village where people live." +
+            "\nEvery day, these people work together to build the village." +
+            "\nThey plant seed and harvest when needed.";
+    
+    //set a vilage location 
+    loc = new Location();
+    loc.setDescription(village + "\nEach person consumers 20 bushels per year.");
+    loc.setSymbol("oOo");
+    for(int i = 0; i < 3; i++){
+      theMap.setLocation(i,0,loc);
+    }
+    
+    //set a vilage location 
+    loc = new Location();
+    loc.setDescription(village + "\nEach person consumers 20 bushels per year.");
+    loc.setSymbol("oOo");
+    for(int i = 0; i < 3; i++){
+      theMap.setLocation(i,1,loc);
+    }
+    //define the string for a desert location
+    String desert = "\nYou are on the desert." +
+            "\nNobody lives here because it's too hot in here" +
+            "\nBetter move to other location.";
+    
+    //set a location location with a hint 
+    loc = new Location();
+    loc.setDescription(desert + "\nYou must always make sure not to starve the people.");
+    loc.setSymbol("...");
+    for(int i = 0; i < 2; i++){
+      theMap.setLocation(0,i,loc);
+    }
     // define the string for a farm land location
     // I added market here. What do you think? --Jem
     String market = "\nYou are in the market where people interact with each other to trade." +
@@ -214,8 +255,8 @@ public static void saveGame(Game game, String filePath)
     // set a farmland location with a hint 
     loc = new Location();
     loc.setDescription(market + "\nTwenty bushels can feed one person in the population.");
-    loc.setSymbol("!!!");
-    theMap.setLocation(1, 3, loc);
+    loc.setSymbol("l^l");
+    theMap.setLocation(1, 2, loc);
     
     //I feel like we need a Temple.  Did you expect less from me? HAHA Jacalyn
     // set a Temple with a hint

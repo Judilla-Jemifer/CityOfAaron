@@ -167,8 +167,10 @@ public class CropControl {
       int currentPopulation = population - starved;
       cropData.setPopulation(currentPopulation);
       
-      if (currentPopulation <= 0) throw new Exception(
-      "You have failed. Everyone has died. Nearby cities will tell of your epic fail for generations.");
+      
+      
+     if (currentPopulation <= 0) throw new Exception(
+    "You have failed. Everyone has died. Nearby cities will tell of your epic fail for generations.");
       return starved;
     }
 

@@ -200,7 +200,7 @@ public static void saveGame(Game game, String filePath) throws Exception {
     loc = new Location();
     loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
     loc.setSymbol("!!!");
-<<<<<<< HEAD
+
     for(int i = 0; i < MAX_ROW; i++){
       theMap.setLocation(i,2,loc);
     }
@@ -244,9 +244,9 @@ public static void saveGame(Game game, String filePath) throws Exception {
     for(int i = 0; i < 2; i++){
       theMap.setLocation(0,i,loc);
     }
-=======
+
     theMap.setLocation(0,2, loc);
->>>>>>> f69b3d47f87f49fe82abc343610c997ba5978695
+
     // define the string for a farm land location
     // I added market here. What do you think? --Jem
     String market = "\nYou are in the market where people interact with each other to trade." +
@@ -255,14 +255,14 @@ public static void saveGame(Game game, String filePath) throws Exception {
     // set a farmland location with a hint
     loc = new Location();
     loc.setDescription(market + "\nTwenty bushels can feed one person in the population.");
-<<<<<<< HEAD
+
     loc.setSymbol("l^l");
     theMap.setLocation(1, 2, loc);
     
-=======
+
     loc.setSymbol("!!!");
     theMap.setLocation(1, 3, loc);
->>>>>>> f69b3d47f87f49fe82abc343610c997ba5978695
+
     //I feel like we need a Temple.  Did you expect less from me? HAHA Jacalyn
     // set a Temple with a hint
     String temple = "\n The ancient Americans built Temples to worship God";

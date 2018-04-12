@@ -195,12 +195,12 @@ public class CropView {
         newYearView();
         //We now get a random population growth
        CropControl.populationGrowth(theCropData);
-<<<<<<< HEAD
+
     }
 
-}
-=======
+
+
     }//close runCropsView
 
-}//end of class
->>>>>>> f69b3d47f87f49fe82abc343610c997ba5978695
+//end of class
+
